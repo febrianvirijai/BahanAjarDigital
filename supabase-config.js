@@ -16,8 +16,9 @@
 // mempertimbangkan hal ini.
 // ============================================================================
 
-window.ECBOOK_SUPABASE_URL = 'https://YOUR-PROJECT.supabase.co'; // <-- ganti
-window.ECBOOK_SUPABASE_ANON_KEY = 'YOUR-ANON-PUBLIC-KEY'; // <-- ganti
+window.ECBOOK_SUPABASE_URL = 'https://ozlrffvzfvslrqkxtkij.supabase.co/'; // <-- ganti
+window.ECBOOK_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im96bHJmZnZ6ZnZzbHJxa3h0a2lqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM1NjI5OTIsImV4cCI6MjA5OTEzODk5Mn0.xD9lVXHm5qRJxV4jz8JAcRRp_M3An_582BHcfBVlNmg'; // <-- ganti
+
 
 window.EcbookCloud = (function () {
   function ready() {

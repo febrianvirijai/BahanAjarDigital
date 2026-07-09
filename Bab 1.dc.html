@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bahan Ajar Digital Eksperimen Fisika STEM-ESD · Bab 1 - Orientasi &amp; Krisis Air</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&amp;family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script src="supabase-config.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: #e8efee; }
+  #bookRoot ::selection { background: rgba(14,131,136,0.22); }
+  #bookScroll { scroll-behavior: smooth; }
+  #bookMain p, #bookMain li { text-align: justify; text-align-last: left; }
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 0.3em 0 !important; overflow-x: auto; overflow-y: hidden; }
+  @keyframes ecFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  @keyframes ecFlow { 0% { background-position: 0 0; } 100% { background-position: 40px 0; } }
+  @media (max-width: 1040px) {
+    #tocAside { transform: translateX(-100%); }
+    #tocAside.open { transform: none; }
+    #tocToggle { display: flex !important; }
+    #bookMain { margin-left: 0 !important; }
+  }
+  @media print {
+    #tocAside, #tocToggle, #progressBar, .no-print { display: none !important; }
+    #bookMain { margin-left: 0 !important; }
+    #bookRoot { background: #fff !important; }
+    section[data-chapter] { break-before: page; }
+  }
+</style>
+</helmet>
+
+<div id="bookRoot" style="--paper: #f4f8f7; --ink: #0f3238; --body: #243c41; --muted: #5f7d80; --teal: #0e8388; --teal-d: #0a5a5d; --aqua: #1596ad; --green: #2f8f5b; --amber: #c47f22; --violet: #6a4c93; --indigo: #375a97; --coral: #cf503b; --line: #d6e4e1; --card: #ffffff; background: var(--paper); color: var(--body); font-family: 'Mulish',system-ui,sans-serif; font-size: 16.5px; line-height: 1.72; -webkit-font-smoothing: antialiased; min-height: 100vh; position: relative">
+
+
+  <div id="progressBar" style="position:fixed; top:0; left:0; height:4px; width:0%; background:linear-gradient(90deg,#0e8388,#1596ad,#2f8f5b); z-index:1000; transition:width .12s linear;"></div>
+
+  <!-- ============ LOGIN GATE ============ -->
+  <div id="authGate" class="no-print" style="display:none; position:fixed; inset:0; z-index:2000; background:linear-gradient(155deg,#0c2a30 0%,#0e5a5c 60%,#12a08c 100%); overflow-y:auto;">
+    <div style="position:absolute; inset:0; opacity:.15; background-image:radial-gradient(circle at 82% 16%, #7fffe0 0, transparent 42%), radial-gradient(circle at 12% 86%, #2f8f5b 0, transparent 40%); pointer-events:none;"></div>
+    <div style="position:relative; min-height:100%; display:flex; align-items:center; justify-content:center; padding:40px 20px;">
+      <div style="width:100%; max-width:440px; background:#fff; border-radius:22px; box-shadow:0 30px 80px -30px rgba(0,0,0,.6); overflow:hidden;">
+        <div style="background:linear-gradient(135deg,#0c2a30,#12857f); color:#fff; padding:26px 30px;">
+          <div style="display:flex; align-items:center; gap:11px;">
+            <div style="width:38px; height:38px; border-radius:10px; background:linear-gradient(135deg,#12a3a0,#2f8f5b); display:flex; align-items:center; justify-content:center;">
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5C12 2.5 5 10 5 15a7 7 0 0 0 14 0c0-5-7-12.5-7-12.5z"></path></svg>
+            </div>
+            <div>
+              <div style="font:800 15px/1.1 'Mulish'; letter-spacing:.01em;">Bahan Ajar Digital Interaktif</div>
+              <div style="font:600 10.5px/1.2 'Mulish'; color:#8fd8ce; letter-spacing:.14em; text-transform:uppercase;">Eksperimen Fisika · STEM-ESD</div>
+            </div>
+          </div>
+          <p style="margin:14px 0 0; font-size:13px; color:#cfeae4;">Masuk untuk mulai belajar. Jawaban Anda tersimpan &amp; dapat dipantau dosen.</p>
+        </div>
+
+        <div style="display:flex; padding:16px 24px 0; gap:8px;">
+          <button id="tabMhs" data-auth-tab="mhs" style="flex:1; padding:11px; border:none; border-radius:10px 10px 0 0; background:#eef6f4; color:var(--teal-d); font-weight:800; font-family:inherit; font-size:14px; cursor:pointer;">Mahasiswa</button>
+          <button id="tabDosen" data-auth-tab="dosen" style="flex:1; padding:11px; border:none; border-radius:10px 10px 0 0; background:#f4f8f7; color:var(--muted); font-weight:700; font-family:inherit; font-size:14px; cursor:pointer;">Dosen</button>
+        </div>
+
+        <!-- Mahasiswa form -->
+        <div id="formMhs" style="padding:22px 24px 26px;">
+          <div style="display:flex; background:#eef1f0; border-radius:10px; padding:4px; margin-bottom:16px; gap:4px;">
+            <button type="button" id="mhsModeSignup" data-mhs-mode="signup" style="flex:1; padding:8px; border:none; border-radius:7px; font-family:inherit; font-size:12.5px; font-weight:800; cursor:pointer; background:#fff; color:var(--teal-d); box-shadow:0 2px 6px rgba(0,0,0,.08);">Daftar Baru</button>
+            <button type="button" id="mhsModeLogin" data-mhs-mode="login" style="flex:1; padding:8px; border:none; border-radius:7px; font-family:inherit; font-size:12.5px; font-weight:700; cursor:pointer; background:transparent; color:var(--muted);">Masuk</button>
+          </div>
+          <label style="display:block; font-size:12.5px; font-weight:700; color:var(--ink); margin-bottom:5px;">Nama Lengkap</label>
+          <input id="mhsName" type="text" placeholder="mis. Ahmad Fauzi" style="width:100%; padding:11px 13px; border:1px solid var(--line); border-radius:10px; font-family:inherit; font-size:14.5px; margin-bottom:14px; color:var(--body);">
+          <label style="display:block; font-size:12.5px; font-weight:700; color:var(--ink); margin-bottom:5px;">NIM</label>
+          <input id="mhsNim" type="text" placeholder="mis. 2100123" style="width:100%; padding:11px 13px; border:1px solid var(--line); border-radius:10px; font-family:inherit; font-size:14.5px; margin-bottom:6px; color:var(--body);">
+          <label style="display:block; font-size:12.5px; font-weight:700; color:var(--ink); margin:10px 0 5px;">Kelas / Rombel <span style="font-weight:400; color:var(--muted);">(opsional)</span></label>
+          <input id="mhsKelas" type="text" placeholder="mis. Pendidikan Fisika A" style="width:100%; padding:11px 13px; border:1px solid var(--line); border-radius:10px; font-family:inherit; font-size:14.5px; margin-bottom:16px; color:var(--body);">
+          <div id="mhsErr" style="display:none; color:var(--coral); font-size:12.5px; margin-bottom:10px;"></div>
+          <button id="mhsSubmitBtn" data-auth-login="mhs" style="width:100%; padding:13px; border:none; border-radius:10px; background:linear-gradient(135deg,#0e8388,#2f8f5b); color:#fff; font-weight:800; font-family:inherit; font-size:15px; cursor:pointer;">Daftar sebagai Mahasiswa</button>
+        </div>
+
+        <!-- Dosen form -->
+        <div id="formDosen" style="display:none; padding:22px 24px 26px;">
+          <label style="display:block; font-size:12.5px; font-weight:700; color:var(--ink); margin-bottom:5px;">Nama Dosen</label>
+          <input id="dosenName" type="text" placeholder="mis. Febrian Virijai" style="width:100%; padding:11px 13px; border:1px solid var(--line); border-radius:10px; font-family:inherit; font-size:14.5px; margin-bottom:14px; color:var(--body);">
+          <label style="display:block; font-size:12.5px; font-weight:700; color:var(--ink); margin-bottom:5px;">Kode Rahasia Dosen</label>
+          <input id="dosenPass" type="password" placeholder="Masukkan kode rahasia" style="width:100%; padding:11px 13px; border:1px solid var(--line); border-radius:10px; font-family:inherit; font-size:14.5px; margin-bottom:6px; color:var(--body);">
+          <div style="font-size:11px; color:var(--muted); margin-bottom:12px;">Kode dibagikan oleh koordinator mata kuliah.</div>
+          <div id="dosenErr" style="display:none; color:var(--coral); font-size:12.5px; margin-bottom:10px;"></div>
+          <button id="dosenSubmitBtn" data-auth-login="dosen" style="width:100%; padding:13px; border:none; border-radius:10px; background:linear-gradient(135deg,#375a97,#0e8388); color:#fff; font-weight:800; font-family:inherit; font-size:15px; cursor:pointer;">Masuk sebagai Dosen</button>
+        </div>
+        <div style="padding:0 24px 22px; font-size:11.5px; color:var(--muted); line-height:1.6;">Data tersimpan di peramban perangkat ini. Untuk menyetor jawaban dari perangkat berbeda, gunakan tombol <b>Kumpulkan Jawaban</b> (mahasiswa) lalu <b>Impor</b> pada dasbor dosen.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ USER PILL ============ -->
+  <div id="userPill" class="no-print" style="display:none; position:fixed; top:14px; right:16px; z-index:1002; align-items:center; gap:8px; background:var(--card); border:1px solid var(--line); border-radius:999px; padding:5px 6px 5px 14px; box-shadow:0 6px 18px rgba(15,50,56,.14);">
+    <span id="pillRole" style="font:800 10px/1 'Mulish'; letter-spacing:.08em; text-transform:uppercase; padding:4px 8px; border-radius:999px; background:#eef6f4; color:var(--teal-d);">Mahasiswa</span>
+    <span id="pillName" style="font-size:13px; font-weight:700; color:var(--ink); max-width:150px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">—</span>
+    <button id="pillDash" style="display:none; width:32px; height:32px; border-radius:50%; border:none; background:#375a97; color:#fff; cursor:pointer; align-items:center; justify-content:center;" title="Dasbor Dosen"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="12" width="7" height="9"></rect><rect x="3" y="16" width="7" height="5"></rect></svg></button>
+    <button id="pillCollect" style="display:none; width:32px; height:32px; border-radius:50%; border:none; background:#2f8f5b; color:#fff; cursor:pointer; align-items:center; justify-content:center;" title="Kumpulkan / Unduh Jawaban"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"></path></svg></button>
+    <button id="pillLogout" style="width:32px; height:32px; border-radius:50%; border:none; background:#eef0ee; color:var(--muted); cursor:pointer; align-items:center; justify-content:center;" title="Keluar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"></path></svg></button>
+  </div>
+
+  <!-- ============ DASHBOARD (DOSEN) ============ -->
+  <div id="dashModal" class="no-print" style="display:none; position:fixed; inset:0; z-index:2100; background:rgba(8,26,30,.55); backdrop-filter:blur(3px); overflow-y:auto;">
+    <div style="min-height:100%; padding:32px 18px; display:flex; justify-content:center;">
+      <div style="width:100%; max-width:920px; background:#f4f8f7; border-radius:20px; box-shadow:0 30px 80px -30px rgba(0,0,0,.6); overflow:hidden;">
+        <div style="background:linear-gradient(135deg,#0c2a30,#375a97); color:#fff; padding:22px 26px; display:flex; align-items:center; justify-content:space-between; gap:14px;">
+          <div>
+            <div style="font:800 19px/1.1 'Newsreader'; font-family:'Newsreader',serif;">Dasbor Monitoring Dosen</div>
+            <div style="font-size:12.5px; color:#c5d6f0; margin-top:3px;">Rekap aktivitas &amp; jawaban mahasiswa pada perangkat ini</div>
+          </div>
+          <button id="dashClose" style="width:38px; height:38px; border-radius:50%; border:none; background:rgba(255,255,255,.16); color:#fff; font-size:20px; cursor:pointer;">✕</button>
+        </div>
+        <div style="padding:18px 22px; display:flex; flex-wrap:wrap; gap:10px; border-bottom:1px solid var(--line); background:#fff;">
+          <button id="dashRefresh" style="padding:9px 16px; border:1px solid var(--line); border-radius:9px; background:#fff; color:var(--teal-d); font-weight:700; font-family:inherit; font-size:13px; cursor:pointer;">↻ Muat Ulang</button>
+          <button id="dashCsv" style="padding:9px 16px; border:1px solid var(--line); border-radius:9px; background:#fff; color:var(--teal-d); font-weight:700; font-family:inherit; font-size:13px; cursor:pointer;">⇩ Ekspor Semua (CSV)</button>
+          <button id="dashClearAll" style="padding:9px 16px; border:1px solid #f0c9c2; border-radius:9px; background:#fff; color:var(--coral); font-weight:700; font-family:inherit; font-size:13px; cursor:pointer; margin-left:auto;">🗑 Hapus Semua Data</button>
+        </div>
+        <div id="dashBody" style="padding:18px 22px 26px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <button id="tocToggle" style="display:none; position:fixed; top:16px; left:16px; z-index:1001; width:46px; height:46px; border-radius:12px; border:1px solid var(--line); background:var(--card); color:var(--teal-d); align-items:center; justify-content:center; cursor:pointer; box-shadow:0 6px 18px rgba(15,50,56,.14);">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+  </button>
+
+  <aside id="tocAside" style="position:fixed; top:0; left:0; width:280px; height:100vh; overflow-y:auto; background:#0c2a30; color:#cfe6e2; z-index:999; transition:transform .28s ease; padding:0 0 40px;">
+    <div style="padding:26px 24px 18px; border-bottom:1px solid rgba(255,255,255,.09);">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <div style="width:34px; height:34px; border-radius:9px; background:linear-gradient(135deg,#12a3a0,#2f8f5b); display:flex; align-items:center; justify-content:center;">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5C12 2.5 5 10 5 15a7 7 0 0 0 14 0c0-5-7-12.5-7-12.5z"></path></svg>
+        </div>
+        <div>
+          <div style="font:800 13.5px/1.1 'Mulish'; color:#fff; letter-spacing:.02em;">Eksperimen Fisika</div>
+          <div style="font:600 10.5px/1.2 'Mulish'; color:#6fb3ab; letter-spacing:.14em; text-transform:uppercase;">STEM · ESD</div>
+        </div>
+      </div>
+    </div>
+    <nav style="padding:14px 12px; font-size:13.5px;">
+      <div style="font:700 10px/1 'Mulish'; letter-spacing:.16em; text-transform:uppercase; color:#5f9990; padding:10px 12px 6px;">Bagian Awal</div>
+      <a href="Bahan%20Ajar%20Elektrokoagulasi%20STEM-ESD.dc.html#sampul" style="display:block; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;">Sampul</a>
+            <a href="Bahan%20Ajar%20Elektrokoagulasi%20STEM-ESD.dc.html#pengantar" style="display:block; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;">Kata Pengantar</a>
+            <a href="Bahan%20Ajar%20Elektrokoagulasi%20STEM-ESD.dc.html#panduan" style="display:block; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;">Panduan Penggunaan</a>
+            <a href="Bahan%20Ajar%20Elektrokoagulasi%20STEM-ESD.dc.html#alur" style="display:block; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;">Peta Alur &amp; Matriks</a>
+            <a href="Bahan%20Ajar%20Elektrokoagulasi%20STEM-ESD.dc.html#simbol" style="display:block; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;">Daftar Simbol &amp; Satuan</a>
+                  <a href="Bahan%20Ajar%20Elektrokoagulasi%20STEM-ESD.dc.html#sop" style="display:block; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;">SOP Keselamatan</a>
+            <a href="Pretest.dc.html#pretest" style="display:block; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;">Pretest</a>
+            <div style="font:700 10px/1 'Mulish'; letter-spacing:.16em; text-transform:uppercase; color:#5f9990; padding:16px 12px 6px;">8 Pertemuan</div>
+      <a href="Bab%201.dc.html" style="display:flex; gap:10px; padding:8px 12px; border-radius:8px; color:#fff; text-decoration:none; background:rgba(127,216,207,.18); font-weight:700;"><b style="color:#7fd8cf;">01</b><span>Orientasi &amp; Krisis Air</span></a>
+      <a href="Bab%202.dc.html" style="display:flex; gap:10px; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;"><b style="color:#7fd8cf;">02</b><span>Analisis Air Tercemar</span></a>
+      <a href="Bab%203.dc.html" style="display:flex; gap:10px; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;"><b style="color:#7fd8cf;">03</b><span>Kelistrikan &amp; Elektromagnetik</span></a>
+      <a href="Bab%204.dc.html" style="display:flex; gap:10px; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;"><b style="color:#7fd8cf;">04</b><span>Elektrokimia &amp; Koagulasi</span></a>
+      <a href="Bab%205.dc.html" style="display:flex; gap:10px; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;"><b style="color:#7fd8cf;">05</b><span>Faraday &amp; Efisiensi Energi</span></a>
+      <a href="Bab%206.dc.html" style="display:flex; gap:10px; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;"><b style="color:#7fd8cf;">06</b><span>Desain Alat Berkelanjutan</span></a>
+      <a href="Bab%207.dc.html" style="display:flex; gap:10px; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;"><b style="color:#7fd8cf;">07</b><span>Praktikum &amp; Analisis Data</span></a>
+      <a href="Bab%208.dc.html" style="display:flex; gap:10px; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;"><b style="color:#7fd8cf;">08</b><span>Presentasi & Refleksi</span></a>
+      <a href="Posttest.dc.html#posttest" style="display:block; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;">Posttest</a>
+            <div style="font:700 10px/1 'Mulish'; letter-spacing:.16em; text-transform:uppercase; color:#5f9990; padding:16px 12px 6px;">Lampiran</div>
+            <a href="Lampiran.dc.html#glosarium" style="display:block; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;">Glosarium</a>
+            <a href="Lampiran.dc.html#kunci" style="display:block; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;">Kunci Jawaban</a>
+            <a href="Lampiran.dc.html#validasi" style="display:block; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;">Lembar Validasi</a>
+            <a href="Lampiran.dc.html#pustaka" style="display:block; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;">Daftar Pustaka</a>
+          </nav>
+  </aside>
+
+  <main id="bookMain" style="margin-left:280px;">
+    <article id="bookScroll" style="max-width:880px; margin:0 auto; padding:0 34px 120px;">
+
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin:74px 0 6px; flex-wrap:wrap;">
+        <a href="Bahan%20Ajar%20Elektrokoagulasi%20STEM-ESD.dc.html" style="display:flex; align-items:center; gap:6px; padding:10px 16px; border:1px solid var(--line); border-radius:10px; background:#fff; color:var(--teal-d); text-decoration:none; font-weight:700; font-size:13.5px;">← Daftar Isi</a>
+        <a href="Bahan%20Ajar%20Elektrokoagulasi%20STEM-ESD.dc.html#alur" style="font-size:12.5px; color:var(--muted); text-decoration:none;">Daftar Isi</a>
+        <a href="Bab%202.dc.html" style="display:flex; align-items:center; gap:6px; padding:10px 16px; border:1px solid var(--line); border-radius:10px; background:#fff; color:var(--teal-d); text-decoration:none; font-weight:700; font-size:13.5px;">Bab 2 · Analisis Air Tercemar →</a>
+      </div>
+
+      <!-- ============================================================ BAB 1 ============================================================ -->
+      <section id="bab1" data-chapter="" data-section="" data-screen-label="Bab 1" style="padding:70px 0 30px;">
+        <div style="position:relative; border-radius:22px; overflow:hidden; background:linear-gradient(135deg,#0c2a30,#0e5f5a); color:#fff; padding:38px 40px;">
+          <div style="position:absolute; right:-30px; top:-30px; font:800 220px/1 'Newsreader'; color:rgba(255,255,255,.06);">01</div>
+          <div style="position:relative;">
+            <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px;">
+              <span style="padding:6px 13px; background:linear-gradient(135deg,#e3d3f7,#b795e8); color:#3a1f5c; border-radius:999px; font:800 11px/1 'Mulish'; box-shadow:0 2px 8px rgba(0,0,0,.15); border:1px solid rgba(255,255,255,.35);">CPSS · Fluency</span>
+              <span style="padding:6px 13px; background:linear-gradient(135deg,#d3e2f9,#8fb4ec); color:#1c3566; border-radius:999px; font:800 11px/1 'Mulish'; box-shadow:0 2px 8px rgba(0,0,0,.15); border:1px solid rgba(255,255,255,.35);">PCK · Orientasi</span>
+              <span style="padding:6px 13px; background:linear-gradient(135deg,#c8f2d6,#82d9a6); color:#0f4a2a; border-radius:999px; font:800 11px/1 'Mulish'; box-shadow:0 2px 8px rgba(0,0,0,.15); border:1px solid rgba(255,255,255,.35);">EA · Isu Lingkungan</span>
+              <span style="padding:6px 13px; background:linear-gradient(135deg,#ffe1a3,#f0ac4e); color:#4a2c05; border-radius:999px; font:800 11px/1 'Mulish'; box-shadow:0 2px 8px rgba(0,0,0,.18); border:1px solid rgba(255,255,255,.4);">STEM-ESD · Orientasi (S-T-E-M-ESD)</span>
+            </div>
+            <div style="font:700 12px/1 'Mulish'; letter-spacing:.2em; text-transform:uppercase; color:#7fd8cf;">Pertemuan 1</div>
+            <h2 style="font-family:'Newsreader',serif; font-weight:600; font-size:40px; line-height:1.05; margin:8px 0 0;">Orientasi Eksperimen Fisika STEM–ESD &amp; Krisis Air Bersih</h2>
+          </div>
+        </div>
+
+        <!-- Capaian -->
+        <div style="margin-top:22px; background:linear-gradient(160deg,#f4faf8,#eaf5f0); border:1px solid var(--line); border-radius:20px; padding:22px 22px 20px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:13px;">
+            <div style="display:inline-flex; align-items:center; gap:8px; padding:6px 14px; border-radius:999px; background:#fff; border:1px solid var(--line);"><span style="width:6px; height:6px; border-radius:50%; background:var(--teal);"></span><span style="font:800 11.5px/1 'Mulish'; letter-spacing:.08em; text-transform:uppercase; color:var(--teal-d);">Sintaks PjBL · Pertemuan 1</span></div>
+            <span style="font-size:11.5px; color:var(--muted); font-weight:700; padding:5px 12px; background:#fff; border:1px solid var(--line); border-radius:999px;">⚡ Alat Elektrokoagulasi</span>
+          </div>
+          <div style="position:relative; margin:0 0 18px;">
+            <div style="position:absolute; top:22px; left:5%; right:5%; height:3px; background:linear-gradient(90deg,#1596ad,#0e8388,#c47f22,#375a97,#6a4c93,#2f8f5b); border-radius:2px; z-index:0; opacity:.55;"></div>
+            <div style="display:flex; align-items:flex-start; gap:0; overflow-x:auto; padding-bottom:4px; position:relative; z-index:1;">
+              <div style="flex:1; min-width:98px; text-align:center; padding:0 3px;">
+                <div style="width:40px; height:40px; margin:0 auto 8px; border-radius:50%; background:linear-gradient(145deg, #1596ad, #1596ad); color:#fff; display:flex; align-items:center; justify-content:center; font:800 16px/1 'Newsreader',serif; border:3px solid #fff; box-shadow:0 8px 18px -6px rgba(21,150,173,.6); transform:scale(1.08);">1</div>
+                <div style="font-size:10.5px; font-weight:800; color:var(--ink); line-height:1.25;">Pertanyaan Dasar</div>
+              </div>
+              <div style="flex:1; min-width:98px; text-align:center; padding:0 3px;">
+                <div style="width:40px; height:40px; margin:0 auto 8px; border-radius:50%; background:#e4ecea; color:#7a9793; display:flex; align-items:center; justify-content:center; font:800 16px/1 'Newsreader',serif; border:3px solid #fff; ">2</div>
+                <div style="font-size:10.5px; font-weight:600; color:#7a9793; line-height:1.25;">Desain Perencanaan</div>
+              </div>
+              <div style="flex:1; min-width:98px; text-align:center; padding:0 3px;">
+                <div style="width:40px; height:40px; margin:0 auto 8px; border-radius:50%; background:#e4ecea; color:#7a9793; display:flex; align-items:center; justify-content:center; font:800 16px/1 'Newsreader',serif; border:3px solid #fff; ">3</div>
+                <div style="font-size:10.5px; font-weight:600; color:#7a9793; line-height:1.25;">Penjadwalan</div>
+              </div>
+              <div style="flex:1; min-width:98px; text-align:center; padding:0 3px;">
+                <div style="width:40px; height:40px; margin:0 auto 8px; border-radius:50%; background:#e4ecea; color:#7a9793; display:flex; align-items:center; justify-content:center; font:800 16px/1 'Newsreader',serif; border:3px solid #fff; ">4</div>
+                <div style="font-size:10.5px; font-weight:600; color:#7a9793; line-height:1.25;">Monitoring &amp; Bimbingan</div>
+              </div>
+              <div style="flex:1; min-width:98px; text-align:center; padding:0 3px;">
+                <div style="width:40px; height:40px; margin:0 auto 8px; border-radius:50%; background:#e4ecea; color:#7a9793; display:flex; align-items:center; justify-content:center; font:800 16px/1 'Newsreader',serif; border:3px solid #fff; ">5</div>
+                <div style="font-size:10.5px; font-weight:600; color:#7a9793; line-height:1.25;">Evaluasi Hasil</div>
+              </div>
+              <div style="flex:1; min-width:98px; text-align:center; padding:0 3px;">
+                <div style="width:40px; height:40px; margin:0 auto 8px; border-radius:50%; background:#e4ecea; color:#7a9793; display:flex; align-items:center; justify-content:center; font:800 16px/1 'Newsreader',serif; border:3px solid #fff; ">6</div>
+                <div style="font-size:10.5px; font-weight:600; color:#7a9793; line-height:1.25;">Refleksi &amp; Umpan Balik</div>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:8px; margin:0 0 16px;">
+            <div style="display:flex; gap:10px; padding:9px 12px; background:#fff; border-left:3px solid #1596ad; border-radius:8px;">
+              <div style="flex-shrink:0; width:20px; height:20px; border-radius:50%; background:#1596ad; color:#fff; display:flex; align-items:center; justify-content:center; font:800 10.5px/1 'Mulish'; margin-top:1px;">1</div>
+              <div style="font-size:12.5px; line-height:1.55; color:var(--body);"><b style="color:var(--ink);">Menentukan Pertanyaan Dasar / Masalah Autentik:</b> Studi Kasus “Sungai yang Berubah Warna” &amp; kotak Ayo Berpikir memunculkan pertanyaan pendorong “Dapatkah kita menjernihkan air sungai dengan listrik sederhana?”, diperkuat Konsep Inti 1.1–1.5</div>
+            </div>
+            <div style="display:flex; gap:10px; padding:9px 12px; background:#fff; border-left:3px solid #0e8388; border-radius:8px;">
+              <div style="flex-shrink:0; width:20px; height:20px; border-radius:50%; background:#0e8388; color:#fff; display:flex; align-items:center; justify-content:center; font:800 10.5px/1 'Mulish'; margin-top:1px;">2</div>
+              <div style="font-size:12.5px; line-height:1.55; color:var(--body);"><b style="color:var(--ink);">Mendesain Perencanaan Proyek:</b> Aktivitas baru: menyusun rencana proyek 8 pertemuan · menetapkan tujuan (alat elektrokoagulasi berfungsi), produk akhir, dan pembagian tugas kelompok</div>
+            </div>
+            <div style="display:flex; gap:10px; padding:9px 12px; background:#fff; border-left:3px solid #c47f22; border-radius:8px;">
+              <div style="flex-shrink:0; width:20px; height:20px; border-radius:50%; background:#c47f22; color:#fff; display:flex; align-items:center; justify-content:center; font:800 10.5px/1 'Mulish'; margin-top:1px;">3</div>
+              <div style="font-size:12.5px; line-height:1.55; color:var(--body);"><b style="color:var(--ink);">Penjadwalan Tahapan Kerja:</b> Menyusun linimasa 8 pertemuan (Bab 1–8) sebagai jadwal kerja bersama, termasuk target penyelesaian LKM 1 pada pertemuan ini</div>
+            </div>
+            <div style="display:flex; gap:10px; padding:9px 12px; background:#fff; border-left:3px solid #375a97; border-radius:8px;">
+              <div style="flex-shrink:0; width:20px; height:20px; border-radius:50%; background:#375a97; color:#fff; display:flex; align-items:center; justify-content:center; font:800 10.5px/1 'Mulish'; margin-top:1px;">4</div>
+              <div style="font-size:12.5px; line-height:1.55; color:var(--body);"><b style="color:var(--ink);">Memonitor &amp; Membimbing Proyek Mahasiswa:</b> LKM 1: Peta Masalah Krisis Air dikerjakan berkelompok (curah gagasan Fluency) sambil dosen membimbing; dilengkapi aktivitas cek pemahaman mandiri</div>
+            </div>
+            <div style="display:flex; gap:10px; padding:9px 12px; background:#fff; border-left:3px solid #6a4c93; border-radius:8px;">
+              <div style="flex-shrink:0; width:20px; height:20px; border-radius:50%; background:#6a4c93; color:#fff; display:flex; align-items:center; justify-content:center; font:800 10.5px/1 'Mulish'; margin-top:1px;">5</div>
+              <div style="font-size:12.5px; line-height:1.55; color:var(--body);"><b style="color:var(--ink);">Mengevaluasi Hasil Proyek (Produk Nyata):</b> Aktivitas berbagi hasil LKM 1 ke kelompok lain sebagai evaluasi bersama atas produk peta masalah</div>
+            </div>
+            <div style="display:flex; gap:10px; padding:9px 12px; background:#fff; border-left:3px solid #2f8f5b; border-radius:8px;">
+              <div style="flex-shrink:0; width:20px; height:20px; border-radius:50%; background:#2f8f5b; color:#fff; display:flex; align-items:center; justify-content:center; font:800 10.5px/1 'Mulish'; margin-top:1px;">6</div>
+              <div style="font-size:12.5px; line-height:1.55; color:var(--body);"><b style="color:var(--ink);">Refleksi &amp; Umpan Balik:</b> Tantangan CPSS, Teacher Candidate Corner, dan Green Note sebagai refleksi pengalaman belajar pertemuan pertama</div>
+            </div></div>
+          
+          <div style="margin-top:16px; background:#fff; border:1px solid var(--line); border-left:3px solid var(--teal); border-radius:12px; padding:14px 16px; font-size:13.5px; color:var(--body);"><b>Fokus PjBL pertemuan ini:</b> Mengorientasi mahasiswa pada krisis air bersih dan memunculkan <b>pertanyaan pendorong</b>: “Dapatkah kita menjernihkan air sungai dengan listrik sederhana?” Proyek alat elektrokoagulasi diperkenalkan sebagai tantangan autentik.</div>
+          <div style="margin-top:10px; font-size:11px; color:var(--muted); line-height:1.5;">Model pembelajaran: Project-Based Learning (Blumenfeld et al., 1991; Krajcik &amp; Blumenfeld, 2006; Larmer, Mergendoller, &amp; Boss, 2015).</div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1.3fr 1fr; gap:16px; margin-top:22px;">
+          <div style="background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px 22px;">
+            <h3 style="font-family:'Newsreader',serif; font-size:20px; margin:0 0 10px; color:var(--ink);">Capaian Pembelajaran Bab</h3>
+            <p style="margin:0 0 8px; font-size:14px; color:var(--muted);">Setelah mempelajari bab ini, Anda mampu:</p>
+            <ol style="margin:0; padding-left:20px; font-size:14.5px;">
+              <li>menjelaskan krisis air bersih sebagai konteks pembelajaran fisika;</li>
+              <li>mengaitkan isu air dengan SDGs 6 dan peran guru fisika;</li>
+              <li>menjelaskan pendekatan STEM–ESD dan gambaran proyek elektrokoagulasi;</li>
+              <li>menghasilkan banyak gagasan solusi krisis air (CPSS–Fluency);</li>
+              <li>mengenali makna CPSS, PCK, dan EA bagi calon guru.</li>
+            </ol>
+          </div>
+          <div style="background:linear-gradient(160deg,#f0f8f6,#e2f1ec); border:1px solid var(--line); border-radius:16px; padding:20px 22px;">
+            <h3 style="font-family:'Newsreader',serif; font-size:20px; margin:0 0 10px; color:var(--ink);">Kata Kunci</h3>
+            <div style="display:flex; flex-wrap:wrap; gap:7px;">
+              <span style="padding:5px 12px; background:#fff; border:1px solid var(--line); border-radius:999px; font-size:13px;">krisis air bersih</span>
+              <span style="padding:5px 12px; background:#fff; border:1px solid var(--line); border-radius:999px; font-size:13px;">SDGs 6</span>
+              <span style="padding:5px 12px; background:#fff; border:1px solid var(--line); border-radius:999px; font-size:13px;">STEM</span>
+              <span style="padding:5px 12px; background:#fff; border:1px solid var(--line); border-radius:999px; font-size:13px;">ESD</span>
+              <span style="padding:5px 12px; background:#fff; border:1px solid var(--line); border-radius:999px; font-size:13px;">elektrokoagulasi</span>
+              <span style="padding:5px 12px; background:#fff; border:1px solid var(--line); border-radius:999px; font-size:13px;">CPSS</span>
+              <span style="padding:5px 12px; background:#fff; border:1px solid var(--line); border-radius:999px; font-size:13px;">PCK</span>
+              <span style="padding:5px 12px; background:#fff; border:1px solid var(--line); border-radius:999px; font-size:13px;">EA</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Studi Kasus -->
+        <div style="background:#eef7fa; border:1px solid #cfe7ef; border-left:4px solid var(--aqua); border-radius:14px; padding:20px 22px; margin:24px 0;">
+                  <div style="background:linear-gradient(160deg,#fbfdfc,#f1f8f6); border:1px solid var(--line); border-radius:16px; padding:20px 22px; margin:22px 0 24px; opacity:0; animation:ecFade .5s ease both;">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+            <div style="font:700 12px/1 'Mulish'; letter-spacing:.12em; text-transform:uppercase; color:var(--ink);">Integrasi STEM-ESD · Pertemuan 1</div>
+            <div style="flex:1; height:1px; background:linear-gradient(90deg,var(--line),transparent);"></div>
+          </div>
+          <p style="margin:0 0 14px; font-size:13px; color:var(--muted);">Ke mana Sains, Teknologi, Rekayasa (<i>Engineering</i>), Matematika, dan ESD hadir pada pertemuan ini:</p>
+          <div style="display:flex; flex-wrap:wrap; gap:10px;">
+            <div style="flex:1; min-width:150px; background:#fff; border:1px solid var(--line); border-top:4px solid #1596ad; border-radius:12px; padding:14px 14px 15px;"><div style="width:34px; height:34px; border-radius:9px; background:#1596ad; color:#fff; display:flex; align-items:center; justify-content:center; font:800 14px/1 'Mulish'; margin-bottom:9px;">S</div><div style="font:800 13.5px/1.1 'Mulish'; color:#1596ad; margin-bottom:5px;">Sains</div><div style="font-size:12px; line-height:1.5; color:var(--body);">Fenomena krisis air: kualitas vs kuantitas air, sifat fisik-kimia air (§1.1).</div></div><div style="flex:1; min-width:150px; background:#fff; border:1px solid var(--line); border-top:4px solid #0e8388; border-radius:12px; padding:14px 14px 15px;"><div style="width:34px; height:34px; border-radius:9px; background:#0e8388; color:#fff; display:flex; align-items:center; justify-content:center; font:800 14px/1 'Mulish'; margin-bottom:9px;">T</div><div style="font:800 13.5px/1.1 'Mulish'; color:#0e8388; margin-bottom:5px;">Teknologi</div><div style="font-size:12px; line-height:1.5; color:var(--body);">Elektrokoagulasi sebagai teknologi tepat guna penjernih air (§1.4).</div></div><div style="flex:1; min-width:150px; background:#fff; border:1px solid var(--line); border-top:4px solid #c47f22; border-radius:12px; padding:14px 14px 15px;"><div style="width:34px; height:34px; border-radius:9px; background:#c47f22; color:#fff; display:flex; align-items:center; justify-content:center; font:800 14px/1 'Mulish'; margin-bottom:9px;">E</div><div style="font:800 13.5px/1.1 'Mulish'; color:#c47f22; margin-bottom:5px;">Rekayasa</div><div style="font-size:12px; line-height:1.5; color:var(--body);">Gambaran proses merancang-membangun-menguji alat sebagai proyek inti (§1.4).</div></div><div style="flex:1; min-width:150px; background:#fff; border:1px solid var(--line); border-top:4px solid #375a97; border-radius:12px; padding:14px 14px 15px;"><div style="width:34px; height:34px; border-radius:9px; background:#375a97; color:#fff; display:flex; align-items:center; justify-content:center; font:800 14px/1 'Mulish'; margin-bottom:9px;">M</div><div style="font:800 13.5px/1.1 'Mulish'; color:#375a97; margin-bottom:5px;">Matematika</div><div style="font-size:12px; line-height:1.5; color:var(--body);">Pengantar perhitungan kuantitatif yang akan dipakai sepanjang proyek (§1.4–1.5).</div></div><div style="flex:1; min-width:150px; background:#fff; border:1px solid var(--line); border-top:4px solid #2f8f5b; border-radius:12px; padding:14px 14px 15px;"><div style="width:34px; height:34px; border-radius:9px; background:#2f8f5b; color:#fff; display:flex; align-items:center; justify-content:center; font:800 14px/1 'Mulish'; margin-bottom:9px;">ESD</div><div style="font:800 13.5px/1.1 'Mulish'; color:#2f8f5b; margin-bottom:5px;">Keberlanjutan</div><div style="font-size:12px; line-height:1.5; color:var(--body);">SDGs 6 &amp; pendekatan ESD sebagai nilai yang melandasi proyek (§1.2–1.3).</div></div>
+          </div>
+        </div>
+
+        <div style="font:700 12px/1 'Mulish'; letter-spacing:.1em; text-transform:uppercase; color:var(--aqua); margin-bottom:10px;">Studi Kasus Dunia Nyata</div>
+          <p style="margin: 0 0 10px; text-align: justify"><b>Sungai yang berubah warna.</b> Di sebuah kota kecil, warga Desa Muara terbiasa mengambil air sungai untuk mencuci dan memasak. Sepuluh tahun terakhir, air itu berubah: cokelat keruh saat hujan, berbau saat kemarau, dan berbusa di dekat pembuangan pabrik tahu. Puskesmas mencatat kenaikan kasus diare pada anak. Pemerintah desa hanya mampu menyediakan air galon untuk sebagian keluarga.</p>
+          <p style="margin: 0; text-align: justify">Seorang guru fisika di SMA setempat bertanya kepada murid-muridnya: <i>"Bisakah kita, dengan listrik sederhana, membantu menjernihkan air ini?"</i> Pertanyaan itulah yang akan Anda jawab sepanjang bahan ajar digital ini, bukan sebagai konsumen teori, melainkan sebagai <b>calon guru yang merancang solusi</b>.</p>
+        </div>
+
+        <!-- Foto & Video pemantik -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:16px 0 8px;">
+          <figure style="margin:0;">
+            <div style="aspect-ratio:4/3; border-radius:14px; overflow:hidden; background:#0c2a30;">
+              <img src="assets/gambar-1-1-kebutuhan-air-sungai.png" alt="Warga mencuci di tepi sungai keruh yang berisi sampah di dekat permukiman padat" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+            <figcaption style="font-size:12.5px; color:var(--muted); margin-top:6px;"><b>Gambar 1.1</b> Kebutuhan air masyarakat di pinggir sungai: warga tetap memanfaatkan air keruh &amp; tercemar untuk aktivitas sehari-hari.</figcaption>
+          </figure>
+          <figure style="margin:0;">
+            <div data-yt-holder="" data-yt="EEFSEBEw6vE" style="aspect-ratio:4/3; border-radius:14px; overflow:hidden; position:relative; cursor:pointer; background:#0c2a30;">
+              <img src="https://img.youtube.com/vi/EEFSEBEw6vE/hqdefault.jpg" alt="Video krisis air bersih dan SDGs 6" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
+              <div style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.5));"></div>
+              <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:60px; height:60px; border-radius:50%; background:rgba(224,38,34,.92); display:flex; align-items:center; justify-content:center; box-shadow:0 6px 18px rgba(0,0,0,.35);"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></div>
+              <div style="position:absolute; left:14px; bottom:12px; right:14px; color:#fff; font-weight:700; font-size:13.5px; text-shadow:0 1px 4px rgba(0,0,0,.5);">Rahasia di Balik Krisis Air Bersih · Solusi SDGs 6</div>
+            </div>
+            <figcaption style="font-size:12.5px; color:var(--muted); margin-top:6px;"><b>Video 1.1</b> Pemantik: krisis air bersih &amp; SDGs 6 (klik untuk memutar). <a href="https://www.youtube.com/watch?v=EEFSEBEw6vE" target="_blank" rel="noopener" style="color:var(--teal); font-weight:600;">Buka di YouTube ↗</a></figcaption>
+          </figure>
+        </div>
+
+        <!-- Ayo Berpikir -->
+        <div style="background:#fef7ea; border:1px solid #f2e0bd; border-left:4px solid var(--amber); border-radius:14px; padding:20px 22px; margin:22px 0;">
+          <div style="font:700 12px/1 'Mulish'; letter-spacing:.1em; text-transform:uppercase; color:var(--amber); margin-bottom:10px;">Ayo Berpikir · Diskusi Interaktif</div>
+          <p style="margin:0 0 8px;">Sebelum membaca konsep, tuliskan dugaan Anda. Jawaban tersimpan otomatis.</p>
+          <ol style="margin:0 0 12px; padding-left:20px; font-size:14.5px;">
+            <li>Mengapa air yang <i>tampak</i> jernih belum tentu aman?</li>
+            <li>Menurut Anda, apa saja penyebab air sungai menjadi tercemar? Sebutkan sebanyak-banyaknya (ini melatih <b>Fluency</b>).</li>
+          </ol>
+          <textarea data-note="b1-berpikir" placeholder="Tulis dugaan dan daftar penyebab Anda di sini…" style="width:100%; min-height:96px; resize:vertical; border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-family:inherit; font-size:14.5px; background:#fff; color:var(--body);"></textarea>
+        </div>
+
+        <div style="background:#f7f3fc; border:1px solid #ddd0ee; border-left:4px solid var(--violet); border-radius:14px; padding:20px 22px; margin:22px 0;">
+          <div style="font:700 12px/1 'Mulish'; letter-spacing:.1em; text-transform:uppercase; color:var(--violet); margin-bottom:10px;">Sintaks PjBL · Fase 3 · Perencanaan Proyek</div>
+          <p style="margin: 0 0 8px; text-align: justify">Bersama kelompok, susun <b>rencana awal proyek elektrokoagulasi</b> untuk 8 pertemuan ke depan: (1) nama &amp; anggota kelompok beserta pembagian peran, (2) target capaian tiap pertemuan, (3) perkiraan bahan/alat yang dibutuhkan. Rencana ini akan diperbarui setiap bab.</p>
+          <textarea data-note="b1-plan" placeholder="Rencana proyek kelompok kami…" style="width:100%; min-height:80px; resize:vertical; border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-family:inherit; font-size:14.5px; background:#fff; color:var(--body);"></textarea>
+        </div>
+
+
+        <!-- Aktivitas / LKM -->
+        <div style="background:#e9f6f0; border:1px solid #c4e6d5; border-left:4px solid var(--teal); border-radius:14px; padding:20px 22px; margin:22px 0;">
+          <div style="font:700 12px/1 'Mulish'; letter-spacing:.1em; text-transform:uppercase; color:var(--teal); margin-bottom:10px;">Aktivitas Mahasiswa · LKM 1: Peta Masalah Krisis Air</div>
+          <p style="margin: 0 0 10px; text-align: justify">Secara berkelompok, buat <b>peta masalah</b> (<i>mind map</i>) krisis air bersih di sekitar Anda. Target: hasilkan <b>minimal 15 gagasan</b> penyebab &amp; dampak dalam 10 menit. Semakin banyak, semakin baik (indikator <b><i>Fluency</i></b>).</p>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin-bottom:12px;">
+            <div style="background:#fff; border:1px solid var(--line); border-radius:10px; padding:12px;"><b style="font-size:13px; color:var(--teal-d);">Sumber pencemar</b><div style="font-size:12.5px; color:var(--muted);">industri, rumah tangga, pertanian…</div></div>
+            <div style="background:#fff; border:1px solid var(--line); border-radius:10px; padding:12px;"><b style="font-size:13px; color:var(--teal-d);">Dampak kesehatan</b><div style="font-size:12.5px; color:var(--muted);">diare, kulit, gizi…</div></div>
+            <div style="background:#fff; border:1px solid var(--line); border-radius:10px; padding:12px;"><b style="font-size:13px; color:var(--teal-d);">Dampak sosial-ekonomi</b><div style="font-size:12.5px; color:var(--muted);">biaya air, produktivitas…</div></div>
+            <div style="background:#fff; border:1px solid var(--line); border-radius:10px; padding:12px;"><b style="font-size:13px; color:var(--teal-d);">Peluang solusi</b><div style="font-size:12.5px; color:var(--muted);">filtrasi, koagulasi, elektro…</div></div>
+          </div>
+          <textarea data-note="b1-lkm" placeholder="Daftar gagasan kelompok Anda (beri nomor)…" style="width:100%; min-height:110px; resize:vertical; border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-family:inherit; font-size:14.5px; background:#fff; color:var(--body);"></textarea>
+        </div>
+
+        <!-- KONSEP INTI -->
+        <h3 style="font-family:'Newsreader',serif; font-weight:600; font-size:27px; color:var(--ink); margin:36px 0 4px;">Konsep Inti</h3>
+        <div style="height:3px; width:56px; background:var(--teal); border-radius:2px; margin-bottom:18px;"></div>
+
+        <div style="background:#fbfaf5; border:1px solid #ece6d2; border-radius:14px; padding:16px 20px; margin:0 0 24px;">
+          <div style="font:700 11px/1 'Mulish'; letter-spacing:.1em; text-transform:uppercase; color:#9a8a4a; margin-bottom:10px; display:flex; align-items:center; gap:6px;"><span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#2f8f5b; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle; white-space:nowrap;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>SDG</span> Keterkaitan SDGs</div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px;"><span style="display:inline-flex; align-items:center; gap:5px; padding:5px 11px 5px 8px; background:#26bde2; color:#fff; border-radius:999px; font:800 12px/1.4 'Mulish';"><span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; background:rgba(255,255,255,.28); border-radius:50%; font-size:10.5px;">6</span>Air Bersih dan Sanitasi Layak</span> <span style="display:inline-flex; align-items:center; gap:5px; padding:5px 11px 5px 8px; background:#c5192d; color:#fff; border-radius:999px; font:800 12px/1.4 'Mulish';"><span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; background:rgba(255,255,255,.28); border-radius:50%; font-size:10.5px;">4</span>Pendidikan Berkualitas</span></div>
+          <p style="margin: 0; font-size: 13.5px; color: var(--body); line-height: 1.65; text-align: justify">Materi ini terkait langsung dengan <b>SDGs 6 (Air Bersih dan Sanitasi Layak)</b> karena krisis air bersih adalah masalah autentik yang mendasari seluruh proyek elektrokoagulasi satu semester. Materi ini juga terkait <b>SDGs 4 (Pendidikan Berkualitas)</b> karena pendekatan STEM–ESD yang diperkenalkan bertujuan mendidik calon guru fisika agar mampu mengajarkan sains lewat aksi nyata demi keberlanjutan, bukan sekadar teori di kelas.</p>
+        </div>
+
+        <h4 style="font-family:'Newsreader',serif; font-size:21px; color:var(--ink); margin:24px 0 8px;">1.1 Krisis Air Bersih: Fakta Global dan Lokal <span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#1596ad; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><circle cx="12" cy="12" r="1.8" fill="#fff" stroke="none"/><ellipse cx="12" cy="12" rx="10" ry="4.2"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)"/></svg>S</span></h4>
+        <p style="text-align: justify">Air menutupi sebagian besar permukaan bumi, tetapi hanya sebagian sangat kecil yang berupa air tawar yang mudah diakses. Ketika pertumbuhan penduduk, urbanisasi, dan pencemaran meningkat, ketersediaan air <i>layak pakai</i> menurun. Krisis air bukan hanya soal <b>kuantitas</b> (jumlah air), melainkan juga <b>kualitas</b>&nbsp;air yang ada belum tentu aman. Di Indonesia, banyak sungai menjadi sumber air baku sekaligus tempat pembuangan, sehingga beban pencemarnya tinggi.</p>
+        <p style="text-align: justify">Bagi seorang fisikawan-pendidik, krisis ini menarik karena solusinya bersinggungan langsung dengan konsep yang Anda ajarkan: arus listrik, energi, reaksi kimia, dan perpindahan partikel. Inilah yang membuat air menjadi <b>konteks pembelajaran</b> yang autentik.</p>
+        <p style="text-align: justify">Bagi calon guru fisika, memahami skala persoalan ini penting sebelum melangkah ke solusi teknis. Data BPS dan Kementerian PUPR mencatat bahwa sebagian besar wilayah perkotaan di Pulau Jawa mengalami tekanan air musiman, sementara di banyak wilayah luar Jawa kendala utamanya adalah infrastruktur pengolahan yang belum menjangkau permukiman padat. Dua kondisi yang berbeda ini menuntut solusi yang juga berbeda: bukan satu alat untuk semua tempat, melainkan pemahaman prinsip fisika dan kimia yang dapat diadaptasi sesuai konteks lokal. Semangat inilah yang mendasari mengapa proyek satu semester ini dimulai dari <i>Problem Identification</i>, bukan langsung meloncat ke pembuatan alat.</p>
+
+        <h4 style="font-family:'Newsreader',serif; font-size:21px; color:var(--ink); margin:24px 0 8px;">1.2 SDGs 6 dan Peran Pendidikan Fisika <span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#2f8f5b; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>ESD</span></h4>
+        <p style="text-align: justify">Tujuan Pembangunan Berkelanjutan ke-6 (<b>SDGs 6</b>) menargetkan <i>air bersih dan sanitasi layak untuk semua</i>. Pendidikan berperan besar dalam mewujudkannya, bukan lewat ceramah, melainkan lewat <b>tindakan berbasis sains</b>. Guru fisika dapat menjadikan isu air sebagai proyek nyata: mengukur kualitas air, merancang alat penjernih, dan mendidik siswa untuk peduli. Di sinilah fisika bertemu keberlanjutan.</p>
+        <p style="text-align: justify">SDGs 6 memiliki delapan target rinci, mulai dari akses air minum aman dan sanitasi layak, hingga peningkatan efisiensi penggunaan air dan perlindungan ekosistem terkait air seperti sungai dan lahan basah. Bagi pendidikan fisika, target-target ini bukan sekadar isu lingkungan yang berdiri sendiri, melainkan kumpulan fenomena terukur: debit air, konsentrasi zat terlarut, energi yang dibutuhkan untuk mengolah air, dan efisiensi suatu teknologi pengolahan. Semua besaran ini adalah bahasa fisika yang sudah Anda kuasai, hanya saja jarang dikaitkan secara eksplisit dengan konteks keberlanjutan.</p>
+        <p style="text-align: justify">Riset pendidikan STEM menunjukkan bahwa pembelajaran yang mengaitkan konsep sains dengan isu sosial-lingkungan nyata (disebut <i>socio-scientific issues</i>) meningkatkan motivasi belajar sekaligus kepedulian siswa terhadap lingkungan. Dengan menjadikan krisis air sebagai konteks, Anda tidak hanya mengajarkan hukum Ohm atau reaksi kimia, tetapi juga melatih siswa berpikir tentang konsekuensi nyata dari pilihan teknologi yang mereka pelajari.</p>
+        <div style="background: #f0f9f3; border: 1px solid #cbe8d5; border-radius: 12px; padding: 14px 18px; margin: 12px 0; text-align: justify">
+          <b style="color:var(--green);">Hubungkan:</b> Setiap kali Anda mengajarkan hukum Ohm atau energi listrik, Anda sebenarnya sedang memegang alat untuk memecahkan masalah nyata seperti penjernihan air. STEM-ESD membantu membuat hubungan itu <i>eksplisit</i> bagi siswa.
+        </div>
+
+        <h4 style="font-family:'Newsreader',serif; font-size:21px; color:var(--ink); margin:24px 0 8px;">1.3 Mengenal Pendekatan STEM–ESD <span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#2f8f5b; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>ESD</span></h4>
+        <p style="text-align: justify"><b>STEM</b> memadukan <i>Science, Technology, Engineering, Mathematics</i> dalam satu alur pemecahan masalah, bukan empat mata pelajaran terpisah. <b>ESD</b> (<i>Education for Sustainable Development</i>) menambahkan orientasi nilai: solusi tidak hanya harus bekerja, tetapi juga <b>berkelanjutan,</b>&nbsp;hemat energi, aman, dan bertanggung jawab terhadap lingkungan. Gabungan <b>STEM-ESD</b> mengajak mahasiswa memecahkan masalah dunia nyata dengan sains sekaligus mempertimbangkan dampak jangka panjang.</p>
+        <p style="text-align: justify">Dalam praktiknya, integrasi STEM tidak berarti mengajarkan sains, teknologi, rekayasa, dan matematika secara terpisah lalu menjumlahkannya pada akhir pembelajaran. Sebaliknya, keempat disiplin ini dipakai secara bersamaan untuk menjawab satu pertanyaan pendorong (<i>driving question</i>): "Bagaimana kita dapat menjernihkan air keruh dengan alat sederhana dan hemat energi?" Sains menjelaskan mengapa air menjadi keruh dan bagaimana partikel dapat digumpalkan; teknologi menyediakan alat elektrokoagulasi sebagai solusi konkret; rekayasa menuntun proses merancang, menguji, dan menyempurnakan alat tersebut; dan matematika memberi bahasa untuk menghitung efisiensi, biaya, dan kebutuhan energinya.</p>
+        <p style="text-align: justify">ESD melengkapi kerangka ini dengan pertanyaan lanjutan yang sering terlewat dalam pembelajaran STEM konvensional: apakah solusi ini benar-benar berkelanjutan? Sebuah alat elektrokoagulasi yang berhasil menjernihkan air tetapi menghabiskan listrik berlebihan, atau menghasilkan limbah logam yang tidak dikelola, bukanlah solusi yang utuh. Sepanjang bahan ajar digital ini, setiap keputusan desain, mulai dari pemilihan tegangan, jenis elektroda, hingga pengelolaan endapan, akan selalu ditinjau dari dua sisi: apakah bekerja secara sains, dan apakah bertanggung jawab secara ekologis dan sosial.</p>
+
+        <!-- Skema STEM -> ESD -->
+        <div style="background:linear-gradient(160deg,#f4faf8,#eef6f2); border-radius:20px; padding:26px 20px 24px; margin:18px 0;">
+          <div style="text-align:center; font:800 12px/1 'Mulish'; letter-spacing:.16em; text-transform:uppercase; color:var(--teal-d); margin-bottom:20px;">🔗 Skema Integrasi STEM–ESD</div>
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px;">
+            <div style="text-align:center; background:#fff; border-radius:14px; padding:16px 8px 14px; box-shadow:0 10px 22px -14px rgba(21,150,173,.5); border-top:3px solid #1596ad;">
+              <div style="width:40px; height:40px; margin:0 auto 9px; border-radius:50%; background:linear-gradient(145deg,#3fc4dd,#1596ad); color:#fff; display:flex; align-items:center; justify-content:center; font:800 17px/1 'Mulish'; box-shadow:0 8px 16px -6px rgba(21,150,173,.6);">S</div>
+              <div style="font-size:11.5px; font-weight:800; color:var(--ink);">Sains</div>
+              <div style="font-size:10.5px; color:var(--muted); margin-top:3px; line-height:1.3;">Sifat &amp; kualitas air, elektrolisis</div>
+            </div>
+            <div style="text-align:center; background:#fff; border-radius:14px; padding:16px 8px 14px; box-shadow:0 10px 22px -14px rgba(14,131,136,.5); border-top:3px solid #0e8388;">
+              <div style="width:40px; height:40px; margin:0 auto 9px; border-radius:50%; background:linear-gradient(145deg,#2fc0be,#0e8388); color:#fff; display:flex; align-items:center; justify-content:center; font:800 17px/1 'Mulish'; box-shadow:0 8px 16px -6px rgba(14,131,136,.6);">T</div>
+              <div style="font-size:11.5px; font-weight:800; color:var(--ink);">Teknologi</div>
+              <div style="font-size:10.5px; color:var(--muted); margin-top:3px; line-height:1.3;">Alat elektrokoagulasi</div>
+            </div>
+            <div style="text-align:center; background:#fff; border-radius:14px; padding:16px 8px 14px; box-shadow:0 10px 22px -14px rgba(196,127,34,.5); border-top:3px solid #c47f22;">
+              <div style="width:40px; height:40px; margin:0 auto 9px; border-radius:50%; background:linear-gradient(145deg,#e8a94f,#c47f22); color:#fff; display:flex; align-items:center; justify-content:center; font:800 17px/1 'Mulish'; box-shadow:0 8px 16px -6px rgba(196,127,34,.6);">E</div>
+              <div style="font-size:11.5px; font-weight:800; color:var(--ink);">Rekayasa</div>
+              <div style="font-size:10.5px; color:var(--muted); margin-top:3px; line-height:1.3;">Merancang &amp; menguji</div>
+            </div>
+            <div style="text-align:center; background:#fff; border-radius:14px; padding:16px 8px 14px; box-shadow:0 10px 22px -14px rgba(55,90,151,.5); border-top:3px solid #375a97;">
+              <div style="width:40px; height:40px; margin:0 auto 9px; border-radius:50%; background:linear-gradient(145deg,#6f8fc9,#375a97); color:#fff; display:flex; align-items:center; justify-content:center; font:800 17px/1 'Mulish'; box-shadow:0 8px 16px -6px rgba(55,90,151,.6);">M</div>
+              <div style="font-size:11.5px; font-weight:800; color:var(--ink);">Matematika</div>
+              <div style="font-size:10.5px; color:var(--muted); margin-top:3px; line-height:1.3;">Hitungan &amp; data</div>
+            </div>
+          </div>
+          <div style="display:flex; justify-content:center; margin:8px 0 4px;">
+            <svg width="100%" height="56" viewBox="0 0 100 56" preserveAspectRatio="none" style="overflow:visible;">
+              <path d="M12.5 0 Q12.5 30 46 44" stroke="#1596ad" stroke-width="1" fill="none" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+              <path d="M37.5 0 Q37.5 24 47.5 42" stroke="#0e8388" stroke-width="1" fill="none" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+              <path d="M62.5 0 Q62.5 24 52.5 42" stroke="#c47f22" stroke-width="1" fill="none" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+              <path d="M87.5 0 Q87.5 30 54 44" stroke="#375a97" stroke-width="1" fill="none" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+              <path d="M47 44 L50 54 L53 44 Z" fill="#2f8f5b"></path>
+            </svg>
+          </div>
+          <div style="display:flex; justify-content:center;">
+            <div style="text-align:center; background:linear-gradient(135deg,#eafaf1,#dcf3e5); border-radius:16px; padding:16px 28px; max-width:380px; box-shadow:0 12px 26px -16px rgba(47,143,91,.55);">
+              <div style="display:flex; align-items:center; justify-content:center; gap:9px;"><div style="width:34px; height:34px; border-radius:50%; background:linear-gradient(145deg,#52b880,#2f8f5b); color:#fff; display:flex; align-items:center; justify-content:center; font:800 11px/1 'Mulish'; box-shadow:0 8px 16px -6px rgba(47,143,91,.6);">ESD</div><div style="font-size:14px; font-weight:800; color:var(--ink);">Keberlanjutan</div></div>
+              <p style="margin:9px 0 0; font-size:11.5px; color:var(--muted); line-height:1.4;">Solusi hemat energi, aman, &amp; bertanggung jawab pada lingkungan &amp; masyarakat</p>
+            </div>
+          </div>
+          <div style="display:flex; justify-content:center; margin:6px 0;">
+            <svg width="24" height="38" viewBox="0 0 24 38">
+              <defs><linearGradient id="arrowGrad2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2f8f5b"></stop><stop offset="100%" stop-color="#0c2a30"></stop></linearGradient></defs>
+              <path d="M12 0 V20" stroke="url(#arrowGrad2)" stroke-width="3.5" stroke-linecap="round"></path>
+              <path d="M0 20 L12 34 L24 20 Z" fill="#0c2a30"></path>
+            </svg>
+          </div>
+          <div style="text-align:center; background:linear-gradient(135deg,#0c2a30,#123f45); color:#fff; border-radius:16px; padding:16px 20px; box-shadow:0 14px 30px -16px rgba(12,42,48,.6);">
+            <div style="font:800 13.5px/1.2 'Mulish';">Proyek: Alat Elektrokoagulasi untuk Krisis Air Bersih</div>
+            <div style="font-size:11px; color:#bfe0da; margin-top:3px;">Tempat S, T, E, M bertemu ESD selama 8 pertemuan</div>
+          </div>
+        </div>
+
+        <!-- Alur / Flowchart proses proyek -->
+        <div style="margin:26px 0 10px; background:linear-gradient(135deg,#f4faf8,#eef6f2); border-radius:20px; padding:26px 20px 22px;">
+          <div style="text-align:center; font:800 12px/1 'Mulish'; letter-spacing:.16em; text-transform:uppercase; color:var(--teal-d); margin-bottom:20px;">⚡ Alur Pemecahan Masalah Berbasis Proyek</div>
+          <div style="position:relative;">
+            <div style="position:absolute; top:24px; left:6%; right:6%; height:3px; background:linear-gradient(90deg,#1596ad,#0e8388,#c47f22,#375a97,#2f8f5b); border-radius:2px; z-index:0;"></div>
+            <div style="display:flex; align-items:flex-start; gap:0; overflow-x:auto; padding-bottom:6px; position:relative; z-index:1;">
+              <div style="flex:1; min-width:132px; text-align:center; padding:0 4px;">
+                <div style="width:48px; height:48px; margin:0 auto 12px; border-radius:50%; background:linear-gradient(145deg,#1cb4cf,#1596ad); color:#fff; display:flex; align-items:center; justify-content:center; font:800 20px/1 'Newsreader',serif; box-shadow:0 10px 22px -8px rgba(21,150,173,.55); border:3px solid #fff;">1</div>
+                <div style="background:#fff; border-radius:14px; padding:14px 12px; box-shadow:0 8px 20px -12px rgba(12,42,48,.25); height:100%;">
+                  <div style="font-size:12.5px; font-weight:800; color:var(--ink); line-height:1.3;">Identifikasi Masalah Autentik</div>
+                  <div style="font-size:10.5px; color:var(--muted); margin-top:5px; line-height:1.35;">Krisis air, data kualitas air</div>
+                </div>
+              </div>
+              <div style="flex:1; min-width:132px; text-align:center; padding:0 4px;">
+                <div style="width:48px; height:48px; margin:0 auto 12px; border-radius:50%; background:linear-gradient(145deg,#12a0a0,#0e8388); color:#fff; display:flex; align-items:center; justify-content:center; font:800 20px/1 'Newsreader',serif; box-shadow:0 10px 22px -8px rgba(14,131,136,.55); border:3px solid #fff;">2</div>
+                <div style="background:#fff; border-radius:14px; padding:14px 12px; box-shadow:0 8px 20px -12px rgba(12,42,48,.25); height:100%;">
+                  <div style="font-size:12.5px; font-weight:800; color:var(--ink); line-height:1.3;">Rencana &amp; Jadwal Proyek</div>
+                  <div style="font-size:10.5px; color:var(--muted); margin-top:5px; line-height:1.35;">Tujuan, produk, pembagian tugas</div>
+                </div>
+              </div>
+              <div style="flex:1; min-width:132px; text-align:center; padding:0 4px;">
+                <div style="width:48px; height:48px; margin:0 auto 12px; border-radius:50%; background:linear-gradient(145deg,#e0983a,#c47f22); color:#fff; display:flex; align-items:center; justify-content:center; font:800 20px/1 'Newsreader',serif; box-shadow:0 10px 22px -8px rgba(196,127,34,.55); border:3px solid #fff;">3</div>
+                <div style="background:#fff; border-radius:14px; padding:14px 12px; box-shadow:0 8px 20px -12px rgba(12,42,48,.25); height:100%;">
+                  <div style="font-size:12.5px; font-weight:800; color:var(--ink); line-height:1.3;">Rancang &amp; Uji Alat</div>
+                  <div style="font-size:10.5px; color:var(--muted); margin-top:5px; line-height:1.35;">Elektroda, tegangan, prototipe</div>
+                </div>
+              </div>
+              <div style="flex:1; min-width:132px; text-align:center; padding:0 4px;">
+                <div style="width:48px; height:48px; margin:0 auto 12px; border-radius:50%; background:linear-gradient(145deg,#4d71ad,#375a97); color:#fff; display:flex; align-items:center; justify-content:center; font:800 20px/1 'Newsreader',serif; box-shadow:0 10px 22px -8px rgba(55,90,151,.55); border:3px solid #fff;">4</div>
+                <div style="background:#fff; border-radius:14px; padding:14px 12px; box-shadow:0 8px 20px -12px rgba(12,42,48,.25); height:100%;">
+                  <div style="font-size:12.5px; font-weight:800; color:var(--ink); line-height:1.3;">Praktikum &amp; Evaluasi Data</div>
+                  <div style="font-size:10.5px; color:var(--muted); margin-top:5px; line-height:1.35;">%removal, efisiensi energi</div>
+                </div>
+              </div>
+              <div style="flex:1; min-width:132px; text-align:center; padding:0 4px;">
+                <div style="width:48px; height:48px; margin:0 auto 12px; border-radius:50%; background:linear-gradient(145deg,#3fa873,#2f8f5b); color:#fff; display:flex; align-items:center; justify-content:center; font:800 20px/1 'Newsreader',serif; box-shadow:0 10px 22px -8px rgba(47,143,91,.55); border:3px solid #fff;">5</div>
+                <div style="background:#fff; border-radius:14px; padding:14px 12px; box-shadow:0 8px 20px -12px rgba(12,42,48,.25); height:100%;">
+                  <div style="font-size:12.5px; font-weight:800; color:var(--ink); line-height:1.3;">Diseminasi &amp; Refleksi</div>
+                  <div style="font-size:10.5px; color:var(--muted); margin-top:5px; line-height:1.35;">Presentasi, dampak berkelanjutan</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h4 style="font-family:'Newsreader',serif; font-size:21px; color:var(--ink); margin:24px 0 8px;">1.4 Elektrokoagulasi: Sekilas Proyek Solusi <span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#0e8388; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle;"><svg width="10" height="10" viewBox="0 0 24 24" fill="#fff"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>T</span> <span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#c47f22; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>E</span> <span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#375a97; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>M</span></h4>
+        <p style="text-align: justify"><b>Elektrokoagulasi</b> adalah proses menjernihkan air dengan mengalirkan <b>arus listrik searah (DC)</b> melalui elektroda logam (biasanya aluminium atau besi) yang tercelup dalam air. Arus melarutkan elektroda menjadi ion logam yang kemudian membentuk <b>koagulan</b>; koagulan ini "menangkap" partikel-partikel penyebab keruh sehingga menggumpal (<b>flok</b>), lalu mengendap atau mengapung dan dapat dipisahkan. Inti proyek Anda sepanjang bahan ajar digital ini adalah <b>merancang, membangun, dan menguji alat elektrokoagulasi sederhana</b>.</p>
+        <p style="text-align: justify">Alat elektrokoagulasi dipilih sebagai proyek inti bahan ajar digital ini karena tiga alasan. Pertama, prinsip kerjanya melibatkan konsep fisika dasar yang sudah dikenal calon guru: arus searah, hukum Ohm, serta daya dan energi listrik, sehingga tidak memerlukan peralatan laboratorium canggih. Kedua, bahan dan komponennya (elektroda logam, sumber DC, wadah, kabel) mudah didapat dan relatif murah, sehingga dapat direplikasi di sekolah dengan keterbatasan anggaran. Ketiga, hasilnya dapat diamati secara langsung, dari air keruh menjadi jernih, sehingga memberi kepuasan belajar yang konkret dan memotivasi.</p>
+        <p style="text-align: justify">Sepanjang delapan pertemuan, alat ini akan berkembang bertahap: dimulai dari pemahaman masalah (Bab 1–2), dasar kelistrikan dan reaksi kimia (Bab 3–4), perhitungan efisiensi (Bab 5), desain dan perakitan (Bab 6), pengujian melalui praktikum (Bab 7), hingga presentasi hasil (Bab 8). Setiap tahap membangun tahap sebelumnya, sehingga di akhir semester Anda tidak hanya memiliki alat yang berfungsi, tetapi juga pemahaman menyeluruh tentang bagaimana sains, teknologi, rekayasa, dan matematika bekerja sama menyelesaikan masalah nyata.</p>
+        <div style="background:linear-gradient(135deg,#0c2a30,#123f45); border-radius:18px; padding:24px 18px 20px; margin:14px 0; position:relative; overflow:hidden;">
+          <div style="position:absolute; inset:0; opacity:.08; background-image:radial-gradient(circle at 90% 10%, #7fffe0 0, transparent 45%);"></div>
+          <div style="position:relative; display:flex; align-items:stretch; gap:0; overflow-x:auto; padding-bottom:4px;">
+            <div style="flex:1; min-width:110px; text-align:center; padding:0 4px;">
+              <div style="width:52px; height:52px; margin:0 auto 10px; border-radius:50%; background:linear-gradient(145deg,#ffd76b,#e0a52c); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 18px -6px rgba(224,165,44,.6);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M13 2 L4 14h6l-1 8 9-12h-6l1-8z" fill="#5a3d00"></path></svg>
+              </div>
+              <div style="font-size:12px; font-weight:800; color:#fff;">Sumber DC</div>
+              <div style="font-size:10px; color:#bfe0da; margin-top:3px;">Arus listrik searah</div>
+            </div>
+            <div style="display:flex; align-items:center; color:#7fbfb6; font-size:20px; padding:0 2px; margin-top:-30px;">›</div>
+            <div style="flex:1; min-width:110px; text-align:center; padding:0 4px;">
+              <div style="width:52px; height:52px; margin:0 auto 10px; border-radius:50%; background:linear-gradient(145deg,#8ef0dc,#1596ad); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 18px -6px rgba(21,150,173,.6);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="4" height="16" fill="#fff"></rect><rect x="16" y="4" width="4" height="16" fill="#fff"></rect><circle cx="12" cy="8" r="1.6" fill="#0c3a3d"></circle><circle cx="13" cy="13" r="1.6" fill="#0c3a3d"></circle><circle cx="11" cy="17" r="1.6" fill="#0c3a3d"></circle></svg>
+              </div>
+              <div style="font-size:12px; font-weight:800; color:#fff;">Elektroda Larut</div>
+              <div style="font-size:10px; color:#bfe0da; margin-top:3px;">Melepas ion logam</div>
+            </div>
+            <div style="display:flex; align-items:center; color:#7fbfb6; font-size:20px; padding:0 2px; margin-top:-30px;">›</div>
+            <div style="flex:1; min-width:110px; text-align:center; padding:0 4px;">
+              <div style="width:52px; height:52px; margin:0 auto 10px; border-radius:50%; background:linear-gradient(145deg,#e0983a,#c47f22); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 18px -6px rgba(196,127,34,.6);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="8" cy="8" r="2.2" fill="#fff"></circle><circle cx="16" cy="8" r="2.2" fill="#fff"></circle><circle cx="12" cy="16" r="2.2" fill="#fff"></circle><path d="M8 8 L12 16 M16 8 L12 16 M8 8 L16 8" stroke="#fff" stroke-width="1.4"></path></svg>
+              </div>
+              <div style="font-size:12px; font-weight:800; color:#fff;">Koagulan Mengikat</div>
+              <div style="font-size:10px; color:#bfe0da; margin-top:3px;">Menetralkan partikel</div>
+            </div>
+            <div style="display:flex; align-items:center; color:#7fbfb6; font-size:20px; padding:0 2px; margin-top:-30px;">›</div>
+            <div style="flex:1; min-width:110px; text-align:center; padding:0 4px;">
+              <div style="width:52px; height:52px; margin:0 auto 10px; border-radius:50%; background:linear-gradient(145deg,#4d71ad,#375a97); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 18px -6px rgba(55,90,151,.6);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="10" r="4" fill="#fff" opacity=".95"></circle><circle cx="15" cy="9" r="3.2" fill="#fff" opacity=".8"></circle><circle cx="13" cy="15" r="3.6" fill="#fff" opacity=".9"></circle></svg>
+              </div>
+              <div style="font-size:12px; font-weight:800; color:#fff;">Flok Terbentuk</div>
+              <div style="font-size:10px; color:#bfe0da; margin-top:3px;">Gumpalan partikel</div>
+            </div>
+            <div style="display:flex; align-items:center; color:#7fbfb6; font-size:20px; padding:0 2px; margin-top:-30px;">›</div>
+            <div style="flex:1; min-width:110px; text-align:center; padding:0 4px;">
+              <div style="width:52px; height:52px; margin:0 auto 10px; border-radius:50%; background:linear-gradient(145deg,#8ef0dc,#2f8f5b); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 18px -6px rgba(47,143,91,.6);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3c-3.5 0-6 4.2-6 8a6 6 0 0 0 12 0c0-3.8-2.5-8-6-8z" fill="#fff"></path></svg>
+              </div>
+              <div style="font-size:12px; font-weight:800; color:#fff;">Air Jernih</div>
+              <div style="font-size:10px; color:#bfe0da; margin-top:3px;">Mengendap / mengapung</div>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:12.5px; color:var(--muted);"><b>Gambar 1.2</b> Alur ringkas proses elektrokoagulasi (dibahas rinci pada Bab 3–5).</p>
+
+        <h4 style="font-family:'Newsreader',serif; font-size:21px; color:var(--ink); margin:24px 0 8px;">1.5 Tiga Kompetensi Sasaran: CPSS, PCK, EA</h4>
+        <p style="text-align: justify">Bahan Ajar Digital ini menuntun Anda menumbuhkan tiga kompetensi calon guru secara serentak melalui proyek yang sama. Ketiganya tidak berdiri sendiri: <b>CPSS</b> Anda pakai untuk memecahkan masalah krisis air secara kreatif, <b>PCK</b> Anda pakai untuk mengubah pengalaman itu menjadi pembelajaran fisika yang bermakna bagi siswa, dan <b>EA</b> menjadi nilai yang menggerakkan sekaligus diperkuat oleh kedua proses tersebut.</p>
+        <p style="text-align: justify">Ketiga kompetensi ini diukur secara konsisten sepanjang semester melalui instrumen yang sama: Pretest di awal dan Posttest di akhir menggunakan soal esai dan angket yang identik, sehingga perkembangan Anda dapat dibandingkan secara langsung. Selain itu, setiap pertemuan menyisipkan Tantangan CPSS, Teacher Candidate Corner (PCK), dan Green Note (EA) sebagai latihan rutin berskala kecil, sehingga ketiga kompetensi ini tidak hanya dinilai di ujung semester, tetapi dilatih secara bertahap dari pertemuan pertama.</p>
+        <div style="display:grid; grid-template-columns:1fr; gap:12px; margin:12px 0;">
+          <div style="background:#fff; border:1px solid var(--line); border-left:4px solid var(--violet); border-radius:12px; padding:16px 18px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;"><div style="width:30px; height:30px; border-radius:8px; background:var(--violet); color:#fff; display:flex; align-items:center; justify-content:center; font:800 12px/1 'Mulish';">CPSS</div><b style="color:var(--violet); font-size:14.5px;">Creative Problem Solving Skills</b></div>
+            <p style="margin: 0 0 8px; font-size: 13.5px; text-align: justify">7 indikator: <b>Fluency, Flexibility, Originality, Elaboration</b> (berpikir divergen, Torrance, 1974; dikembangkan Hu &amp; Adey, 2002), serta <b>Problem Identification, Solution Planning, Solution Implementation</b> (berpikir konvergen / <i>creative problem solving</i>, Treffinger, Isaksen, &amp; Stead-Dorval, 2003).</p>
+            <p style="margin: 0; font-size: 13px; color: var(--muted); line-height: 1.5; text-align: justify">Dalam proyek elektrokoagulasi, CPSS terlihat saat Anda mencari banyak solusi krisis air (Fluency), memandangnya dari sudut sains-sosial-ekonomi (Flexibility), memodifikasi rancangan elektroda (Originality), menyusun prosedur yang rinci (Elaboration), lalu mengidentifikasi akar masalah, merancang, dan menerapkan solusi secara sistematis.</p>
+          </div>
+          <div style="background:#fff; border:1px solid var(--line); border-left:4px solid var(--indigo); border-radius:12px; padding:16px 18px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;"><div style="width:30px; height:30px; border-radius:8px; background:var(--indigo); color:#fff; display:flex; align-items:center; justify-content:center; font:800 11px/1 'Mulish';">PCK</div><b style="color:var(--indigo); font-size:14.5px;">Pedagogical Content Knowledge</b></div>
+            <p style="margin:0 0 8px; font-size:13.5px;">5 indikator: <b>Content Knowledge, Curriculum Knowledge, Instructional Strategies, Student Understanding, Assessment</b> (Shulman, 1986; Magnusson, Krajcik, &amp; Borko, 1999).</p>
+            <p style="margin: 0; font-size: 13px; color: var(--muted); line-height: 1.5; text-align: justify">PCK adalah jembatan dari "Anda memahami elektrokoagulasi" menjadi "Anda mampu mengajarkannya". Setiap bab menantang Anda memposisikan materi dalam kurikulum SMA, merancang skenario pembelajaran, mengantisipasi miskonsepsi siswa, dan menyusun asesmen otentik. Ini bukan sekadar menguasai isi.</p>
+          </div>
+          <div style="background:#fff; border:1px solid var(--line); border-left:4px solid var(--green); border-radius:12px; padding:16px 18px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;"><div style="width:30px; height:30px; border-radius:8px; background:var(--green); color:#fff; display:flex; align-items:center; justify-content:center; font:800 12px/1 'Mulish';">EA</div><b style="color:var(--green); font-size:14.5px;">Environmental Awareness</b></div>
+            <p style="margin: 0 0 8px; font-size: 13.5px; text-align: justify">5 indikator: <b>pengetahuan isu lingkungan, sikap, perilaku ramah lingkungan, penerapan praktik berkelanjutan, kesediaan mengubah gaya hidup</b> (Hungerford &amp; Volk, 1990; Stern, 2000).</p>
+            <p style="margin: 0; font-size: 13px; color: var(--muted); line-height: 1.5; text-align: justify">EA adalah fondasi nilai di balik CPSS dan PCK: tanpa kepedulian pada keberlanjutan, solusi kreatif bisa saja boros energi atau mencemari, dan pembelajaran bisa lupa menanamkan tanggung jawab lingkungan pada siswa. EA diukur lewat Pretest, Posttest, dan Green Note di setiap bab.</p>
+          </div>
+        </div>
+
+        <!-- Bagan Keterkaitan CPSS-PCK-EA -->
+        <div style="background:linear-gradient(160deg,#f7f4fb,#f1eefa); border-radius:20px; padding:26px 20px 24px; margin:20px 0;">
+          <div style="text-align:center; font:800 12px/1 'Mulish'; letter-spacing:.16em; text-transform:uppercase; color:var(--violet); margin-bottom:20px;">🧩 Keterkaitan CPSS · PCK · EA</div>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px;">
+            <div style="text-align:center; background:#fff; border-radius:14px; padding:16px 10px 14px; box-shadow:0 10px 22px -14px rgba(106,76,147,.5); border-top:3px solid var(--violet);">
+              <div style="width:42px; height:42px; margin:0 auto 9px; border-radius:50%; background:linear-gradient(145deg,#9b7ec9,var(--violet)); color:#fff; display:flex; align-items:center; justify-content:center; font:800 11px/1 'Mulish'; box-shadow:0 8px 16px -6px rgba(106,76,147,.6);">CPSS</div>
+              <div style="font-size:12px; font-weight:800; color:var(--ink);">Memecahkan</div>
+              <div style="font-size:10.5px; color:var(--muted); margin-top:3px; line-height:1.3;">Kreatif merancang solusi krisis air</div>
+            </div>
+            <div style="text-align:center; background:#fff; border-radius:14px; padding:16px 10px 14px; box-shadow:0 10px 22px -14px rgba(55,90,151,.5); border-top:3px solid var(--indigo);">
+              <div style="width:42px; height:42px; margin:0 auto 9px; border-radius:50%; background:linear-gradient(145deg,#6f8fc9,var(--indigo)); color:#fff; display:flex; align-items:center; justify-content:center; font:800 11px/1 'Mulish'; box-shadow:0 8px 16px -6px rgba(55,90,151,.6);">PCK</div>
+              <div style="font-size:12px; font-weight:800; color:var(--ink);">Mengajarkan</div>
+              <div style="font-size:10.5px; color:var(--muted); margin-top:3px; line-height:1.3;">Mengubahnya jadi pembelajaran bermakna</div>
+            </div>
+            <div style="text-align:center; background:#fff; border-radius:14px; padding:16px 10px 14px; box-shadow:0 10px 22px -14px rgba(47,143,91,.5); border-top:3px solid var(--green);">
+              <div style="width:42px; height:42px; margin:0 auto 9px; border-radius:50%; background:linear-gradient(145deg,#52b880,var(--green)); color:#fff; display:flex; align-items:center; justify-content:center; font:800 13px/1 'Mulish'; box-shadow:0 8px 16px -6px rgba(47,143,91,.6);">EA</div>
+              <div style="font-size:12px; font-weight:800; color:var(--ink);">Peduli &amp; Bertahan</div>
+              <div style="font-size:10.5px; color:var(--muted); margin-top:3px; line-height:1.3;">Nilai keberlanjutan yang menggerakkan</div>
+            </div>
+          </div>
+          <div style="display:flex; justify-content:center; margin:8px 0 4px;">
+            <svg width="100%" height="46" viewBox="0 0 100 46" preserveAspectRatio="none" style="overflow:visible;">
+              <path d="M16.7 0 Q16.7 26 46 38" stroke="#6a4c93" stroke-width="1" fill="none" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+              <path d="M50 0 Q50 20 50 34" stroke="#375a97" stroke-width="1" fill="none" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+              <path d="M83.3 0 Q83.3 26 54 38" stroke="#2f8f5b" stroke-width="1" fill="none" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+              <path d="M47 38 L50 46 L53 38 Z" fill="#4a3768"></path>
+            </svg>
+          </div>
+          <div style="text-align:center; background:linear-gradient(135deg,#2a1f3d,#4a3768); color:#fff; border-radius:16px; padding:16px 20px; box-shadow:0 14px 30px -16px rgba(42,31,61,.6);">
+            <div style="font:800 13.5px/1.2 'Mulish';">Calon Guru Fisika yang Kreatif, Reflektif, &amp; Berkelanjutan</div>
+            <div style="font-size:11px; color:#d9cdf0; margin-top:3px;">CPSS memecahkan masalah → PCK mengajarkannya → EA menjaga arahnya tetap bertanggung jawab</div>
+          </div>
+        </div>
+
+        <!-- Tantangan CPSS -->
+                <h4 style="font-family:'Newsreader',serif; font-size:21px; color:var(--ink); margin:24px 0 8px;">1.6 Ekologi Air: Berapa Banyak Air Tawar yang Sebenarnya Tersedia? <span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#1596ad; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><circle cx="12" cy="12" r="1.8" fill="#fff" stroke="none"/><ellipse cx="12" cy="12" rx="10" ry="4.2"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)"/></svg>S</span></h4>
+        <p style="text-align: justify">Dari seluruh air di Bumi, hanya sekitar <b data-om-id="54f69265:535">2,5%</b> berupa air tawar; sisanya (97,5%) adalah air laut yang asin. Dari 2,5% itu pun, sekitar <b data-om-id="54f69265:536">68%</b> terkunci sebagai es di gletser dan tudung kutub, dan sebagian besar lainnya adalah air tanah dalam yang sulit diakses. Air permukaan yang mudah dijangkau (sungai, danau, dan waduk) hanya menyumbang <b data-om-id="54f69265:537">kurang dari 1% dari seluruh air tawar</b>&nbsp;jumlah yang sangat kecil dibanding kebutuhan miliaran manusia.</p>
+        <p style="text-align: justify">Ketimpangan ini melahirkan konsep <b>tekanan air (<i>water stress</i>)</b>: suatu wilayah dikatakan mengalami tekanan air tinggi bila kebutuhan air penduduknya mendekati atau melebihi ketersediaan air tawar yang bisa diperbarui. Krisis air, dengan demikian, bukan semata soal "airnya habis", melainkan soal <i>distribusi, aksesibilitas, dan kualitas. </i>Tiga hal ini yang justru bisa diperbaiki lewat sains dan rekayasa seperti elektrokoagulasi.</p>
+        <p style="text-align: justify">Memahami proporsi air tawar yang sesungguhnya tersedia juga mengubah cara kita memandang skala solusi. Sebuah alat elektrokoagulasi sederhana tidak akan mengubah total volume air tawar di Bumi, tetapi dapat meningkatkan kualitas air yang sudah tersedia agar layak pakai, sehingga volume air yang sama dapat melayani lebih banyak kebutuhan. Inilah alasan mengapa proyek Anda difokuskan pada pengolahan air (meningkatkan kualitas), bukan penambahan sumber air baru yang jauh lebih mahal dan kompleks secara rekayasa.</p>
+
+        <div style="background:#eaf6f5; border:1px solid var(--line); border-left:4px solid #0e8388; border-radius:14px; padding:20px 22px; margin:22px 0;">
+          <div style="font:700 12px/1 'Mulish'; letter-spacing:.1em; text-transform:uppercase; color:#0e8388; margin-bottom:10px;">Aktivitas Terpadu STEM-ESD · Pertemuan 1</div>
+          <p style="margin: 0 0 8px; text-align: justify">Misalkan sebuah wilayah berpenduduk 2 juta jiwa hanya memiliki pasokan air tawar terbarukan sebesar 1,2 miliar liter/tahun. Standar kebutuhan air layak per orang adalah 1.000 liter/tahun untuk kebutuhan dasar (WHO, ilustratif).</p>
+          <ol style="margin: 0 0 10px; padding-left: 20px; font-size: 14.5px; text-align: justify">
+            <li><span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#375a97; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle; white-space:nowrap;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>M</span> Hitung total kebutuhan air wilayah tersebut per tahun, lalu bandingkan dengan pasokan yang tersedia. Apakah wilayah ini mengalami tekanan air?</li>
+            <li><span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#1596ad; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle; white-space:nowrap;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><circle cx="12" cy="12" r="1.8" fill="#fff" stroke="none"/><ellipse cx="12" cy="12" rx="10" ry="4.2"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)"/></svg>S</span> <span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#0e8388; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle; white-space:nowrap;"><svg width="10" height="10" viewBox="0 0 24 24" fill="#fff"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>T</span> <span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#c47f22; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle; white-space:nowrap;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>E</span> Identifikasi peran sains (data), teknologi (alat ukur/olah air), dan rekayasa (desain solusi) dalam mengatasi kesenjangan yang Anda temukan.</li>
+            <li><span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#375a97; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle; white-space:nowrap;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>PCK</span> Rancang satu kalimat penjelasan sederhana untuk siswa SMA tentang mengapa "air banyak di Bumi" tidak berarti "air mudah didapat".</li>
+            <li><span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#2f8f5b; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle; white-space:nowrap;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>EA</span> Tuliskan satu sikap pribadi yang akan Anda ubah setelah menyadari kecilnya proporsi air tawar yang benar-benar dapat diakses.</li>
+          </ol>
+          <textarea data-note="b1-stemesd" placeholder="Jawaban aktivitas terpadu saya…" style="width:100%; min-height:110px; resize:vertical; border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-family:inherit; font-size:14.5px; background:#fff; color:var(--body); margin-top:10px;"></textarea>
+        </div>
+
+        <div style="background:#f4effa; border:1px solid #ddd0ee; border-left:4px solid var(--violet); border-radius:14px; padding:20px 22px; margin:24px 0;">
+          <div style="font:700 12px/1 'Mulish'; letter-spacing:.1em; text-transform:uppercase; color:var(--violet); margin-bottom:10px; display:flex; align-items:center; gap:6px;"><span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#6a4c93; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle; white-space:nowrap;"><svg width="10" height="10" viewBox="0 0 24 24" fill="#fff"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>CPSS</span> <span>Fluency</span></div>
+          <p style="margin: 0 0 8px; text-align: justify">Dalam <b>3 menit</b>, tuliskan sebanyak mungkin cara berbeda untuk menjernihkan air keruh (tanpa menilai dulu bagus/tidaknya). Target: &gt; 12 ide. Fluency dinilai dari <i>jumlah gagasan relevan</i>.</p>
+          <textarea data-note="b1-cpss" placeholder="1. … 2. … 3. …" style="width:100%; min-height:88px; resize:vertical; border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-family:inherit; font-size:14.5px; background:#fff; color:var(--body);"></textarea>
+        </div>
+
+        <!-- Teacher Candidate Corner -->
+        <div style="background:#eef2fb; border:1px solid #cdd8ef; border-left:4px solid var(--indigo); border-radius:14px; padding:20px 22px; margin:24px 0;">
+          <div style="font:700 12px/1 'Mulish'; letter-spacing:.1em; text-transform:uppercase; color:var(--indigo); margin-bottom:10px; display:flex; align-items:center; gap:6px;"><span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#375a97; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle; white-space:nowrap;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>PCK</span> <span>Teacher Candidate Corner</span></div>
+          <p style="margin: 0 0 8px; text-align: justify">Bayangkan Anda mengajar topik "Listrik Dinamis" di SMA. Bagaimana Anda memakai kasus krisis air agar konsep terasa <b>bermakna</b> bagi siswa? Tuliskan satu ide pembuka pelajaran (<i>hook</i>) berbasis masalah air.</p>
+          <textarea data-note="b1-pck" placeholder="Ide pembuka pelajaran saya…" style="width:100%; min-height:76px; resize:vertical; border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-family:inherit; font-size:14.5px; background:#fff; color:var(--body);"></textarea>
+        </div>
+
+        <!-- Green Note -->
+        <div style="background:#ecf7ef; border:1px solid #c8e6d1; border-left:4px solid var(--green); border-radius:14px; padding:20px 22px; margin:24px 0;">
+          <div style="font:700 12px/1 'Mulish'; letter-spacing:.1em; text-transform:uppercase; color:var(--green); margin-bottom:10px; display:flex; align-items:center; gap:6px;"><span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#2f8f5b; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle; white-space:nowrap;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>EA</span> <span>Green Note</span></div>
+          <p style="margin: 0; text-align: justify">Krisis air bukan hanya masalah teknis, tetapi juga masalah <b>perilaku</b>. Menghemat air, tidak membuang limbah ke sungai, dan mendukung solusi lokal adalah bentuk kepedulian nyata. Sebagai calon guru, kepedulian Anda akan menular ke ratusan siswa selama karier Anda.</p>
+        </div>
+
+        <!-- Miskonsepsi -->
+        <div style="background:#fbefec; border:1px solid #f1cfc6; border-left:4px solid var(--coral); border-radius:14px; padding:20px 22px; margin:24px 0;">
+          <div style="font:700 12px/1 'Mulish'; letter-spacing:.1em; text-transform:uppercase; color:var(--coral); margin-bottom:10px;">Miskonsepsi yang Perlu Diwaspadai</div>
+          <ul style="margin:0; padding-left:20px; font-size:14.5px;">
+            <li style="text-align: justify"><b>"Air jernih pasti aman."</b> Salah, kejernihan hanya sifat fisik; bakteri, logam berat, dan zat terlarut bisa tak terlihat.</li>
+            <li style="text-align: justify"><b>"STEM hanya untuk pelajaran komputer/robotik."</b> Salah, STEM adalah cara memecahkan masalah lintas bidang, termasuk isu air.</li>
+          </ul>
+        </div>
+
+        <!-- Rangkuman -->
+        <div style="background:#fdf8ec; border:1px solid #f0e3bf; border-left:4px solid #b8860b; border-radius:14px; padding:20px 22px; margin:22px 0;">
+          <div style="font:700 12px/1 'Mulish'; letter-spacing:.1em; text-transform:uppercase; color:#b8860b; margin-bottom:10px;">SINTAKS PJBL · FASE 5 · MONITORING &amp; REVISI</div>
+          <p style="margin:0 0 6px;">Beri tanda ✓ pada hal yang sudah Anda kuasai/lakukan pertemuan ini:</p>
+          <div style="display:flex; flex-direction:column; gap:6px; margin:8px 0 10px; font-size:14px;"><label style="display:flex; gap:8px; align-items:flex-start; cursor:pointer;"><input type="checkbox" style="margin-top:3px;">Menjelaskan mengapa air jernih belum tentu aman</label><label style="display:flex; gap:8px; align-items:flex-start; cursor:pointer;"><input type="checkbox" style="margin-top:3px;">Menjelaskan keterkaitan krisis air dengan SDGs 6</label><label style="display:flex; gap:8px; align-items:flex-start; cursor:pointer;"><input type="checkbox" style="margin-top:3px;">Menjelaskan pendekatan STEM-ESD secara sederhana</label><label style="display:flex; gap:8px; align-items:flex-start; cursor:pointer;"><input type="checkbox" style="margin-top:3px;">Menjelaskan alur dasar elektrokoagulasi</label><label style="display:flex; gap:8px; align-items:flex-start; cursor:pointer;"><input type="checkbox" style="margin-top:3px;">Menyebutkan 7 indikator CPSS, 5 PCK, 5 EA</label></div>
+          <textarea data-note="b1-monitor" placeholder="Catatan revisi/kendala yang perlu ditindaklanjuti…" style="width:100%; min-height:64px; resize:vertical; border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-family:inherit; font-size:14.5px; background:#fff; color:var(--body);"></textarea>
+        </div>
+
+        <div style="background:#eef2fb; border:1px solid #cdd8ef; border-left:4px solid var(--indigo); border-radius:14px; padding:20px 22px; margin:22px 0;">
+          <div style="font:700 12px/1 'Mulish'; letter-spacing:.1em; text-transform:uppercase; color:var(--indigo); margin-bottom:10px;">SINTAKS PJBL · FASE 6 · PRESENTASI HASIL</div>
+          <p style="margin: 0 0 8px; text-align: justify">Presentasikan <b>Peta Masalah (LKM 1)</b> kelompok Anda secara singkat (± 3 menit) kepada satu kelompok lain. Catat satu masukan yang Anda terima dari mereka.</p>
+          <textarea data-note="b1-share" placeholder="Masukan yang saya terima dari kelompok lain…" style="width:100%; min-height:64px; resize:vertical; border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-family:inherit; font-size:14.5px; background:#fff; color:var(--body);"></textarea>
+        </div>
+
+        <div style="background:#0c2a30; color:#dbeee9; border-radius:16px; padding:24px 26px; margin:28px 0;">
+          <div style="font:700 12px/1 'Mulish'; letter-spacing:.14em; text-transform:uppercase; color:#7fd8cf; margin-bottom:12px;">Rangkuman Bab 1</div>
+          <ul style="margin:0; padding-left:20px; font-size:14.5px; line-height:1.9;">
+            <li>Krisis air menyangkut <b>kualitas</b>, bukan hanya kuantitas; air jernih belum tentu aman.</li>
+            <li><b>SDGs 6</b> menjadikan air bersih konteks nyata untuk pembelajaran fisika.</li>
+            <li><b>STEM-ESD</b> memadukan sains, teknologi, rekayasa, matematika dengan orientasi keberlanjutan.</li>
+            <li><b>Elektrokoagulasi</b> = menjernihkan air memakai arus DC + elektroda logam sebagai proyek inti.</li>
+            <li>Sasaran bahan ajar digital: menumbuhkan <b>CPSS (7)</b>, <b>PCK (5)</b>, dan <b>EA (5)</b> calon guru fisika.</li>
+          </ul>
+        </div>
+
+        <!-- Evaluasi -->
+        <h3 style="font-family:'Newsreader',serif; font-weight:600; font-size:24px; color:var(--ink); margin:30px 0 4px;">Evaluasi Bab 1</h3>
+        <div style="height:3px; width:56px; background:var(--amber); border-radius:2px; margin-bottom:16px;"></div>
+        <p style="font-size:13.5px; color:var(--muted); margin-top:0;">Tiga soal objektif (klik jawaban untuk umpan balik langsung) dan dua soal esai.</p>
+
+        <div data-quiz="" data-quiz-id="b1-q1" style="background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:14px 0;">
+          <p style="margin:0 0 12px; font-weight:600;">1. <span style="color:var(--green); font-size:12px; font-weight:700;">(EA)</span> Pernyataan yang <b>paling tepat</b> tentang air jernih adalah…</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <button data-opt="" style="text-align:left; padding:11px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; cursor:pointer; font-family:inherit; font-size:14.5px; color:var(--body);"><span data-mark="" style="display:inline-block; width:18px; font-weight:800;"></span>A. Air jernih pasti aman diminum.</button>
+            <button data-opt="" data-correct="1" style="text-align:left; padding:11px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; cursor:pointer; font-family:inherit; font-size:14.5px; color:var(--body);"><span data-mark="" style="display:inline-block; width:18px; font-weight:800;"></span>B. Kejernihan hanya sifat fisik; keamanan perlu diuji parameter lain.</button>
+            <button data-opt="" style="text-align:left; padding:11px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; cursor:pointer; font-family:inherit; font-size:14.5px; color:var(--body);"><span data-mark="" style="display:inline-block; width:18px; font-weight:800;"></span>C. Air keruh selalu lebih sehat karena bermineral.</button>
+            <button data-opt="" style="text-align:left; padding:11px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; cursor:pointer; font-family:inherit; font-size:14.5px; color:var(--body);"><span data-mark="" style="display:inline-block; width:18px; font-weight:800;"></span>D. Warna air satu-satunya penentu kualitas.</button>
+          </div>
+          <div data-feedback="" data-fb-correct="Benar." data-expl="Kejernihan tak menjamin keamanan; bakteri, logam berat, dan zat terlarut bisa tak kasat mata." style="display:none; margin-top:12px; padding:11px 14px; border:1px solid; border-radius:10px; font-size:13.5px;"></div>
+        </div>
+
+        <div data-quiz="" data-quiz-id="b1-q2" style="background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:14px 0;">
+          <p style="margin:0 0 12px; font-weight:600;">2. <span style="color:var(--aqua); font-size:12px; font-weight:700;">(Konsep)</span> Dalam elektrokoagulasi, arus listrik berperan utama untuk…</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <button data-opt="" style="text-align:left; padding:11px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; cursor:pointer; font-family:inherit; font-size:14.5px; color:var(--body);"><span data-mark="" style="display:inline-block; width:18px; font-weight:800;"></span>A. Memanaskan air sampai kotoran terbakar.</button>
+            <button data-opt="" data-correct="1" style="text-align:left; padding:11px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; cursor:pointer; font-family:inherit; font-size:14.5px; color:var(--body);"><span data-mark="" style="display:inline-block; width:18px; font-weight:800;"></span>B. Melarutkan elektroda menjadi ion koagulan yang mengikat partikel.</button>
+            <button data-opt="" style="text-align:left; padding:11px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; cursor:pointer; font-family:inherit; font-size:14.5px; color:var(--body);"><span data-mark="" style="display:inline-block; width:18px; font-weight:800;"></span>C. Menambah rasa mineral pada air.</button>
+            <button data-opt="" style="text-align:left; padding:11px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; cursor:pointer; font-family:inherit; font-size:14.5px; color:var(--body);"><span data-mark="" style="display:inline-block; width:18px; font-weight:800;"></span>D. Menguapkan seluruh air menjadi uap bersih.</button>
+          </div>
+          <div data-feedback="" data-fb-correct="Benar." data-expl="Arus DC melarutkan anoda logam menjadi ion (mis. Al³⁺) yang membentuk koagulan penangkap partikel." style="display:none; margin-top:12px; padding:11px 14px; border:1px solid; border-radius:10px; font-size:13.5px;"></div>
+        </div>
+
+        <div data-quiz="" data-quiz-id="b1-q3" style="background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:14px 0;">
+          <p style="margin:0 0 12px; font-weight:600;">3. <span style="color:var(--violet); font-size:12px; font-weight:700;">(CPSS)</span> Menuliskan sebanyak mungkin gagasan penjernihan air dalam waktu singkat terutama melatih indikator…</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <button data-opt="" data-correct="1" style="text-align:left; padding:11px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; cursor:pointer; font-family:inherit; font-size:14.5px; color:var(--body);"><span data-mark="" style="display:inline-block; width:18px; font-weight:800;"></span>A. Fluency (kelancaran gagasan).</button>
+            <button data-opt="" style="text-align:left; padding:11px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; cursor:pointer; font-family:inherit; font-size:14.5px; color:var(--body);"><span data-mark="" style="display:inline-block; width:18px; font-weight:800;"></span>B. Elaboration (kerincian).</button>
+            <button data-opt="" style="text-align:left; padding:11px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; cursor:pointer; font-family:inherit; font-size:14.5px; color:var(--body);"><span data-mark="" style="display:inline-block; width:18px; font-weight:800;"></span>C. Solution Implementation.</button>
+            <button data-opt="" style="text-align:left; padding:11px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; cursor:pointer; font-family:inherit; font-size:14.5px; color:var(--body);"><span data-mark="" style="display:inline-block; width:18px; font-weight:800;"></span>D. Problem Identification.</button>
+          </div>
+          <div data-feedback="" data-fb-correct="Benar." data-expl="Banyaknya gagasan relevan dalam waktu singkat adalah ciri Fluency menurut Torrance." style="display:none; margin-top:12px; padding:11px 14px; border:1px solid; border-radius:10px; font-size:13.5px;"></div>
+        </div>
+
+        <div style="background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:14px 0;">
+          <p style="margin:0 0 6px; font-weight:600;">Esai 1. <span style="color:var(--violet); font-size:12px; font-weight:700;">(CPSS–Fluency)</span></p>
+          <p style="margin:0 0 10px;">Sebutkan minimal 8 penyebab pencemaran air sungai di daerah Anda, lalu kelompokkan menjadi sumber alami dan sumber akibat aktivitas manusia.</p>
+          <textarea data-note="b1-esai1" data-gate-essay="" placeholder="Jawaban esai Anda…" style="width:100%; min-height:88px; resize:vertical; border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-family:inherit; font-size:14.5px; background:#fbfdfc; color:var(--body);"></textarea>
+        </div>
+        <div style="background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:14px 0;">
+          <p style="margin:0 0 6px; font-weight:600;">Esai 2. <span style="color:var(--indigo); font-size:12px; font-weight:700;">(PCK)</span></p>
+          <p style="margin:0 0 10px;">Rancang satu kalimat tujuan pembelajaran fisika SMA yang mengaitkan konsep listrik dengan isu air bersih, lalu jelaskan mengapa konteks itu bermakna bagi siswa.</p>
+          <textarea data-note="b1-esai2" data-gate-essay="" placeholder="Jawaban esai Anda…" style="width:100%; min-height:88px; resize:vertical; border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-family:inherit; font-size:14.5px; background:#fbfdfc; color:var(--body);"></textarea>
+        </div>
+
+        <div style="margin-top:8px;">
+          <button data-reveal="b1-kunci" data-gate="1" data-label-show="▸ Tampilkan Pedoman Jawaban" data-label-hide="▾ Sembunyikan Pedoman Jawaban" disabled="" style="padding:10px 18px; border:1px solid var(--line); border-radius:10px; background:#f0f2f1; color:#9aa5a3; font-weight:700; font-family:inherit; font-size:13.5px; cursor:not-allowed; opacity:.75;"><span data-lbl="">🔒 Tampilkan Pedoman Jawaban</span></button>
+          <div data-gate-hint="1" style="margin-top:7px; font-size:12px; color:var(--amber);">Jawab semua soal (3 objektif + 2 esai) dahulu untuk membuka pedoman jawaban. (0/5 terjawab)</div>
+        </div>
+        <div id="b1-kunci" data-open="0" style="display:none; margin-top:12px; background:#f5faf8; border:1px dashed var(--teal); border-radius:12px; padding:16px 18px; font-size:14px;">
+          <p style="margin:0 0 6px;"><b>Objektif:</b> 1-B, 2-B, 3-A.</p>
+          <p style="margin:0 0 6px;"><b>Esai 1:</b> Fluency dinilai dari banyaknya penyebab relevan (mis. limbah pabrik, deterjen rumah tangga, pupuk/pestisida, sampah, sedimentasi erosi, limbah ternak, air lindi TPA, tumpahan minyak) dan ketepatan pengelompokan alami vs. antropogenik.</p>
+          <p style="margin:0;"><b>Esai 2:</b> Jawaban baik memuat kata kerja operasional + konsep listrik + konteks air + alasan kebermaknaan (relevansi lokal, keterlibatan, transfer ke masalah nyata).</p>
+        </div>
+
+        <!-- Referensi -->
+        <h3 style="font-family:'Newsreader',serif; font-weight:600; font-size:20px; color:var(--ink); margin:30px 0 10px;">Referensi Utama Bab 1</h3>
+        <ol style="font-size:13px; color:var(--body); line-height:1.7; padding-left:22px; margin:0;">
+          <li>UNESCO. (2017). <i>Education for Sustainable Development Goals: Learning objectives</i>. UNESCO.</li>
+          <li>Bybee, R. W. (2013). <i>The case for STEM education: Challenges and opportunities</i>. NSTA Press.</li>
+          <li>English, L. D. (2016). STEM education K-12: Perspectives on integration. <i>International Journal of STEM Education, 3</i>(1), 3. https://doi.org/10.1186/s40594-016-0036-1</li>
+          <li>Kelley, T. R., &amp; Knowles, J. G. (2016). A conceptual framework for integrated STEM education. <i>International Journal of STEM Education, 3</i>(1), 11. https://doi.org/10.1186/s40594-016-0046-z</li>
+          <li>Holt, P. K., Barton, G. W., &amp; Mitchell, C. A. (2005). The future for electrocoagulation as a localised water treatment technology. <i>Chemosphere, 59</i>(3), 355–367. https://doi.org/10.1016/j.chemosphere.2004.10.023</li>
+          <li>Torrance, E. P. (1974). <i>Torrance Tests of Creative Thinking: Norms-technical manual</i>. Scholastic Testing Service.</li>
+        </ol>
+      </section>
+
+      
+
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin:26px 0 6px; flex-wrap:wrap;">
+        <a href="Bahan%20Ajar%20Elektrokoagulasi%20STEM-ESD.dc.html" style="display:flex; align-items:center; gap:6px; padding:10px 16px; border:1px solid var(--line); border-radius:10px; background:#fff; color:var(--teal-d); text-decoration:none; font-weight:700; font-size:13.5px;">← Daftar Isi</a>
+        <a href="Bahan%20Ajar%20Elektrokoagulasi%20STEM-ESD.dc.html#alur" style="font-size:12.5px; color:var(--muted); text-decoration:none;">Daftar Isi</a>
+        <a href="Bab%202.dc.html" style="display:flex; align-items:center; gap:6px; padding:10px 16px; border:1px solid var(--line); border-radius:10px; background:#fff; color:var(--teal-d); text-decoration:none; font-weight:700; font-size:13.5px;">Bab 2 · Analisis Air Tercemar →</a>
+      </div>
+
+      
+
+    </article>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    this._boot();
+  }
+  _boot() {
+    this.DOSEN_SECRET = 'dosen2024';
+    this.mhsMode = 'signup';
+    this.buildNoteLabels();
+    this.wireAuth();
+    this.initSession();
+    this.applyGates();
+    this.cloudMergeGates();
+    this.setupMath();
+    window.addEventListener('pagehide', () => {
+      const u = this.cu();
+      if (u && u.role === 'mhs') this.cloudPushNow(u.nim, true);
+    });
+    this.bindAnswers();
+    this.bindScores();
+    this.wireClicks();
+    this.wireToc();
+  }
+  setupMath() {
+    let tries = 0;
+    const run = () => {
+      if (window.renderMathInElement) {
+        try {
+          window.renderMathInElement(document.getElementById('bookRoot') || document.body, {
+            delimiters: [
+              { left: '\\[', right: '\\]', display: true },
+              { left: '\\(', right: '\\)', display: false }
+            ],
+            throwOnError: false,
+            trust: true
+          });
+        } catch (e) {}
+      } else if (tries++ < 60) {
+        setTimeout(run, 120);
+      }
+    };
+    run();
+  }
+  // ---------- SESSION ----------
+  cu() {
+    try { return JSON.parse(localStorage.getItem('ecbook:session') || 'null'); } catch (e) { return null; }
+  }
+  getDB() { try { return JSON.parse(localStorage.getItem('ecbook:students') || '{}'); } catch (e) { return {}; } }
+  saveDB(db) { try { localStorage.setItem('ecbook:students', JSON.stringify(db)); } catch (e) {} }
+  getRec(nim) { const db = this.getDB(); return db[nim] || {}; }
+  touchRec(db, u) {
+    const rec = db[u.nim] || {};
+    rec.name = u.name; rec.kelas = u.kelas || rec.kelas || ''; if (!rec.registeredAt) rec.registeredAt = Date.now(); rec.updated = Date.now();
+    db[u.nim] = rec;
+    return rec;
+  }
+  setAnswer(id, val) { const u = this.cu(); if (!u) return; const db = this.getDB(); const rec = this.touchRec(db, u); rec.answers = rec.answers || {}; rec.answers[id] = val; this.saveDB(db); }
+  getAnswer(id) { const u = this.cu(); if (!u) return null; const rec = this.getRec(u.nim); return rec.answers ? rec.answers[id] : null; }
+  setAngket(name, val) { const u = this.cu(); if (!u) return; const db = this.getDB(); const rec = this.touchRec(db, u); rec.angket = rec.angket || {}; rec.angket[name] = val; this.saveDB(db); }
+  getAngket(name) { const u = this.cu(); if (!u) return null; const rec = this.getRec(u.nim); return rec.angket ? rec.angket[name] : null; }
+  clearAngket(name) { const u = this.cu(); if (!u) return; const db = this.getDB(); const rec = db[u.nim]; if (!rec || !rec.angket) return; delete rec.angket[name]; rec.updated = Date.now(); this.saveDB(db); }
+  setQuiz(qid, val) { const u = this.cu(); if (!u) return; const db = this.getDB(); const rec = this.touchRec(db, u); rec.quiz = rec.quiz || {}; rec.quiz[qid] = val; this.saveDB(db); }
+  getQuiz(qid) { const u = this.cu(); if (!u) return null; const rec = this.getRec(u.nim); return rec.quiz ? rec.quiz[qid] : null; }
+  async cloudMergeOnLogin(nim) {
+    try {
+      if (!window.EcbookCloud || !window.EcbookCloud.ready()) return;
+      const cloudRec = await window.EcbookCloud.pull(nim);
+      if (!cloudRec) { this.cloudPushNow(nim); return; }
+      const db = this.getDB();
+      const localRec = db[nim] || {};
+      const cu = cloudRec.updated || 0, lu = localRec.updated || 0;
+      const base = cu >= lu ? [localRec, cloudRec] : [cloudRec, localRec];
+      const merged = Object.assign({}, base[0], base[1], {
+        answers: Object.assign({}, base[0].answers, base[1].answers),
+        quiz: Object.assign({}, base[0].quiz, base[1].quiz),
+        angket: Object.assign({}, base[0].angket, base[1].angket),
+        scores: Object.assign({}, base[0].scores, base[1].scores)
+      });
+      db[nim] = merged;
+      this.saveDB(db);
+      this.cloudPushNow(nim);
+    } catch (e) {}
+  }
+  cloudPushNow(nim, keepalive) {
+    try {
+      if (!window.EcbookCloud || !window.EcbookCloud.ready()) return;
+      const rec = this.getRec(nim);
+      if (rec && Object.keys(rec).length) window.EcbookCloud.push(nim, rec, keepalive);
+    } catch (e) {}
+  }
+  async cloudPullAllMerge() {
+    try {
+      if (!window.EcbookCloud || !window.EcbookCloud.ready()) return;
+      const cloud = await window.EcbookCloud.pullAll();
+      const db = this.getDB();
+      Object.keys(cloud).forEach((nim) => {
+        const c = cloud[nim] || {}, l = db[nim] || {};
+        const cu = c.updated || 0, lu = l.updated || 0;
+        const base = cu >= lu ? [l, c] : [c, l];
+        db[nim] = Object.assign({}, base[0], base[1], {
+          answers: Object.assign({}, base[0].answers, base[1].answers),
+          quiz: Object.assign({}, base[0].quiz, base[1].quiz),
+          angket: Object.assign({}, base[0].angket, base[1].angket),
+          scores: Object.assign({}, base[0].scores, base[1].scores)
+        });
+      });
+      this.saveDB(db);
+    } catch (e) {}
+  }
+  async cloudMergeGates() {
+    try {
+      if (!window.EcbookCloud || !window.EcbookCloud.ready()) return;
+      const g = await window.EcbookCloud.pullGates();
+      if (g) { this.setGates(g); this.applyGates(); }
+    } catch (e) {}
+  }
+
+  buildNoteLabels() {
+    this.noteLabels = {};
+    document.querySelectorAll('textarea[data-note]').forEach((t) => {
+      const id = t.getAttribute('data-note');
+      let label = '';
+      let node = t.previousElementSibling;
+      while (node) { const tx = (node.innerText || '').trim(); if (tx) { label = tx; break; } node = node.previousElementSibling; }
+      if (!label) { const c = t.closest('div,li'); if (c) label = (c.innerText || '').trim(); }
+      const chap = t.closest('[data-chapter]');
+      const chapId = chap ? (chap.getAttribute('data-screen-label') || chap.id) : (t.closest('[id]') ? t.closest('[id]').id : '');
+      this.noteLabels[id] = { label: label.replace(/\s+/g, ' ').slice(0, 150) || id, chap: chapId };
+    });
+  }
+
+  checkGateComplete() {
+    const quizzes = document.querySelectorAll('[data-quiz]');
+    const answeredQuiz = [...quizzes].filter((q) => q.getAttribute('data-answered') === '1').length;
+    const essays = document.querySelectorAll('[data-gate-essay]');
+    const answeredEssay = [...essays].filter((t) => t.value && t.value.trim().length > 0).length;
+    return { total: quizzes.length + essays.length, answered: answeredQuiz + answeredEssay };
+  }
+  updateGate() {
+    const btn = document.querySelector('[data-gate]');
+    if (!btn) return;
+    const { total, answered } = this.checkGateComplete();
+    const hint = document.querySelector('[data-gate-hint]');
+    const lbl = btn.querySelector('[data-lbl]');
+    if (total > 0 && answered >= total) {
+      btn.disabled = false;
+      btn.style.background = '#fff'; btn.style.color = 'var(--teal-d)'; btn.style.cursor = 'pointer'; btn.style.opacity = '1';
+      if (lbl) lbl.textContent = btn.getAttribute('data-label-show');
+      if (hint) hint.style.display = 'none';
+    } else {
+      btn.disabled = true;
+      btn.style.background = '#f0f2f1'; btn.style.color = '#9aa5a3'; btn.style.cursor = 'not-allowed'; btn.style.opacity = '.75';
+      if (lbl) lbl.textContent = '\ud83d\udd12 Tampilkan Pedoman Jawaban';
+      if (hint) { hint.style.display = 'block'; hint.textContent = 'Jawab semua soal (3 objektif + 2 esai) dahulu untuk membuka pedoman jawaban. (' + answered + '/' + total + ' terjawab)'; }
+    }
+  }
+  renderQuizVisual(quiz, chosenIdx) {
+    const opts = [...quiz.querySelectorAll('[data-opt]')];
+    opts.forEach((o, i) => {
+      o.style.cursor = 'default';
+      const isC = o.getAttribute('data-correct') === '1';
+      const mk = o.querySelector('[data-mark]');
+      if (isC) { o.style.background = '#e6f6ec'; o.style.borderColor = '#2f8f5b'; o.style.color = '#1c5f39'; if (mk) mk.textContent = '✓'; }
+      else if (i === chosenIdx) { o.style.background = '#fbe9e6'; o.style.borderColor = '#cf503b'; o.style.color = '#8f2c1e'; if (mk) mk.textContent = '✕'; }
+      else { o.style.opacity = '0.6'; }
+    });
+    const correctIdx = opts.findIndex((o) => o.getAttribute('data-correct') === '1');
+    const correct = chosenIdx === correctIdx;
+    const fb = quiz.querySelector('[data-feedback]');
+    if (fb) {
+      fb.style.display = 'block';
+      fb.style.background = correct ? '#e6f6ec' : '#fbe9e6';
+      fb.style.color = correct ? '#1c5f39' : '#8f2c1e';
+      fb.style.borderColor = correct ? '#bfe6cd' : '#f0c9c2';
+      const good = fb.getAttribute('data-fb-correct') || 'Tepat!';
+      const bad = fb.getAttribute('data-fb-wrong') || 'Belum tepat. Lihat opsi yang ditandai hijau.';
+      const expl = fb.getAttribute('data-expl') || '';
+      fb.innerHTML = '<b>' + (correct ? '✓ ' + good : '✕ ' + bad) + '</b>' + (expl ? '<br>' + expl : '');
+    }
+    quiz.setAttribute('data-answered', '1');
+  }
+  answerQuiz(quiz, opt) {
+    const opts = [...quiz.querySelectorAll('[data-opt]')];
+    const chosenIdx = opts.indexOf(opt);
+    const correctIdx = opts.findIndex((o) => o.getAttribute('data-correct') === '1');
+    const correct = chosenIdx === correctIdx;
+    this.renderQuizVisual(quiz, chosenIdx);
+    this.updateGate();
+    const u = this.cu();
+    const qid = quiz.getAttribute('data-quiz-id');
+    if (u && qid) {
+      try { this.setQuiz(qid, { choice: chosenIdx, correct: correct, ts: Date.now() }); } catch (e) {}
+    }
+  }
+  restoreQuizzes() {
+    document.querySelectorAll('[data-quiz-id]').forEach((quiz) => {
+      const qid = quiz.getAttribute('data-quiz-id');
+      try {
+        const rec = this.getQuiz(qid);
+        if (rec) {
+          this.renderQuizVisual(quiz, rec.choice);
+        } else {
+          quiz.removeAttribute('data-answered');
+          quiz.querySelectorAll('[data-opt]').forEach((o) => { o.style.cursor=''; o.style.background=''; o.style.borderColor=''; o.style.color=''; o.style.opacity=''; const mk=o.querySelector('[data-mark]'); if(mk) mk.textContent=''; });
+          const fb = quiz.querySelector('[data-feedback]'); if (fb) fb.style.display = 'none';
+        }
+      } catch (e) {}
+    });
+  }
+  bindScores() {
+    const modal = document.getElementById('dashModal');
+    if (modal) {
+      modal.addEventListener('input', (e) => {
+        const inp = e.target.closest('[data-score-input]');
+        if (!inp) return;
+        const parts = inp.getAttribute('data-score-input').split('||');
+        const nim = parts[0], id = parts[1];
+        let v = inp.value.trim();
+        if (v !== '') {
+          let n = Number(v);
+          if (isNaN(n)) return;
+          if (n < 1) n = 1; if (n > 4) n = 4;
+          v = String(n);
+        }
+        this.setScore(nim, id, v || null);
+      });
+    }
+  }
+
+  bindAnswers() {
+    document.querySelectorAll('textarea[data-note]').forEach((t) => {
+      t.addEventListener('input', () => {
+        const u = this.cu(); if (!u) return;
+        try { this.setAnswer(t.getAttribute('data-note'), t.value); } catch (e) {}
+        if (t.hasAttribute('data-gate-essay')) this.updateGate();
+      });
+    });
+    document.querySelectorAll('input[type="radio"][data-persist]').forEach((r) => {
+      r.addEventListener('change', () => {
+        const u = this.cu(); if (!u) return;
+        try { this.setAngket(r.name, r.value); } catch (e) {}
+      });
+    });
+  }
+
+  loadAnswers() {
+    document.querySelectorAll('textarea[data-note]').forEach((t) => {
+      try { const v = this.getAnswer(t.getAttribute('data-note')); t.value = v != null ? v : ''; } catch (e) {}
+    });
+    this.restoreQuizzes();
+    this.updateGate();
+    document.querySelectorAll('input[type="radio"][data-persist]').forEach((r) => {
+      try { r.checked = this.getAngket(r.name) === r.value; } catch (e) {}
+    });
+  }
+
+  touch(u) {
+    if (!u || u.role !== 'mhs') return;
+    try {
+      const db = this.getDB();
+      this.touchRec(db, u);
+      this.saveDB(db);
+    } catch (e) {}
+  }
+
+  initSession() {
+    const u = this.cu();
+    if (u) { this.applyAuth(u); } else { this.showGate(); }
+  }
+
+  applyAuth(u) {
+    const gate = document.getElementById('authGate');
+    if (gate) gate.style.display = 'none';
+    const pill = document.getElementById('userPill');
+    if (pill) {
+      pill.style.display = 'flex';
+      document.getElementById('pillName').textContent = u.name + (u.role === 'mhs' && u.nim ? ' · ' + u.nim : '');
+      const role = document.getElementById('pillRole');
+      role.textContent = u.role === 'dosen' ? 'Dosen' : 'Mahasiswa';
+      role.style.background = u.role === 'dosen' ? '#e7edf8' : '#eef6f4';
+      role.style.color = u.role === 'dosen' ? '#375a97' : '#0a5a5d';
+      document.getElementById('pillDash').style.display = u.role === 'dosen' ? 'flex' : 'none';
+      document.getElementById('pillCollect').style.display = u.role === 'mhs' ? 'flex' : 'none';
+    }
+    if (u.role === 'mhs') {
+      this.touch(u);
+      this.cloudMergeOnLogin(u.nim).then(() => this.loadAnswers());
+    }
+    this.applyGates();
+    this.loadAnswers();
+  }
+
+  showGate() { const g = document.getElementById('authGate'); if (g) g.style.display = 'block'; }
+
+  wireAuth() {
+    const setTab = (which) => {
+      const m = which === 'mhs';
+      document.getElementById('formMhs').style.display = m ? 'block' : 'none';
+      document.getElementById('formDosen').style.display = m ? 'none' : 'block';
+      const tm = document.getElementById('tabMhs'), td = document.getElementById('tabDosen');
+      tm.style.background = m ? '#eef6f4' : '#f4f8f7'; tm.style.color = m ? '#0a5a5d' : '#5f7d80'; tm.style.fontWeight = m ? '800' : '700';
+      td.style.background = !m ? '#e7edf8' : '#f4f8f7'; td.style.color = !m ? '#375a97' : '#5f7d80'; td.style.fontWeight = !m ? '800' : '700';
+    };
+    document.getElementById('bookRoot').addEventListener('click', (e) => {
+      const tab = e.target.closest('[data-auth-tab]');
+      if (tab) { setTab(tab.getAttribute('data-auth-tab')); return; }
+      const mm = e.target.closest('[data-mhs-mode]');
+      if (mm) { this.setMhsMode(mm.getAttribute('data-mhs-mode')); return; }
+      const login = e.target.closest('[data-auth-login]');
+      if (login) { this.doLogin(login.getAttribute('data-auth-login')); return; }
+      if (e.target.closest('#pillLogout')) { this.logout(); return; }
+      if (e.target.closest('#pillDash')) { this.openDash(); return; }
+      if (e.target.closest('#pillCollect')) { const u = this.cu(); if (u) this.exportOne(u.nim); return; }
+      if (e.target.closest('#dashClose')) { document.getElementById('dashModal').style.display = 'none'; return; }
+      if (e.target.closest('#dashRefresh')) { this.renderDash(); this.cloudPullAllMerge().then(() => this.renderDash()); return; }
+      if (e.target.closest('#dashCsv')) { this.exportCsv(); return; }
+      if (e.target.closest('#dashClearAll')) { this.delAll(); return; }
+      const gt = e.target.closest('[data-gate-toggle]'); if (gt) { this.toggleGate(gt.getAttribute('data-gate-toggle')); return; }
+      const del = e.target.closest('[data-dash-del]'); if (del) { this.delStudent(del.getAttribute('data-dash-del')); return; }
+      const back = e.target.closest('[data-dash-back]'); if (back) { this.renderDash(); return; }
+      const view = e.target.closest('[data-dash-view]'); if (view) { this.viewStudent(view.getAttribute('data-dash-view')); return; }
+      const exp = e.target.closest('[data-dash-export]'); if (exp) { this.exportOneCsv(exp.getAttribute('data-dash-export')); return; }
+    });
+  }
+
+  setMhsMode(mode) {
+    this.mhsMode = mode;
+    const signup = mode === 'signup';
+    const bSignup = document.getElementById('mhsModeSignup'), bLogin = document.getElementById('mhsModeLogin');
+    bSignup.style.background = signup ? '#fff' : 'transparent'; bSignup.style.color = signup ? 'var(--teal-d)' : 'var(--muted)'; bSignup.style.boxShadow = signup ? '0 2px 6px rgba(0,0,0,.08)' : 'none'; bSignup.style.fontWeight = signup ? '800' : '700';
+    bLogin.style.background = !signup ? '#fff' : 'transparent'; bLogin.style.color = !signup ? 'var(--teal-d)' : 'var(--muted)'; bLogin.style.boxShadow = !signup ? '0 2px 6px rgba(0,0,0,.08)' : 'none'; bLogin.style.fontWeight = !signup ? '800' : '700';
+    document.getElementById('mhsSubmitBtn').textContent = signup ? 'Daftar sebagai Mahasiswa' : 'Masuk sebagai Mahasiswa';
+    document.getElementById('mhsErr').style.display = 'none';
+  }
+
+  doLogin(role) {
+    if (role === 'mhs') {
+      const name = document.getElementById('mhsName').value.trim();
+      const nimRaw = document.getElementById('mhsNim').value.trim();
+      const kelas = document.getElementById('mhsKelas').value.trim();
+      const err = document.getElementById('mhsErr');
+      if (!name || !nimRaw) { err.textContent = 'Nama dan NIM wajib diisi.'; err.style.display = 'block'; return; }
+      const nim = nimRaw.replace(/[^A-Za-z0-9_-]/g, '');
+      if (!nim) { err.textContent = 'NIM hanya boleh huruf/angka.'; err.style.display = 'block'; return; }
+      let reg = {};
+      try { reg = JSON.parse(localStorage.getItem('ecbook:students') || '{}'); } catch (e) {}
+      const existing = reg[nim];
+      if (this.mhsMode === 'signup') {
+        if (existing) { err.textContent = 'NIM ' + nim + ' sudah terdaftar atas nama "' + existing.name + '". Silakan pilih Masuk.'; err.style.display = 'block'; return; }
+        reg[nim] = { name, kelas, registeredAt: Date.now() };
+        try { localStorage.setItem('ecbook:students', JSON.stringify(reg)); } catch (e) {}
+        err.style.display = 'none';
+        const u = { role: 'mhs', name, nim, kelas };
+        localStorage.setItem('ecbook:session', JSON.stringify(u));
+        this.applyAuth(u);
+      } else {
+        if (!existing) { err.textContent = 'NIM ' + nim + ' belum terdaftar. Silakan pilih Daftar Baru.'; err.style.display = 'block'; return; }
+        if (existing.name && existing.name.trim().toLowerCase() !== name.toLowerCase()) { err.textContent = 'Nama tidak sesuai data pendaftaran NIM ini ("' + existing.name + '").'; err.style.display = 'block'; return; }
+        err.style.display = 'none';
+        const u = { role: 'mhs', name: existing.name || name, nim, kelas: kelas || existing.kelas || '' };
+        localStorage.setItem('ecbook:session', JSON.stringify(u));
+        this.applyAuth(u);
+      }
+    } else {
+      const name = document.getElementById('dosenName').value.trim() || 'Dosen';
+      const pass = document.getElementById('dosenPass').value;
+      const err = document.getElementById('dosenErr');
+      if (pass !== this.DOSEN_SECRET) { err.textContent = 'Kode rahasia salah.'; err.style.display = 'block'; return; }
+      err.style.display = 'none';
+      const u = { role: 'dosen', name, nim: 'DOSEN' };
+      localStorage.setItem('ecbook:session', JSON.stringify(u));
+      this.applyAuth(u);
+    }
+    window.scrollTo(0, 0);
+  }
+
+  logout() {
+    try { localStorage.removeItem('ecbook:session'); } catch (e) {}
+    document.getElementById('userPill').style.display = 'none';
+    document.getElementById('dashModal').style.display = 'none';
+    this.loadAnswers();
+    this.showGate();
+    window.scrollTo(0, 0);
+  }
+
+  // ---------- MONITORING ----------
+  getManifest() {
+    return {
+      chapters: {
+        1: { title:'Orientasi & Krisis Air', essays:['b1-esai1','b1-esai2'], quizzes:['b1-q1','b1-q2','b1-q3'], activities:['b1-berpikir','b1-plan','b1-lkm','b1-cpss','b1-pck','b1-monitor','b1-share','b1-stemesd'] },
+        2: { title:'Analisis Air Tercemar', essays:['b2-esai1','b2-esai2'], quizzes:['b2-q1','b2-q2','b2-q3'], activities:['b2-berpikir','b2-plan','b2-lkm','b2-cpss','b2-pck','b2-monitor','b2-share','b2-stemesd'] },
+        3: { title:'Kelistrikan & Elektromagnetik', essays:['b3-esai1','b3-esai2'], quizzes:['b3-q1','b3-q2','b3-q3'], activities:['b3-berpikir','b3-plan','b3-lkm','b3-cpss','b3-pck','b3-monitor','b3-share','b3-stemesd'] },
+        4: { title:'Elektrokimia & Koagulasi', essays:['b4-esai1','b4-esai2'], quizzes:['b4-q1','b4-q2','b4-q3'], activities:['b4-berpikir','b4-plan','b4-lkm','b4-cpss','b4-pck','b4-monitor','b4-share','b4-stemesd'] },
+        5: { title:'Faraday & Efisiensi Energi', essays:['b5-esai1','b5-esai2'], quizzes:['b5-q1','b5-q2','b5-q3'], activities:['b5-berpikir','b5-plan','b5-lkm','b5-cpss','b5-pck','b5-monitor','b5-share','b5-stemesd'] },
+        6: { title:'Desain Alat Berkelanjutan', essays:['b6-esai1','b6-esai2'], quizzes:['b6-q1','b6-q2','b6-q3'], activities:['b6-berpikir','b6-plan','b6-lkm','b6-cpss','b6-pck','b6-monitor','b6-share','b6-stemesd'] },
+        7: { title:'Praktikum & Analisis Data', essays:['b7-esai1','b7-esai2'], quizzes:['b7-q1','b7-q2','b7-q3'], activities:['b7-berpikir','b7-plan','b7-lkm','b7-cpss','b7-pck','b7-monitor','b7-share','b7-stemesd'] },
+        8: { title:'Presentasi, Posttest & Angket', essays:['b8-esai1','b8-esai2'], quizzes:['b8-q1','b8-q2','b8-q3'], activities:['b8-berpikir','b8-lkm','b8-ref-cpss','b8-ref-pck','b8-ref-ea','b8-post-cpss','b8-post-pck','b8-cpss','b8-pck','b8-stemesd'] }
+      },
+      posttest: ['pre-cpss1','pre-cpss2','pre-cpss3','pre-cpss4','pre-cpss5','pre-cpss6','pre-cpss7','pre-pck1','pre-pck2','pre-pck3','pre-pck4','pre-pck5','pre-open1','pre-open2','pre-open3','post-cpss1','post-cpss2','post-cpss3','post-cpss4','post-cpss5','post-cpss6','post-cpss7','post-pck1','post-pck2','post-pck3','post-pck4','post-pck5','post-open1','post-open2','post-open3'],
+      angketTotal: 60
+    };
+  }
+
+  labelFor(id) {
+    const SUF = { berpikir:'Ayo Berpikir', plan:'PjBL F3 · Rencana Proyek', lkm:'Aktivitas/LKM', cpss:'Tantangan CPSS', pck:'Teacher Candidate Corner', monitor:'Monitoring Diri', share:'PjBL F6 · Presentasi', esai1:'Esai 1', esai2:'Esai 2', 'ref-cpss':'Refleksi CPSS', 'ref-pck':'Refleksi PCK', 'ref-ea':'Refleksi EA', 'post-cpss':'Simulasi Posttest CPSS (latihan)', 'post-pck':'Simulasi Posttest PCK (latihan)', stemesd:'Aktivitas Terpadu STEM-ESD' };
+    const PT = { 'pre-cpss1':'Pretest CPSS · Fluency', 'pre-cpss2':'Pretest CPSS · Flexibility', 'pre-cpss3':'Pretest CPSS · Originality', 'pre-cpss4':'Pretest CPSS · Elaboration', 'pre-cpss5':'Pretest CPSS · Problem Identification', 'pre-cpss6':'Pretest CPSS · Solution Planning', 'pre-cpss7':'Pretest CPSS · Solution Implementation', 'pre-pck1':'Pretest PCK · Content Knowledge', 'pre-pck2':'Pretest PCK · Curriculum Knowledge', 'pre-pck3':'Pretest PCK · Instructional Strategies', 'pre-pck4':'Pretest PCK · Student Understanding', 'pre-pck5':'Pretest PCK · Assessment', 'pre-open1':'Pretest EA · Refleksi Terbuka 1', 'pre-open2':'Pretest EA · Refleksi Terbuka 2', 'pre-open3':'Pretest EA · Refleksi Terbuka 3', 'post-cpss1':'Posttest CPSS · Fluency', 'post-cpss2':'Posttest CPSS · Flexibility', 'post-cpss3':'Posttest CPSS · Originality', 'post-cpss4':'Posttest CPSS · Elaboration', 'post-cpss5':'Posttest CPSS · Problem Identification', 'post-cpss6':'Posttest CPSS · Solution Planning', 'post-cpss7':'Posttest CPSS · Solution Implementation', 'post-pck1':'Posttest PCK · Content Knowledge', 'post-pck2':'Posttest PCK · Curriculum Knowledge', 'post-pck3':'Posttest PCK · Instructional Strategies', 'post-pck4':'Posttest PCK · Student Understanding', 'post-pck5':'Posttest PCK · Assessment', 'post-open1':'Posttest EA · Refleksi Terbuka 1', 'post-open2':'Posttest EA · Refleksi Terbuka 2', 'post-open3':'Posttest EA · Refleksi Terbuka 3' };
+    if (PT[id]) return PT[id];
+    const m = id.match(/^b\d+-(.+)$/);
+    if (m && SUF[m[1]]) return SUF[m[1]];
+    return id;
+  }
+
+  listStudents() {
+    const db = this.getDB();
+    return Object.keys(db).map((nim) => {
+      const info = db[nim] || {};
+      return { nim, name: info.name || '(tanpa nama)', kelas: info.kelas || '', updated: info.updated || 0, progress: this.progressFor(nim) };
+    }).sort((a, b) => b.updated - a.updated);
+  }
+
+  collect(nim) {
+    const rec = this.getRec(nim);
+    return { text: rec.answers || {}, radio: rec.angket || {}, quiz: rec.quiz || {} };
+  }
+
+  progressFor(nim) {
+    const man = this.getManifest();
+    const d = this.collect(nim);
+    const chapters = {};
+    let totQuiz = 0, doneQuiz = 0, totEssay = 0, doneEssay = 0, totAct = 0, doneAct = 0;
+    Object.keys(man.chapters).forEach((cn) => {
+      const c = man.chapters[cn];
+      const qDone = c.quizzes.filter((id) => d.quiz[id] != null).length;
+      const eDone = c.essays.filter((id) => d.text[id] && d.text[id].trim()).length;
+      const aDone = c.activities.filter((id) => d.text[id] && d.text[id].trim()).length;
+      totQuiz += c.quizzes.length; doneQuiz += qDone;
+      totEssay += c.essays.length; doneEssay += eDone;
+      totAct += c.activities.length; doneAct += aDone;
+      const chapTotal = c.quizzes.length + c.essays.length + c.activities.length;
+      const chapDone = qDone + eDone + aDone;
+      chapters[cn] = { title: c.title, qDone, qTotal: c.quizzes.length, eDone, eTotal: c.essays.length, aDone, aTotal: c.activities.length, pct: chapTotal ? Math.round(chapDone / chapTotal * 100) : 0 };
+    });
+    const postDone = man.posttest.filter((id) => d.text[id] && d.text[id].trim()).length;
+    const postTotal = man.posttest.length;
+    const angketDone = Object.keys(d.radio).length;
+    const angketTotal = man.angketTotal;
+    const grandTotal = totQuiz + totEssay + totAct + postTotal + angketTotal;
+    const grandDone = doneQuiz + doneEssay + doneAct + postDone + angketDone;
+    return {
+      chapters,
+      quiz: { done: doneQuiz, total: totQuiz }, essay: { done: doneEssay, total: totEssay }, activity: { done: doneAct, total: totAct },
+      posttest: { done: postDone, total: postTotal }, angket: { done: angketDone, total: angketTotal },
+      overallPct: grandTotal ? Math.round(grandDone / grandTotal * 100) : 0
+    };
+  }
+
+  fmtDate(ts) { if (!ts) return '—'; const d = new Date(ts); return d.toLocaleDateString('id-ID', { day: '2-digit', month: 'short' }) + ' ' + d.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' }); }
+  esc(s) { return (s == null ? '' : String(s)).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+  openDash() {
+    document.getElementById('dashModal').style.display = 'block';
+    this.renderDash();
+    this.cloudPullAllMerge().then(() => this.renderDash());
+  }
+
+
+  getGates() {
+    try { return Object.assign({ pretest: false, posttest: false }, JSON.parse(localStorage.getItem('ecbook:gates') || '{}')); } catch (e) { return { pretest: false, posttest: false }; }
+  }
+  setGates(g) { try { localStorage.setItem('ecbook:gates', JSON.stringify(g)); } catch (e) {} }
+  toggleGate(key) {
+    const g = this.getGates();
+    g[key] = !g[key];
+    this.setGates(g);
+    this.applyGates();
+    this.renderDash();
+    if (window.EcbookCloud) window.EcbookCloud.pushGates(g);
+  }
+  applyGates() {
+    const gates = this.getGates();
+    const u = this.cu();
+    const isDosen = u && u.role === 'dosen';
+    ['pretest', 'posttest'].forEach((key) => {
+      const locked = document.getElementById(key + '-locked');
+      const content = document.getElementById(key + '-content');
+      if (!locked || !content) return;
+      const open = isDosen || gates[key];
+      locked.style.display = open ? 'none' : 'block';
+      content.style.display = open ? 'block' : 'none';
+    });
+  }
+
+  renderDash() {
+    const body = document.getElementById('dashBody');
+    if (!body) return;
+    const gates = this.getGates();
+    const gateBtn = (key, label) => {
+      const open = gates[key];
+      return '<button data-gate-toggle="' + key + '" style="padding:9px 16px; border:1px solid ' + (open ? '#bfe3cd' : 'var(--line)') + '; border-radius:9px; background:' + (open ? '#eaf7ee' : '#fff') + '; color:' + (open ? 'var(--green)' : 'var(--muted)') + '; font-weight:700; font-family:inherit; font-size:13px; cursor:pointer; display:flex; align-items:center; gap:6px;">' + (open ? '🔓' : '🔒') + ' ' + label + ': ' + (open ? 'Terbuka' : 'Tertutup') + '</button>';
+    };
+    const gateHtml = '<div style="background:#fff; border:1px solid var(--line); border-radius:12px; padding:14px 16px; margin-bottom:16px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;"><b style="font-size:13px; color:var(--ink); margin-right:4px;">Akses Mahasiswa:</b>' + gateBtn('pretest', 'Pretest') + gateBtn('posttest', 'Posttest') + '</div>';
+    const students = this.listStudents();
+    const man = this.getManifest();
+    const totQuiz = Object.values(man.chapters).reduce((a, c) => a + c.quizzes.length, 0);
+    const totEssay = Object.values(man.chapters).reduce((a, c) => a + c.essays.length, 0);
+    const totAct = Object.values(man.chapters).reduce((a, c) => a + c.activities.length, 0);
+    let html = gateHtml + '<div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px;">' +
+      '<div style="flex:1; min-width:110px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px;"><div style="font:800 22px/1 Newsreader; color:#0e8388;">' + students.length + '</div><div style="font-size:11px; color:var(--muted);">Mahasiswa terdata</div></div>' +
+      '<div style="flex:1; min-width:110px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px;"><div style="font:800 22px/1 Newsreader; color:#375a97;">' + totQuiz + '</div><div style="font-size:11px; color:var(--muted);">Soal objektif (8 bab)</div></div>' +
+      '<div style="flex:1; min-width:110px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px;"><div style="font:800 22px/1 Newsreader; color:#6a4c93;">' + totEssay + '</div><div style="font-size:11px; color:var(--muted);">Esai evaluasi bab</div></div>' +
+      '<div style="flex:1; min-width:110px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px;"><div style="font:800 22px/1 Newsreader; color:#c47f22;">' + totAct + '</div><div style="font-size:11px; color:var(--muted);">Aktivitas/LKM</div></div>' +
+      '<div style="flex:1; min-width:110px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px;"><div style="font:800 22px/1 Newsreader; color:#cf503b;">24</div><div style="font-size:11px; color:var(--muted);">Esai Pretest+Posttest</div></div>' +
+      '<div style="flex:1; min-width:110px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px;"><div style="font:800 22px/1 Newsreader; color:#2f8f5b;">60</div><div style="font-size:11px; color:var(--muted);">Angket EA (pre+post)</div></div></div>';
+
+    if (!students.length) {
+      html += '<div style="background:#fff; border:1px dashed var(--line); border-radius:12px; padding:30px; text-align:center; color:var(--muted); font-size:14px;">Belum ada data mahasiswa pada perangkat ini.<br>Mahasiswa dapat login &amp; mengerjakan, atau impor berkas jawaban (JSON) yang mereka kumpulkan.</div>';
+      body.innerHTML = html;
+      return;
+    }
+
+    const barCell = (done, total, color) => {
+      const pct = total ? Math.round(done / total * 100) : 0;
+      return '<div style="font-weight:700;">' + done + '/' + total + '</div><div style="height:5px; width:50px; margin:3px auto 0; background:#e2ece9; border-radius:3px; overflow:hidden;"><div style="height:100%; width:' + pct + '%; background:' + color + ';"></div></div>';
+    };
+
+    html += '<div style="overflow-x:auto; background:#fff; border:1px solid var(--line); border-radius:12px;"><table style="width:100%; border-collapse:collapse; font-size:12.5px; min-width:920px;"><thead><tr style="background:#0c2a30; color:#fff; text-align:left;">' +
+      '<th style="padding:10px 12px;">Mahasiswa</th><th style="padding:10px 12px;">Kelas</th>' +
+      '<th style="padding:10px 12px; text-align:center;">Keseluruhan</th>' +
+      '<th style="padding:10px 12px; text-align:center;">Objektif</th>' +
+      '<th style="padding:10px 12px; text-align:center;">Esai Bab</th>' +
+      '<th style="padding:10px 12px; text-align:center;">Aktivitas</th>' +
+      '<th style="padding:10px 12px; text-align:center;">Posttest</th>' +
+      '<th style="padding:10px 12px; text-align:center;">Angket</th>' +
+      '<th style="padding:10px 12px;">Terakhir</th><th style="padding:10px 12px;"></th></tr></thead><tbody>';
+    students.forEach((s, i) => {
+      const p = s.progress;
+      const overallColor = p.overallPct >= 67 ? '#2f8f5b' : p.overallPct >= 34 ? '#c47f22' : '#cf503b';
+      html += '<tr style="border-top:1px solid var(--line); ' + (i % 2 ? 'background:#f7fbfa;' : '') + '">' +
+        '<td style="padding:9px 12px;"><b>' + this.esc(s.name) + '</b><div style="font-size:11px; color:var(--muted);">' + this.esc(s.nim) + '</div></td>' +
+        '<td style="padding:9px 12px; color:var(--muted);">' + (this.esc(s.kelas) || '—') + '</td>' +
+        '<td style="padding:9px 12px; text-align:center;"><div style="font-weight:800; color:' + overallColor + ';">' + p.overallPct + '%</div><div style="height:6px; width:62px; margin:3px auto 0; background:#e2ece9; border-radius:3px; overflow:hidden;"><div style="height:100%; width:' + p.overallPct + '%; background:' + overallColor + ';"></div></div></td>' +
+        '<td style="padding:9px 12px; text-align:center;">' + barCell(p.quiz.done, p.quiz.total, '#375a97') + '</td>' +
+        '<td style="padding:9px 12px; text-align:center;">' + barCell(p.essay.done, p.essay.total, '#6a4c93') + '</td>' +
+        '<td style="padding:9px 12px; text-align:center;">' + barCell(p.activity.done, p.activity.total, '#c47f22') + '</td>' +
+        '<td style="padding:9px 12px; text-align:center;">' + barCell(p.posttest.done, p.posttest.total, '#cf503b') + '</td>' +
+        '<td style="padding:9px 12px; text-align:center;">' + barCell(p.angket.done, p.angket.total, '#2f8f5b') + '</td>' +
+        '<td style="padding:9px 12px; color:var(--muted); font-size:12px;">' + this.fmtDate(s.updated) + '</td>' +
+        '<td style="padding:9px 12px; white-space:nowrap;"><button data-dash-view="' + this.esc(s.nim) + '" style="padding:6px 10px; border:1px solid var(--line); border-radius:8px; background:#fff; color:var(--teal-d); font-weight:700; font-size:12px; cursor:pointer;">Lihat</button> <button data-dash-export="' + this.esc(s.nim) + '" style="padding:6px 10px; border:1px solid var(--line); border-radius:8px; background:#fff; color:var(--indigo); font-weight:700; font-size:12px; cursor:pointer;">⇩</button> <button data-dash-del="' + this.esc(s.nim) + '" title="Hapus data mahasiswa ini" style="padding:6px 10px; border:1px solid #f0c9c2; border-radius:8px; background:#fff; color:var(--coral); font-weight:700; font-size:12px; cursor:pointer;">🗑</button></td></tr>';
+    });
+    html += '</tbody></table></div>';
+    body.innerHTML = html;
+  }
+
+  viewStudent(nim) {
+    const body = document.getElementById('dashBody');
+    const students = this.listStudents();
+    const s = students.find((x) => x.nim === nim) || { name: nim, nim, kelas: '', progress: this.progressFor(nim) };
+    const p = s.progress;
+    const man = this.getManifest();
+    const d = this.collect(nim);
+    let html = '<button data-dash-back style="padding:8px 14px; border:1px solid var(--line); border-radius:9px; background:#fff; color:var(--teal-d); font-weight:700; font-size:13px; cursor:pointer; margin-bottom:14px;">← Kembali ke daftar</button>';
+    html += '<div style="background:#fff; border:1px solid var(--line); border-radius:12px; padding:16px 18px; margin-bottom:14px;"><div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px;"><div><div style="font:800 18px/1.1 Newsreader; color:var(--ink);">' + this.esc(s.name) + '</div><div style="font-size:12.5px; color:var(--muted); margin-top:2px;">NIM ' + this.esc(s.nim) + (s.kelas ? ' · ' + this.esc(s.kelas) : '') + '</div><button data-dash-export="' + this.esc(nim) + '" style="margin-top:10px; padding:7px 14px; border:none; border-radius:9px; background:#2f8f5b; color:#fff; font-weight:700; font-size:12.5px; cursor:pointer;">⇩ Unduh jawaban (CSV)</button></div>' +
+      '<div style="text-align:center;"><div style="font:800 30px/1 Newsreader; color:' + (p.overallPct >= 67 ? '#2f8f5b' : p.overallPct >= 34 ? '#c47f22' : '#cf503b') + ';">' + p.overallPct + '%</div><div style="font-size:11px; color:var(--muted);">Progres keseluruhan</div></div></div></div>';
+
+    html += '<div style="background:#fff; border:1px solid var(--line); border-radius:12px; padding:14px 16px; margin-bottom:14px;"><div style="font:700 12px/1 Mulish; color:var(--ink); margin-bottom:10px;">Progres per Pertemuan</div><div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr)); gap:8px;">';
+    Object.keys(p.chapters).forEach((cn) => {
+      const c = p.chapters[cn];
+      const col = c.pct >= 67 ? '#2f8f5b' : c.pct >= 34 ? '#c47f22' : '#cf503b';
+      html += '<div style="text-align:center; border:1px solid var(--line); border-radius:9px; padding:8px 6px;"><div style="font:800 11px/1 Mulish; color:var(--muted);">BAB ' + cn + '</div><div style="font:800 16px/1.3 Newsreader; color:' + col + '; margin-top:3px;">' + c.pct + '%</div><div style="height:4px; background:#e2ece9; border-radius:3px; overflow:hidden; margin-top:4px;"><div style="height:100%; width:' + c.pct + '%; background:' + col + ';"></div></div></div>';
+    });
+    html += '</div></div>';
+
+    Object.keys(man.chapters).forEach((cn) => {
+      const c = man.chapters[cn];
+      const cp = p.chapters[cn];
+      html += '<div style="background:#fff; border:1px solid var(--line); border-radius:12px; padding:6px 0; margin-bottom:12px;"><div style="font:700 13px/1 Mulish; color:var(--teal-d); padding:10px 16px; display:flex; justify-content:space-between;"><span>Bab ' + cn + ' · ' + this.esc(c.title) + '</span><span style="color:var(--muted); font-weight:600;">' + cp.pct + '%</span></div>';
+      c.quizzes.forEach((qid, qi) => {
+        const rec = d.quiz[qid];
+        html += '<div style="padding:9px 16px; border-top:1px solid var(--line); display:flex; justify-content:space-between; align-items:center;"><div style="font-size:12.5px; color:var(--body);">Soal Objektif ' + (qi + 1) + '</div>' +
+          (rec ? '<span style="font-size:11.5px; font-weight:700; padding:3px 9px; border-radius:999px; background:' + (rec.correct ? '#e6f6ec' : '#fbe9e6') + '; color:' + (rec.correct ? '#1c5f39' : '#8f2c1e') + ';">' + (rec.correct ? '✓ Benar' : '✕ Salah') + '</span>' : '<span style="font-size:11.5px; color:#b9c6c3; font-style:italic;">belum dijawab</span>') + '</div>';
+      });
+      [...c.essays, ...c.activities].forEach((id) => {
+        const val = d.text[id];
+        const has = val && val.trim();
+        html += '<div style="padding:10px 16px; border-top:1px solid var(--line);"><div style="font-size:12px; color:var(--muted); margin-bottom:4px;">' + this.esc(this.labelFor(id)) + '</div>' +
+          (has ? '<div style="font-size:13.5px; white-space:pre-wrap; color:var(--body);">' + this.esc(val) + '</div>' : '<div style="font-size:12.5px; color:#b9c6c3; font-style:italic;">— belum dijawab —</div>') + '</div>';
+      });
+      html += '</div>';
+    });
+
+    html += this.renderPrePost(nim, d);
+    body.innerHTML = html;
+  }
+
+  getScore(nim, id) { const rec = this.getRec(nim); return rec.scores && rec.scores[id] != null ? rec.scores[id] : null; }
+  setScore(nim, id, val) {
+    try {
+      const db = this.getDB();
+      const rec = db[nim] || {};
+      rec.scores = rec.scores || {};
+      if (val === '' || val == null) delete rec.scores[id]; else rec.scores[id] = Number(val);
+      rec.updated = Date.now();
+      db[nim] = rec;
+      this.saveDB(db);
+    } catch (e) {}
+  }
+
+  renderPrePost(nim, d) {
+    const CPSS_LABELS = ['Fluency', 'Flexibility', 'Originality', 'Elaboration', 'Problem Identification', 'Solution Planning', 'Solution Implementation'];
+    const PCK_LABELS = ['Content Knowledge', 'Curriculum Knowledge', 'Instructional Strategies', 'Student Understanding', 'Assessment'];
+    const DIM_NAME = { isu: 'Pengetahuan isu', sikap: 'Sikap', perilaku: 'Perilaku', praktik: 'Praktik berkelanjutan', gaya: 'Ubah gaya hidup' };
+
+    const answerCell = (val) => {
+      const has = val && val.trim();
+      return has ? '<div style="font-size:13px; white-space:pre-wrap; color:var(--body);">' + this.esc(val) + '</div>' : '<div style="font-size:12px; color:#b9c6c3; font-style:italic;">— belum dijawab —</div>';
+    };
+    const scoreInput = (id) => {
+      const v = this.getScore(nim, id);
+      return '<input type="number" min="1" max="4" step="1" data-score-input="' + this.esc(nim) + '||' + this.esc(id) + '" placeholder="—" value="' + (v != null ? v : '') + '" style="width:44px; margin-top:6px; padding:5px 7px; border:1px solid var(--line); border-radius:7px; font-family:inherit; font-size:12.5px; text-align:center;">';
+    };
+
+    let html = '<div style="background:#fff; border:1px solid var(--line); border-radius:12px; padding:16px 18px; margin-bottom:14px;">' +
+      '<div style="font:800 16px/1.2 Newsreader; color:var(--ink); margin-bottom:2px;">Pretest &amp; Posttest · Monitoring &amp; Penilaian</div>' +
+      '<div style="font-size:12.5px; color:var(--muted);">Bandingkan jawaban &amp; isi kolom skor (1–4) untuk tiap indikator esai CPSS/PCK. Skor EA dihitung otomatis dari angket.</div></div>';
+
+    const essayCompare = (title, color, labels, keyPrefix) => {
+      let h = '<div style="background:#fff; border:1px solid var(--line); border-radius:12px; padding:6px 0; margin-bottom:12px;"><div style="font:700 13px/1 Mulish; color:' + color + '; padding:10px 16px;">' + title + '</div>';
+      labels.forEach((label, i) => {
+        const preId = 'pre-' + keyPrefix + (i + 1), postId = 'post-' + keyPrefix + (i + 1);
+        h += '<div style="padding:10px 16px; border-top:1px solid var(--line);"><div style="font-size:12px; font-weight:700; color:var(--ink); margin-bottom:6px;">' + (i + 1) + '. ' + label + '</div>' +
+          '<div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">' +
+          '<div><div style="font-size:10.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:3px;">Pretest</div>' + answerCell(d.text[preId]) + scoreInput(preId) + '</div>' +
+          '<div><div style="font-size:10.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:3px;">Posttest</div>' + answerCell(d.text[postId]) + scoreInput(postId) + '</div>' +
+          '</div></div>';
+      });
+      const preScores = labels.map((_, i) => this.getScore(nim, 'pre-' + keyPrefix + (i + 1))).filter((v) => v != null);
+      const postScores = labels.map((_, i) => this.getScore(nim, 'post-' + keyPrefix + (i + 1))).filter((v) => v != null);
+      const avg = (arr) => arr.length ? (arr.reduce((a, b) => a + b, 0) / arr.length) : null;
+      const preAvg = avg(preScores), postAvg = avg(postScores);
+      h += '<div style="padding:10px 16px; border-top:1px solid var(--line); background:#f9fcfb; display:flex; justify-content:space-between; font-size:12.5px;"><span style="font-weight:700; color:var(--ink);">Rata-rata skor</span><span>Pretest <b>' + (preAvg != null ? preAvg.toFixed(2) : '—') + '</b> &nbsp;→&nbsp; Posttest <b>' + (postAvg != null ? postAvg.toFixed(2) : '—') + '</b>' + (preAvg != null && postAvg != null ? ' <span style="color:' + (postAvg >= preAvg ? 'var(--green)' : 'var(--coral)') + '; font-weight:700;">(' + (postAvg >= preAvg ? '+' : '') + (postAvg - preAvg).toFixed(2) + ')</span>' : '') + '</span></div>';
+      h += '</div>';
+      return h;
+    };
+
+    html += essayCompare('Esai CPSS (7 Indikator)', 'var(--violet)', CPSS_LABELS, 'cpss');
+    html += essayCompare('Esai PCK (5 Indikator)', 'var(--indigo)', PCK_LABELS, 'pck');
+
+    // Refleksi terbuka EA (tanpa skor)
+    html += '<div style="background:#fff; border:1px solid var(--line); border-radius:12px; padding:6px 0; margin-bottom:12px;"><div style="font:700 13px/1 Mulish; color:var(--amber); padding:10px 16px;">Refleksi Terbuka EA (3 Butir)</div>';
+    for (let i = 1; i <= 3; i++) {
+      html += '<div style="padding:10px 16px; border-top:1px solid var(--line);"><div style="font-size:12px; font-weight:700; color:var(--ink); margin-bottom:6px;">' + i + '.</div>' +
+        '<div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">' +
+        '<div><div style="font-size:10.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:3px;">Pretest</div>' + answerCell(d.text['pre-open' + i]) + '</div>' +
+        '<div><div style="font-size:10.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:3px;">Posttest</div>' + answerCell(d.text['post-open' + i]) + '</div>' +
+        '</div></div>';
+    }
+    html += '</div>';
+
+    // EA angket score compare
+    const scoreEa = (prefix) => {
+      const dims = { isu: 0, sikap: 0, perilaku: 0, praktik: 0, gaya: 0 };
+      let answered = 0;
+      for (let n = 1; n <= 30; n++) {
+        const name = prefix + '-ea' + n;
+        const v = d.radio[name];
+        if (v == null) continue;
+        answered++;
+        const nv = Number(v) || 0;
+        if (n <= 6) dims.isu += nv; else if (n <= 12) dims.sikap += nv; else if (n <= 18) dims.perilaku += nv; else if (n <= 24) dims.praktik += nv; else dims.gaya += nv;
+      }
+      const sum = Object.values(dims).reduce((a, b) => a + b, 0);
+      return { dims, sum, answered, pct: Math.round((sum / 120) * 100) };
+    };
+    const preEa = scoreEa('pre'), postEa = scoreEa('post');
+    html += '<div style="background:#fff; border:1px solid var(--line); border-radius:12px; padding:14px 16px;"><div style="font:700 13px/1 Mulish; color:var(--green); margin-bottom:10px;">Angket Environmental Awareness (EA) · Pretest vs Posttest</div>' +
+      '<div style="display:flex; justify-content:space-between; font-size:13px; padding:6px 0; border-bottom:1px solid var(--line); margin-bottom:6px;"><span style="font-weight:700;">Skor total (dari 120)</span><span>Pretest <b>' + preEa.sum + '</b> (' + preEa.pct + '%, ' + preEa.answered + '/30 terjawab) &nbsp;→&nbsp; Posttest <b>' + postEa.sum + '</b> (' + postEa.pct + '%, ' + postEa.answered + '/30 terjawab)' + (preEa.answered && postEa.answered ? ' <span style="color:' + (postEa.sum >= preEa.sum ? 'var(--green)' : 'var(--coral)') + '; font-weight:700;">(' + (postEa.sum >= preEa.sum ? '+' : '') + (postEa.sum - preEa.sum) + ')</span>' : '') + '</span></div>';
+    Object.keys(DIM_NAME).forEach((k) => {
+      html += '<div style="display:flex; justify-content:space-between; font-size:13px; padding:4px 0; border-bottom:1px dashed var(--line);"><span>' + DIM_NAME[k] + '</span><span>' + preEa.dims[k] + ' / 24 &nbsp;→&nbsp; ' + postEa.dims[k] + ' / 24</span></div>';
+    });
+    html += '</div>';
+
+    return html;
+  }
+
+  delStudent(nim) {
+    const s = this.listStudents().find((x) => x.nim === nim);
+    const nm = s ? s.name : nim;
+    if (!window.confirm('Hapus semua data mahasiswa "' + nm + '" (NIM ' + nim + ')?\nSeluruh jawaban, kuis, angket, & skor akan reset ke 0. Tindakan ini tidak dapat dibatalkan.')) return;
+    try {
+      const db = this.getDB();
+      delete db[nim];
+      this.saveDB(db);
+    } catch (e) {}
+    if (window.EcbookCloud) window.EcbookCloud.deleteOne(nim);
+    this.renderDash();
+  }
+
+  delAll() {
+    const n = this.listStudents().length;
+    if (!n) { window.alert('Belum ada data mahasiswa untuk dihapus.'); return; }
+    if (!window.confirm('Hapus SELURUH data ' + n + ' mahasiswa pada perangkat ini?\nSemua jawaban, kuis, angket, & skor akan reset ke 0 -- termasuk data di cloud. Tindakan ini tidak dapat dibatalkan.')) return;
+    try {
+      this.saveDB({});
+    } catch (e) {}
+    if (window.EcbookCloud) window.EcbookCloud.deleteAll();
+    this.renderDash();
+  }
+
+  download(filename, text, type) {
+    try {
+      const blob = new Blob([text], { type: type || 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = filename; document.body.appendChild(a); a.click();
+      setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 400);
+    } catch (e) {}
+  }
+
+  exportOne(nim) {
+    const rec = this.getRec(nim);
+    const u = this.cu();
+    const payload = { app: 'ecbook', nim, name: rec.name || (u && u.nim === nim ? u.name : nim), kelas: rec.kelas || (u ? u.kelas : '') || '', updated: rec.updated || Date.now(), answers: rec.answers || {}, angket: rec.angket || {}, quiz: rec.quiz || {}, scores: rec.scores || {} };
+    this.download('jawaban_' + nim + '.json', JSON.stringify(payload, null, 2));
+  }
+
+  exportCsv() {
+    const rows = [['NIM', 'Nama', 'Kelas', 'Tipe', 'Butir', 'Jawaban']];
+    this.listStudents().forEach((s) => {
+      const d = this.collect(s.nim);
+      Object.keys(d.text).forEach((id) => { const v = d.text[id]; if (v && v.trim()) rows.push([s.nim, s.name, s.kelas, 'esai/aktivitas', this.labelFor(id), v]); });
+      Object.keys(d.quiz).forEach((id) => { const rec = d.quiz[id]; rows.push([s.nim, s.name, s.kelas, 'objektif', id, rec && rec.correct ? 'Benar' : 'Salah']); });
+      Object.keys(d.radio).forEach((name) => rows.push([s.nim, s.name, s.kelas, 'angket', name, d.radio[name]]));
+    });
+    const csv = rows.map((r) => r.map((c) => '"' + String(c == null ? '' : c).replace(/"/g, '""').replace(/\r?\n/g, ' ') + '"').join(',')).join('\r\n');
+    this.download('rekap_jawaban_mahasiswa.csv', '\ufeff' + csv, 'text/csv;charset=utf-8');
+  }
+
+  exportOneCsv(nim) {
+    const s = this.listStudents().find((x) => x.nim === nim) || { nim, name: nim, kelas: '' };
+    const d = this.collect(nim);
+    const rows = [['NIM', 'Nama', 'Kelas', 'Tipe', 'Butir', 'Jawaban']];
+    Object.keys(d.text).forEach((id) => { const v = d.text[id]; if (v && v.trim()) rows.push([s.nim, s.name, s.kelas, 'esai/aktivitas', this.labelFor(id), v]); });
+    Object.keys(d.quiz).forEach((id) => { const rec = d.quiz[id]; rows.push([s.nim, s.name, s.kelas, 'objektif', id, rec && rec.correct ? 'Benar' : 'Salah']); });
+    Object.keys(d.radio).forEach((name) => rows.push([s.nim, s.name, s.kelas, 'angket', name, d.radio[name]]));
+    const csv = rows.map((r) => r.map((c) => '"' + String(c == null ? '' : c).replace(/"/g, '""').replace(/\r?\n/g, ' ') + '"').join(',')).join('\r\n');
+    this.download('jawaban_' + nim + '.csv', '\ufeff' + csv, 'text/csv;charset=utf-8');
+  }
+
+  wireClicks() {
+    document.getElementById('bookRoot').addEventListener('click', (e) => {
+      // youtube lite-embed -> load player on click
+      const yt = e.target.closest('[data-yt-holder]');
+      if (yt && !yt.querySelector('iframe')) {
+        const id = yt.getAttribute('data-yt');
+        yt.innerHTML = '<iframe style="position:absolute; inset:0; width:100%; height:100%; border:0;" src="https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1" title="YouTube video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+        return;
+      }
+      // reveal toggles
+      const rev = e.target.closest('[data-reveal]');
+      if (rev) {
+        const el = document.getElementById(rev.getAttribute('data-reveal'));
+        if (el) {
+          const open = el.getAttribute('data-open') === '1';
+          el.style.display = open ? 'none' : 'block';
+          el.setAttribute('data-open', open ? '0' : '1');
+          const lbl = rev.getAttribute(open ? 'data-label-show' : 'data-label-hide');
+          if (lbl) rev.querySelector('[data-lbl]') ? (rev.querySelector('[data-lbl]').textContent = lbl) : (rev.textContent = lbl);
+        }
+        return;
+      }
+      // quiz options
+      const opt = e.target.closest('[data-opt]');
+      if (opt) {
+        const quiz = opt.closest('[data-quiz]');
+        if (!quiz || quiz.getAttribute('data-answered') === '1') return;
+        this.answerQuiz(quiz, opt);
+        return;
+      }
+      // angket score
+      const sc = e.target.closest('[data-angket-score]');
+      if (sc) { this.scoreAngket(sc.getAttribute('data-angket-score')); return; }
+      const rs = e.target.closest('[data-angket-reset]');
+      if (rs) {
+        const box = document.getElementById(rs.getAttribute('data-angket-reset'));
+        if (box) box.querySelectorAll('input[type="radio"]').forEach((r) => { r.checked = false; try { this.clearAngket(r.name); } catch (e) {} });
+        const out = document.getElementById(rs.getAttribute('data-angket-reset') + '-out');
+        if (out) out.style.display = 'none';
+        return;
+      }
+    });
+  }
+  scoreAngket(id) {
+    const box = document.getElementById(id);
+    const out = document.getElementById(id + '-out');
+    if (!box || !out) return;
+    const groups = {};
+    box.querySelectorAll('input[type="radio"]:checked').forEach((r) => {
+      const g = r.getAttribute('data-dim') || 'x';
+      groups[g] = (groups[g] || 0) + Number(r.value);
+    });
+    const totalItems = new Set([...box.querySelectorAll('input[type="radio"]')].map((r) => r.name)).size;
+    const answered = box.querySelectorAll('input[type="radio"]:checked').length;
+    let sum = Object.values(groups).reduce((a, b) => a + b, 0);
+    const max = totalItems * 4;
+    const pct = max ? Math.round((sum / max) * 100) : 0;
+    let level = 'Rendah', col = '#cf503b';
+    if (pct >= 84) { level = 'Sangat Tinggi'; col = '#1c7a45'; }
+    else if (pct >= 68) { level = 'Tinggi'; col = '#2f8f5b'; }
+    else if (pct >= 52) { level = 'Sedang'; col = '#c47f22'; }
+    const dimNames = { isu: 'Pengetahuan isu lingkungan', sikap: 'Sikap terhadap lingkungan', perilaku: 'Perilaku ramah lingkungan', praktik: 'Menerapkan praktik berkelanjutan', gaya: 'Kesediaan mengubah gaya hidup' };
+    let rows = '';
+    Object.keys(dimNames).forEach((k) => {
+      if (groups[k] != null) rows += '<div style="display:flex; justify-content:space-between; gap:12px; padding:4px 0; border-bottom:1px dashed #d6e4e1;"><span>' + dimNames[k] + '</span><b>' + groups[k] + '</b></div>';
+    });
+    out.style.display = 'block';
+    out.innerHTML = '<div style="font:800 15px/1 Mulish; color:#0f3238; margin-bottom:8px;">Hasil Angket EA Anda</div>' +
+      (answered < totalItems ? '<div style="color:#c47f22; font-size:13px; margin-bottom:8px;">Catatan: ' + answered + ' dari ' + totalItems + ' pernyataan terjawab. Lengkapi untuk hasil akurat.</div>' : '') +
+      '<div style="display:flex; align-items:baseline; gap:10px; margin-bottom:6px;"><div style="font:800 34px/1 Newsreader; color:' + col + ';">' + pct + '%</div><div style="font-weight:700; color:' + col + ';">' + level + '</div></div>' +
+      '<div style="height:10px; border-radius:6px; background:#e2ece9; overflow:hidden; margin-bottom:12px;"><div style="height:100%; width:' + pct + '%; background:' + col + ';"></div></div>' +
+      '<div style="font-size:13.5px;">Skor total: <b>' + sum + ' / ' + max + '</b></div>' +
+      '<div style="margin-top:10px; font-size:13.5px;">' + rows + '</div>' +
+      '<div style="margin-top:10px; font-size:12.5px; color:#5f7d80;">Kategori: &lt;52% Rendah · 52–67% Sedang · 68–83% Tinggi · ≥84% Sangat Tinggi. Angket ini untuk refleksi diri, bukan penilaian formal.</div>';
+  }
+  wireToc() {
+    const toggle = document.getElementById('tocToggle');
+    const aside = document.getElementById('tocAside');
+    if (toggle && aside) {
+      toggle.addEventListener('click', () => aside.classList.toggle('open'));
+      aside.querySelectorAll('a[href^="#"]').forEach((a) => a.addEventListener('click', () => { if (window.innerWidth <= 1040) aside.classList.remove('open'); }));
+    }
+    const bar = document.getElementById('progressBar');
+    const links = [...document.querySelectorAll('#tocAside a[data-toc]')];
+    const map = {};
+    links.forEach((l) => { map[l.getAttribute('data-toc')] = l; });
+    const sections = [...document.querySelectorAll('[data-section],[data-chapter]')];
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(() => {
+        const st = window.scrollY || document.documentElement.scrollTop;
+        const h = document.documentElement.scrollHeight - window.innerHeight;
+        if (bar) bar.style.width = (h > 0 ? (st / h) * 100 : 0) + '%';
+        let cur = null;
+        for (const s of sections) {
+          if (s.getBoundingClientRect().top <= 140) cur = s;
+        }
+        links.forEach((l) => { l.style.background = 'transparent'; l.style.color = '#cfe6e2'; });
+        if (cur && map[cur.id]) {
+          const a = map[cur.id];
+          a.style.background = 'rgba(127,216,207,.16)';
+          a.style.color = '#fff';
+        }
+        ticking = false;
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+}
+</script>
+</body>
+</html>

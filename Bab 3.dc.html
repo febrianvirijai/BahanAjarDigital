@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bahan Ajar Digital Eksperimen Fisika STEM-ESD · Bab 3 - Kelistrikan &amp; Elektromagnetik</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&amp;family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script src="supabase-config.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: #e8efee; }
+  #bookRoot ::selection { background: rgba(14,131,136,0.22); }
+  #bookScroll { scroll-behavior: smooth; }
+  #bookMain p, #bookMain li { text-align: justify; text-align-last: left; }
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 0.3em 0 !important; overflow-x: auto; overflow-y: hidden; }
+  @keyframes ecFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  @keyframes ecFlow { 0% { background-position: 0 0; } 100% { background-position: 40px 0; } }
+  @media (max-width: 1040px) {
+    #tocAside { transform: translateX(-100%); }
+    #tocAside.open { transform: none; }
+    #tocToggle { display: flex !important; }
+    #bookMain { margin-left: 0 !important; }
+  }
+  @media print {
+    #tocAside, #tocToggle, #progressBar, .no-print { display: none !important; }
+    #bookMain { margin-left: 0 !important; }
+    #bookRoot { background: #fff !important; }
+    section[data-chapter] { break-before: page; }
+  }
+</style>
+</helmet>
+
+<div id="bookRoot" style="--paper:#f4f8f7; --ink:#0f3238; --body:#243c41; --muted:#5f7d80; --teal:#0e8388; --teal-d:#0a5a5d; --aqua:#1596ad; --green:#2f8f5b; --amber:#c47f22; --violet:#6a4c93; --indigo:#375a97; --coral:#cf503b; --line:#d6e4e1; --card:#ffffff; background:var(--paper); color:var(--body); font-family:'Mulish',system-ui,sans-serif; font-size:16.5px; line-height:1.72; -webkit-font-smoothing:antialiased; min-height:100vh; position:relative;">
+
+
+  <div id="progressBar" style="position:fixed; top:0; left:0; height:4px; width:0%; background:linear-gradient(90deg,#0e8388,#1596ad,#2f8f5b); z-index:1000; transition:width .12s linear;"></div>
+
+  <!-- ============ LOGIN GATE ============ -->
+  <div id="authGate" class="no-print" style="display:none; position:fixed; inset:0; z-index:2000; background:linear-gradient(155deg,#0c2a30 0%,#0e5a5c 60%,#12a08c 100%); overflow-y:auto;">
+    <div style="position:absolute; inset:0; opacity:.15; background-image:radial-gradient(circle at 82% 16%, #7fffe0 0, transparent 42%), radial-gradient(circle at 12% 86%, #2f8f5b 0, transparent 40%); pointer-events:none;"></div>
+    <div style="position:relative; min-height:100%; display:flex; align-items:center; justify-content:center; padding:40px 20px;">
+      <div style="width:100%; max-width:440px; background:#fff; border-radius:22px; box-shadow:0 30px 80px -30px rgba(0,0,0,.6); overflow:hidden;">
+        <div style="background:linear-gradient(135deg,#0c2a30,#12857f); color:#fff; padding:26px 30px;">
+          <div style="display:flex; align-items:center; gap:11px;">
+            <div style="width:38px; height:38px; border-radius:10px; background:linear-gradient(135deg,#12a3a0,#2f8f5b); display:flex; align-items:center; justify-content:center;">
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5C12 2.5 5 10 5 15a7 7 0 0 0 14 0c0-5-7-12.5-7-12.5z"></path></svg>
+            </div>
+            <div>
+              <div style="font:800 15px/1.1 'Mulish'; letter-spacing:.01em;">Bahan Ajar Digital Interaktif</div>
+              <div style="font:600 10.5px/1.2 'Mulish'; color:#8fd8ce; letter-spacing:.14em; text-transform:uppercase;">Eksperimen Fisika · STEM-ESD</div>
+            </div>
+          </div>
+          <p style="margin:14px 0 0; font-size:13px; color:#cfeae4;">Masuk untuk mulai belajar. Jawaban Anda tersimpan &amp; dapat dipantau dosen.</p>
+        </div>
+
+        <div style="display:flex; padding:16px 24px 0; gap:8px;">
+          <button id="tabMhs" data-auth-tab="mhs" style="flex:1; padding:11px; border:none; border-radius:10px 10px 0 0; background:#eef6f4; color:var(--teal-d); font-weight:800; font-family:inherit; font-size:14px; cursor:pointer;">Mahasiswa</button>
+          <button id="tabDosen" data-auth-tab="dosen" style="flex:1; padding:11px; border:none; border-radius:10px 10px 0 0; background:#f4f8f7; color:var(--muted); font-weight:700; font-family:inherit; font-size:14px; cursor:pointer;">Dosen</button>
+        </div>
+
+        <!-- Mahasiswa form -->
+        <div id="formMhs" style="padding:22px 24px 26px;">
+          <div style="display:flex; background:#eef1f0; border-radius:10px; padding:4px; margin-bottom:16px; gap:4px;">
+            <button type="button" id="mhsModeSignup" data-mhs-mode="signup" style="flex:1; padding:8px; border:none; border-radius:7px; font-family:inherit; font-size:12.5px; font-weight:800; cursor:pointer; background:#fff; color:var(--teal-d); box-shadow:0 2px 6px rgba(0,0,0,.08);">Daftar Baru</button>
+            <button type="button" id="mhsModeLogin" data-mhs-mode="login" style="flex:1; padding:8px; border:none; border-radius:7px; font-family:inherit; font-size:12.5px; font-weight:700; cursor:pointer; background:transparent; color:var(--muted);">Masuk</button>
+          </div>
+          <label style="display:block; font-size:12.5px; font-weight:700; color:var(--ink); margin-bottom:5px;">Nama Lengkap</label>
+          <input id="mhsName" type="text" placeholder="mis. Ahmad Fauzi" style="width:100%; padding:11px 13px; border:1px solid var(--line); border-radius:10px; font-family:inherit; font-size:14.5px; margin-bottom:14px; color:var(--body);">
+          <label style="display:block; font-size:12.5px; font-weight:700; color:var(--ink); margin-bottom:5px;">NIM</label>
+          <input id="mhsNim" type="text" placeholder="mis. 2100123" style="width:100%; padding:11px 13px; border:1px solid var(--line); border-radius:10px; font-family:inherit; font-size:14.5px; margin-bottom:6px; color:var(--body);">
+          <label style="display:block; font-size:12.5px; font-weight:700; color:var(--ink); margin:10px 0 5px;">Kelas / Rombel <span style="font-weight:400; color:var(--muted);">(opsional)</span></label>
+          <input id="mhsKelas" type="text" placeholder="mis. Pendidikan Fisika A" style="width:100%; padding:11px 13px; border:1px solid var(--line); border-radius:10px; font-family:inherit; font-size:14.5px; margin-bottom:16px; color:var(--body);">
+          <div id="mhsErr" style="display:none; color:var(--coral); font-size:12.5px; margin-bottom:10px;"></div>
+          <button id="mhsSubmitBtn" data-auth-login="mhs" style="width:100%; padding:13px; border:none; border-radius:10px; background:linear-gradient(135deg,#0e8388,#2f8f5b); color:#fff; font-weight:800; font-family:inherit; font-size:15px; cursor:pointer;">Daftar sebagai Mahasiswa</button>
+        </div>
+
+        <!-- Dosen form -->
+        <div id="formDosen" style="display:none; padding:22px 24px 26px;">
+          <label style="display:block; font-size:12.5px; font-weight:700; color:var(--ink); margin-bottom:5px;">Nama Dosen</label>
+          <input id="dosenName" type="text" placeholder="mis. Febrian Virijai" style="width:100%; padding:11px 13px; border:1px solid var(--line); border-radius:10px; font-family:inherit; font-size:14.5px; margin-bottom:14px; color:var(--body);">
+          <label style="display:block; font-size:12.5px; font-weight:700; color:var(--ink); margin-bottom:5px;">Kode Rahasia Dosen</label>
+          <input id="dosenPass" type="password" placeholder="Masukkan kode rahasia" style="width:100%; padding:11px 13px; border:1px solid var(--line); border-radius:10px; font-family:inherit; font-size:14.5px; margin-bottom:6px; color:var(--body);">
+          <div style="font-size:11px; color:var(--muted); margin-bottom:12px;">Kode dibagikan oleh koordinator mata kuliah.</div>
+          <div id="dosenErr" style="display:none; color:var(--coral); font-size:12.5px; margin-bottom:10px;"></div>
+          <button id="dosenSubmitBtn" data-auth-login="dosen" style="width:100%; padding:13px; border:none; border-radius:10px; background:linear-gradient(135deg,#375a97,#0e8388); color:#fff; font-weight:800; font-family:inherit; font-size:15px; cursor:pointer;">Masuk sebagai Dosen</button>
+        </div>
+        <div style="padding:0 24px 22px; font-size:11.5px; color:var(--muted); line-height:1.6;">Data tersimpan di peramban perangkat ini. Untuk menyetor jawaban dari perangkat berbeda, gunakan tombol <b>Kumpulkan Jawaban</b> (mahasiswa) lalu <b>Impor</b> pada dasbor dosen.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ USER PILL ============ -->
+  <div id="userPill" class="no-print" style="display:none; position:fixed; top:14px; right:16px; z-index:1002; align-items:center; gap:8px; background:var(--card); border:1px solid var(--line); border-radius:999px; padding:5px 6px 5px 14px; box-shadow:0 6px 18px rgba(15,50,56,.14);">
+    <span id="pillRole" style="font:800 10px/1 'Mulish'; letter-spacing:.08em; text-transform:uppercase; padding:4px 8px; border-radius:999px; background:#eef6f4; color:var(--teal-d);">Mahasiswa</span>
+    <span id="pillName" style="font-size:13px; font-weight:700; color:var(--ink); max-width:150px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">—</span>
+    <button id="pillDash" style="display:none; width:32px; height:32px; border-radius:50%; border:none; background:#375a97; color:#fff; cursor:pointer; align-items:center; justify-content:center;" title="Dasbor Dosen"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="12" width="7" height="9"></rect><rect x="3" y="16" width="7" height="5"></rect></svg></button>
+    <button id="pillCollect" style="display:none; width:32px; height:32px; border-radius:50%; border:none; background:#2f8f5b; color:#fff; cursor:pointer; align-items:center; justify-content:center;" title="Kumpulkan / Unduh Jawaban"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"></path></svg></button>
+    <button id="pillLogout" style="width:32px; height:32px; border-radius:50%; border:none; background:#eef0ee; color:var(--muted); cursor:pointer; align-items:center; justify-content:center;" title="Keluar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"></path></svg></button>
+  </div>
+
+  <!-- ============ DASHBOARD (DOSEN) ============ -->
+  <div id="dashModal" class="no-print" style="display:none; position:fixed; inset:0; z-index:2100; background:rgba(8,26,30,.55); backdrop-filter:blur(3px); overflow-y:auto;">
+    <div style="min-height:100%; padding:32px 18px; display:flex; justify-content:center;">
+      <div style="width:100%; max-width:920px; background:#f4f8f7; border-radius:20px; box-shadow:0 30px 80px -30px rgba(0,0,0,.6); overflow:hidden;">
+        <div style="background:linear-gradient(135deg,#0c2a30,#375a97); color:#fff; padding:22px 26px; display:flex; align-items:center; justify-content:space-between; gap:14px;">
+          <div>
+            <div style="font:800 19px/1.1 'Newsreader'; font-family:'Newsreader',serif;">Dasbor Monitoring Dosen</div>
+            <div style="font-size:12.5px; color:#c5d6f0; margin-top:3px;">Rekap aktivitas &amp; jawaban mahasiswa pada perangkat ini</div>
+          </div>
+          <button id="dashClose" style="width:38px; height:38px; border-radius:50%; border:none; background:rgba(255,255,255,.16); color:#fff; font-size:20px; cursor:pointer;">✕</button>
+        </div>
+        <div style="padding:18px 22px; display:flex; flex-wrap:wrap; gap:10px; border-bottom:1px solid var(--line); background:#fff;">
+          <button id="dashRefresh" style="padding:9px 16px; border:1px solid var(--line); border-radius:9px; background:#fff; color:var(--teal-d); font-weight:700; font-family:inherit; font-size:13px; cursor:pointer;">↻ Muat Ulang</button>
+          <button id="dashCsv" style="padding:9px 16px; border:1px solid var(--line); border-radius:9px; background:#fff; color:var(--teal-d); font-weight:700; font-family:inherit; font-size:13px; cursor:pointer;">⇩ Ekspor Semua (CSV)</button>
+          <button id="dashClearAll" style="padding:9px 16px; border:1px solid #f0c9c2; border-radius:9px; background:#fff; color:var(--coral); font-weight:700; font-family:inherit; font-size:13px; cursor:pointer; margin-left:auto;">🗑 Hapus Semua Data</button>
+        </div>
+        <div id="dashBody" style="padding:18px 22px 26px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <button id="tocToggle" style="display:none; position:fixed; top:16px; left:16px; z-index:1001; width:46px; height:46px; border-radius:12px; border:1px solid var(--line); background:var(--card); color:var(--teal-d); align-items:center; justify-content:center; cursor:pointer; box-shadow:0 6px 18px rgba(15,50,56,.14);">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+  </button>
+
+  <aside id="tocAside" style="position:fixed; top:0; left:0; width:280px; height:100vh; overflow-y:auto; background:#0c2a30; color:#cfe6e2; z-index:999; transition:transform .28s ease; padding:0 0 40px;">
+    <div style="padding:26px 24px 18px; border-bottom:1px solid rgba(255,255,255,.09);">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <div style="width:34px; height:34px; border-radius:9px; background:linear-gradient(135deg,#12a3a0,#2f8f5b); display:flex; align-items:center; justify-content:center;">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5C12 2.5 5 10 5 15a7 7 0 0 0 14 0c0-5-7-12.5-7-12.5z"></path></svg>
+        </div>
+        <div>
+          <div style="font:800 13.5px/1.1 'Mulish'; color:#fff; letter-spacing:.02em;">Eksperimen Fisika</div>
+          <div style="font:600 10.5px/1.2 'Mulish'; color:#6fb3ab; letter-spacing:.14em; text-transform:uppercase;">STEM · ESD</div>
+        </div>
+      </div>
+    </div>
+    <nav style="padding:14px 12px; font-size:13.5px;">
+      <div style="font:700 10px/1 'Mulish'; letter-spacing:.16em; text-transform:uppercase; color:#5f9990; padding:10px 12px 6px;">Bagian Awal</div>
+      <a href="Bahan%20Ajar%20Elektrokoagulasi%20STEM-ESD.dc.html#sampul" style="display:block; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;">Sampul</a>
+            <a href="Bahan%20Ajar%20Elektrokoagulasi%20STEM-ESD.dc.html#pengantar" style="display:block; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;">Kata Pengantar</a>
+            <a href="Bahan%20Ajar%20Elektrokoagulasi%20STEM-ESD.dc.html#panduan" style="display:block; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;">Panduan Penggunaan</a>
+            <a href="Bahan%20Ajar%20Elektrokoagulasi%20STEM-ESD.dc.html#alur" style="display:block; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;">Peta Alur &amp; Matriks</a>
+            <a href="Bahan%20Ajar%20Elektrokoagulasi%20STEM-ESD.dc.html#simbol" style="display:block; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;">Daftar Simbol &amp; Satuan</a>
+                  <a href="Bahan%20Ajar%20Elektrokoagulasi%20STEM-ESD.dc.html#sop" style="display:block; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;">SOP Keselamatan</a>
+            <a href="Pretest.dc.html#pretest" style="display:block; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;">Pretest</a>
+            <div style="font:700 10px/1 'Mulish'; letter-spacing:.16em; text-transform:uppercase; color:#5f9990; padding:16px 12px 6px;">8 Pertemuan</div>
+      <a href="Bab%201.dc.html" style="display:flex; gap:10px; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;"><b style="color:#7fd8cf;">01</b><span>Orientasi &amp; Krisis Air</span></a>
+      <a href="Bab%202.dc.html" style="display:flex; gap:10px; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;"><b style="color:#7fd8cf;">02</b><span>Analisis Air Tercemar</span></a>
+      <a href="Bab%203.dc.html" style="display:flex; gap:10px; padding:8px 12px; border-radius:8px; color:#fff; text-decoration:none; background:rgba(127,216,207,.18); font-weight:700;"><b style="color:#7fd8cf;">03</b><span>Kelistrikan &amp; Elektromagnetik</span></a>
+      <a href="Bab%204.dc.html" style="display:flex; gap:10px; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;"><b style="color:#7fd8cf;">04</b><span>Elektrokimia &amp; Koagulasi</span></a>
+      <a href="Bab%205.dc.html" style="display:flex; gap:10px; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;"><b style="color:#7fd8cf;">05</b><span>Faraday &amp; Efisiensi Energi</span></a>
+      <a href="Bab%206.dc.html" style="display:flex; gap:10px; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;"><b style="color:#7fd8cf;">06</b><span>Desain Alat Berkelanjutan</span></a>
+      <a href="Bab%207.dc.html" style="display:flex; gap:10px; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;"><b style="color:#7fd8cf;">07</b><span>Praktikum &amp; Analisis Data</span></a>
+      <a href="Bab%208.dc.html" style="display:flex; gap:10px; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;"><b style="color:#7fd8cf;">08</b><span>Presentasi & Refleksi</span></a>
+      <a href="Posttest.dc.html#posttest" style="display:block; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;">Posttest</a>
+            <div style="font:700 10px/1 'Mulish'; letter-spacing:.16em; text-transform:uppercase; color:#5f9990; padding:16px 12px 6px;">Lampiran</div>
+            <a href="Lampiran.dc.html#glosarium" style="display:block; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;">Glosarium</a>
+            <a href="Lampiran.dc.html#kunci" style="display:block; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;">Kunci Jawaban</a>
+            <a href="Lampiran.dc.html#validasi" style="display:block; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;">Lembar Validasi</a>
+            <a href="Lampiran.dc.html#pustaka" style="display:block; padding:8px 12px; border-radius:8px; color:#cfe6e2; text-decoration:none;">Daftar Pustaka</a>
+          </nav>
+  </aside>
+
+  <main id="bookMain" style="margin-left:280px;">
+    <article id="bookScroll" style="max-width:880px; margin:0 auto; padding:0 34px 120px;">
+
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin:74px 0 6px; flex-wrap:wrap;">
+        <a href="Bab%202.dc.html" style="display:flex; align-items:center; gap:6px; padding:10px 16px; border:1px solid var(--line); border-radius:10px; background:#fff; color:var(--teal-d); text-decoration:none; font-weight:700; font-size:13.5px;">← Bab 2 · Analisis Air Tercemar</a>
+        <a href="Bahan%20Ajar%20Elektrokoagulasi%20STEM-ESD.dc.html#alur" style="font-size:12.5px; color:var(--muted); text-decoration:none;">Daftar Isi</a>
+        <a href="Bab%204.dc.html" style="display:flex; align-items:center; gap:6px; padding:10px 16px; border:1px solid var(--line); border-radius:10px; background:#fff; color:var(--teal-d); text-decoration:none; font-weight:700; font-size:13.5px;">Bab 4 · Elektrokimia &amp; Koagulasi →</a>
+      </div>
+
+      <!-- ============================================================ BAB 3 ============================================================ -->
+      <section id="bab3" data-chapter="" data-section="" data-screen-label="Bab 3" style="padding:70px 0 30px;">
+        <div style="position:relative; border-radius:22px; overflow:hidden; background:linear-gradient(135deg,#0c2a30,#127f97); color:#fff; padding:38px 40px;">
+          <div style="position:absolute; right:-30px; top:-30px; font:800 220px/1 'Newsreader'; color:rgba(255,255,255,.06);">03</div>
+          <div style="position:relative;">
+            <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px;">
+              <span style="padding:6px 13px; background:linear-gradient(135deg,#e3d3f7,#b795e8); color:#3a1f5c; border-radius:999px; font:800 11px/1 'Mulish'; box-shadow:0 2px 8px rgba(0,0,0,.15); border:1px solid rgba(255,255,255,.35);">CPSS · Flexibility</span>
+              <span style="padding:6px 13px; background:linear-gradient(135deg,#d3e2f9,#8fb4ec); color:#1c3566; border-radius:999px; font:800 11px/1 'Mulish'; box-shadow:0 2px 8px rgba(0,0,0,.15); border:1px solid rgba(255,255,255,.35);">PCK · Student Understanding</span>
+              <span style="padding:6px 13px; background:linear-gradient(135deg,#c8f2d6,#82d9a6); color:#0f4a2a; border-radius:999px; font:800 11px/1 'Mulish'; box-shadow:0 2px 8px rgba(0,0,0,.15); border:1px solid rgba(255,255,255,.35);">EA · Sikap (Efisiensi Energi)</span>
+              <span style="padding:6px 13px; background:linear-gradient(135deg,#ffe1a3,#f0ac4e); color:#4a2c05; border-radius:999px; font:800 11px/1 'Mulish'; box-shadow:0 2px 8px rgba(0,0,0,.18); border:1px solid rgba(255,255,255,.4);">STEM-ESD · Sains &amp; Matematika (S-M)</span>
+            </div>
+            <div style="font:700 12px/1 'Mulish'; letter-spacing:.2em; text-transform:uppercase; color:#7fd8cf;">Pertemuan 3</div>
+            <h2 style="font-family:'Newsreader',serif; font-weight:600; font-size:40px; line-height:1.05; margin:8px 0 0;">Kelistrikan &amp; Elektromagnetik dalam Elektrokoagulasi</h2>
+          </div>
+        </div>
+
+        <div style="margin-top:22px; background:linear-gradient(160deg,#f4faf8,#eaf5f0); border:1px solid var(--line); border-radius:20px; padding:22px 22px 20px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:13px;">
+            <div style="display:inline-flex; align-items:center; gap:8px; padding:6px 14px; border-radius:999px; background:#fff; border:1px solid var(--line);"><span style="width:6px; height:6px; border-radius:50%; background:var(--teal);"></span><span style="font:800 11.5px/1 'Mulish'; letter-spacing:.08em; text-transform:uppercase; color:var(--teal-d);">Sintaks PjBL · Pertemuan 3</span></div>
+            <span style="font-size:11.5px; color:var(--muted); font-weight:700; padding:5px 12px; background:#fff; border:1px solid var(--line); border-radius:999px;">⚡ Alat Elektrokoagulasi</span>
+          </div>
+          <div style="position:relative; margin:0 0 18px;">
+            <div style="position:absolute; top:22px; left:5%; right:5%; height:3px; background:linear-gradient(90deg,#1596ad,#0e8388,#c47f22,#375a97,#6a4c93,#2f8f5b); border-radius:2px; z-index:0; opacity:.55;"></div>
+            <div style="display:flex; align-items:flex-start; gap:0; overflow-x:auto; padding-bottom:4px; position:relative; z-index:1;">
+              <div style="flex:1; min-width:98px; text-align:center; padding:0 3px;">
+                <div style="width:40px; height:40px; margin:0 auto 8px; border-radius:50%; background:linear-gradient(145deg, #1596ad, #1596ad); color:#fff; display:flex; align-items:center; justify-content:center; font:800 16px/1 'Newsreader',serif; border:3px solid #fff; box-shadow:0 8px 18px -6px rgba(21,150,173,.6); transform:scale(1.08);">1</div>
+                <div style="font-size:10.5px; font-weight:800; color:var(--ink); line-height:1.25;">Pertanyaan Dasar</div>
+              </div>
+              <div style="flex:1; min-width:98px; text-align:center; padding:0 3px;">
+                <div style="width:40px; height:40px; margin:0 auto 8px; border-radius:50%; background:#e4ecea; color:#7a9793; display:flex; align-items:center; justify-content:center; font:800 16px/1 'Newsreader',serif; border:3px solid #fff; ">2</div>
+                <div style="font-size:10.5px; font-weight:600; color:#7a9793; line-height:1.25;">Desain Perencanaan</div>
+              </div>
+              <div style="flex:1; min-width:98px; text-align:center; padding:0 3px;">
+                <div style="width:40px; height:40px; margin:0 auto 8px; border-radius:50%; background:#e4ecea; color:#7a9793; display:flex; align-items:center; justify-content:center; font:800 16px/1 'Newsreader',serif; border:3px solid #fff; ">3</div>
+                <div style="font-size:10.5px; font-weight:600; color:#7a9793; line-height:1.25;">Penjadwalan</div>
+              </div>
+              <div style="flex:1; min-width:98px; text-align:center; padding:0 3px;">
+                <div style="width:40px; height:40px; margin:0 auto 8px; border-radius:50%; background:#e4ecea; color:#7a9793; display:flex; align-items:center; justify-content:center; font:800 16px/1 'Newsreader',serif; border:3px solid #fff; ">4</div>
+                <div style="font-size:10.5px; font-weight:600; color:#7a9793; line-height:1.25;">Monitoring & Bimbingan</div>
+              </div>
+              <div style="flex:1; min-width:98px; text-align:center; padding:0 3px;">
+                <div style="width:40px; height:40px; margin:0 auto 8px; border-radius:50%; background:#e4ecea; color:#7a9793; display:flex; align-items:center; justify-content:center; font:800 16px/1 'Newsreader',serif; border:3px solid #fff; ">5</div>
+                <div style="font-size:10.5px; font-weight:600; color:#7a9793; line-height:1.25;">Evaluasi Hasil</div>
+              </div>
+              <div style="flex:1; min-width:98px; text-align:center; padding:0 3px;">
+                <div style="width:40px; height:40px; margin:0 auto 8px; border-radius:50%; background:#e4ecea; color:#7a9793; display:flex; align-items:center; justify-content:center; font:800 16px/1 'Newsreader',serif; border:3px solid #fff; ">6</div>
+                <div style="font-size:10.5px; font-weight:600; color:#7a9793; line-height:1.25;">Refleksi & Umpan Balik</div>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:8px; margin:0 0 16px;">
+            <div style="display:flex; gap:10px; padding:9px 12px; background:#fff; border-left:3px solid #1596ad; border-radius:8px;">
+              <div style="flex-shrink:0; width:20px; height:20px; border-radius:50%; background:#1596ad; color:#fff; display:flex; align-items:center; justify-content:center; font:800 10.5px/1 'Mulish'; margin-top:1px;">1</div>
+              <div style="font-size:12.5px; line-height:1.55; color:var(--body);"><b style="color:var(--ink);">Menentukan Pertanyaan Dasar / Masalah Autentik:</b> Studi Kasus “6 Volt vs 12 Volt” &amp; kotak Ayo Berpikir memunculkan pertanyaan tegangan–arus–hambatan–daya; Konsep Inti 3.1–3.5</div>
+            </div>
+            <div style="display:flex; gap:10px; padding:9px 12px; background:#fff; border-left:3px solid #0e8388; border-radius:8px;">
+              <div style="flex-shrink:0; width:20px; height:20px; border-radius:50%; background:#0e8388; color:#fff; display:flex; align-items:center; justify-content:center; font:800 10.5px/1 'Mulish'; margin-top:1px;">2</div>
+              <div style="font-size:12.5px; line-height:1.55; color:var(--body);"><b style="color:var(--ink);">Mendesain Perencanaan Proyek:</b> Aktivitas baru: menetapkan spesifikasi listrik awal alat · tujuan (tegangan &amp; arus operasi), produk spesifikasi, pembagian tugas pengukuran</div>
+            </div>
+            <div style="display:flex; gap:10px; padding:9px 12px; background:#fff; border-left:3px solid #c47f22; border-radius:8px;">
+              <div style="flex-shrink:0; width:20px; height:20px; border-radius:50%; background:#c47f22; color:#fff; display:flex; align-items:center; justify-content:center; font:800 10.5px/1 'Mulish'; margin-top:1px;">3</div>
+              <div style="font-size:12.5px; line-height:1.55; color:var(--body);"><b style="color:var(--ink);">Penjadwalan Tahapan Kerja:</b> Menjadwalkan sesi pengukuran arus/tegangan dengan multimeter &amp; penyelesaian LKM 3 sebelum pertemuan berikutnya</div>
+            </div>
+            <div style="display:flex; gap:10px; padding:9px 12px; background:#fff; border-left:3px solid #375a97; border-radius:8px;">
+              <div style="flex-shrink:0; width:20px; height:20px; border-radius:50%; background:#375a97; color:#fff; display:flex; align-items:center; justify-content:center; font:800 10.5px/1 'Mulish'; margin-top:1px;">4</div>
+              <div style="font-size:12.5px; line-height:1.55; color:var(--body);"><b style="color:var(--ink);">Memonitor &amp; Membimbing Proyek Mahasiswa:</b> LKM 3: Analisis Multiperspektif (Flexibility) dikerjakan sambil dibimbing; aktivitas cek pemahaman mandiri</div>
+            </div>
+            <div style="display:flex; gap:10px; padding:9px 12px; background:#fff; border-left:3px solid #6a4c93; border-radius:8px;">
+              <div style="flex-shrink:0; width:20px; height:20px; border-radius:50%; background:#6a4c93; color:#fff; display:flex; align-items:center; justify-content:center; font:800 10.5px/1 'Mulish'; margin-top:1px;">5</div>
+              <div style="font-size:12.5px; line-height:1.55; color:var(--body);"><b style="color:var(--ink);">Mengevaluasi Hasil Proyek (Produk Nyata):</b> Berbagi hasil analisis multiperspektif sebagai produk yang dievaluasi bersama</div>
+            </div>
+            <div style="display:flex; gap:10px; padding:9px 12px; background:#fff; border-left:3px solid #2f8f5b; border-radius:8px;">
+              <div style="flex-shrink:0; width:20px; height:20px; border-radius:50%; background:#2f8f5b; color:#fff; display:flex; align-items:center; justify-content:center; font:800 10.5px/1 'Mulish'; margin-top:1px;">6</div>
+              <div style="font-size:12.5px; line-height:1.55; color:var(--body);"><b style="color:var(--ink);">Refleksi &amp; Umpan Balik:</b> Tantangan CPSS (Flexibility), Teacher Candidate Corner, Green Note</div>
+            </div></div>
+          
+          <div style="margin-top:16px; background:#fff; border:1px solid var(--line); border-left:3px solid var(--teal); border-radius:12px; padding:14px 16px; font-size:13.5px; color:var(--body);"><b>Fokus PjBL pertemuan ini:</b> <b>Investigasi konsep sains–teknologi</b>: membangun dasar kelistrikan (arus, tegangan, daya, energi) yang menopang cara kerja alat elektrokoagulasi.</div>
+          <div style="margin-top:10px; font-size:11px; color:var(--muted); line-height:1.5;">Model pembelajaran: Project-Based Learning (Blumenfeld et al., 1991; Krajcik &amp; Blumenfeld, 2006; Larmer, Mergendoller, &amp; Boss, 2015).</div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1.3fr 1fr; gap:16px; margin-top:22px;">
+          <div style="background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px 22px;">
+            <h3 style="font-family:'Newsreader',serif; font-size:20px; margin:0 0 10px; color:var(--ink);">Capaian Pembelajaran Bab</h3>
+            <ol style="margin:0; padding-left:20px; font-size:14.5px;">
+              <li>menjelaskan arus DC, tegangan, hambatan, dan konduktivitas larutan;</li>
+              <li>menerapkan hukum Ohm pada sel elektrokoagulasi;</li>
+              <li>menghitung daya dan energi listrik;</li>
+              <li>menjelaskan medan listrik &amp; pergerakan ion (elektromigrasi);</li>
+              <li>meninjau alat dari berbagai perspektif (CPSS–Flexibility).</li>
+            </ol>
+          </div>
+          <div style="background:linear-gradient(160deg,#f0f8f6,#e2f1ec); border:1px solid var(--line); border-radius:16px; padding:20px 22px;">
+            <h3 style="font-family:'Newsreader',serif; font-size:20px; margin:0 0 10px; color:var(--ink);">Kata Kunci</h3>
+            <div style="display:flex; flex-wrap:wrap; gap:7px;">
+              <span style="padding:5px 12px; background:#fff; border:1px solid var(--line); border-radius:999px; font-size:13px;">arus DC</span>
+              <span style="padding:5px 12px; background:#fff; border:1px solid var(--line); border-radius:999px; font-size:13px;">tegangan</span>
+              <span style="padding:5px 12px; background:#fff; border:1px solid var(--line); border-radius:999px; font-size:13px;">hukum Ohm</span>
+              <span style="padding:5px 12px; background:#fff; border:1px solid var(--line); border-radius:999px; font-size:13px;">hambatan larutan</span>
+              <span style="padding:5px 12px; background:#fff; border:1px solid var(--line); border-radius:999px; font-size:13px;">konduktivitas</span>
+              <span style="padding:5px 12px; background:#fff; border:1px solid var(--line); border-radius:999px; font-size:13px;">daya</span>
+              <span style="padding:5px 12px; background:#fff; border:1px solid var(--line); border-radius:999px; font-size:13px;">energi</span>
+              <span style="padding:5px 12px; background:#fff; border:1px solid var(--line); border-radius:999px; font-size:13px;">elektromigrasi</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="background:#eef7fa; border:1px solid #cfe7ef; border-left:4px solid var(--aqua); border-radius:14px; padding:20px 22px; margin:24px 0;">
+                  <div style="background:linear-gradient(160deg,#fbfdfc,#f1f8f6); border:1px solid var(--line); border-radius:16px; padding:20px 22px; margin:22px 0 24px; opacity:0; animation:ecFade .5s ease both;">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+            <div style="font:700 12px/1 'Mulish'; letter-spacing:.12em; text-transform:uppercase; color:var(--ink);">Integrasi STEM-ESD · Pertemuan 3</div>
+            <div style="flex:1; height:1px; background:linear-gradient(90deg,var(--line),transparent);"></div>
+          </div>
+          <p style="margin:0 0 14px; font-size:13px; color:var(--muted);">Ke mana Sains, Teknologi, Rekayasa (<i>Engineering</i>), Matematika, dan ESD hadir pada pertemuan ini:</p>
+          <div style="display:flex; flex-wrap:wrap; gap:10px;">
+            <div style="flex:1; min-width:150px; background:#fff; border:1px solid var(--line); border-top:4px solid #1596ad; border-radius:12px; padding:14px 14px 15px;"><div style="width:34px; height:34px; border-radius:9px; background:#1596ad; color:#fff; display:flex; align-items:center; justify-content:center; font:800 14px/1 'Mulish'; margin-bottom:9px;">S</div><div style="font:800 13.5px/1.1 'Mulish'; color:#1596ad; margin-bottom:5px;">Sains</div><div style="font-size:12px; line-height:1.5; color:var(--body);">Listrik dinamis: arus DC, hambatan, konduktivitas larutan (§3.1–3.2).</div></div><div style="flex:1; min-width:150px; background:#fff; border:1px solid var(--line); border-top:4px solid #0e8388; border-radius:12px; padding:14px 14px 15px;"><div style="width:34px; height:34px; border-radius:9px; background:#0e8388; color:#fff; display:flex; align-items:center; justify-content:center; font:800 14px/1 'Mulish'; margin-bottom:9px;">T</div><div style="font:800 13.5px/1.1 'Mulish'; color:#0e8388; margin-bottom:5px;">Teknologi</div><div style="font-size:12px; line-height:1.5; color:var(--body);">Rangkaian sumber DC, multimeter, elektroda (Gambar 3.1).</div></div><div style="flex:1; min-width:150px; background:#fff; border:1px solid var(--line); border-top:4px solid #c47f22; border-radius:12px; padding:14px 14px 15px;"><div style="width:34px; height:34px; border-radius:9px; background:#c47f22; color:#fff; display:flex; align-items:center; justify-content:center; font:800 14px/1 'Mulish'; margin-bottom:9px;">E</div><div style="font:800 13.5px/1.1 'Mulish'; color:#c47f22; margin-bottom:5px;">Rekayasa</div><div style="font-size:12px; line-height:1.5; color:var(--body);">Memilih geometri &amp; konfigurasi sel demi arus yang optimal (§3.3).</div></div><div style="flex:1; min-width:150px; background:#fff; border:1px solid var(--line); border-top:4px solid #375a97; border-radius:12px; padding:14px 14px 15px;"><div style="width:34px; height:34px; border-radius:9px; background:#375a97; color:#fff; display:flex; align-items:center; justify-content:center; font:800 14px/1 'Mulish'; margin-bottom:9px;">M</div><div style="font:800 13.5px/1.1 'Mulish'; color:#375a97; margin-bottom:5px;">Matematika</div><div style="font-size:12px; line-height:1.5; color:var(--body);">Hukum Ohm, daya, dan energi listrik (Persamaan 3.1–3.4).</div></div><div style="flex:1; min-width:150px; background:#fff; border:1px solid var(--line); border-top:4px solid #2f8f5b; border-radius:12px; padding:14px 14px 15px;"><div style="width:34px; height:34px; border-radius:9px; background:#2f8f5b; color:#fff; display:flex; align-items:center; justify-content:center; font:800 14px/1 'Mulish'; margin-bottom:9px;">ESD</div><div style="font:800 13.5px/1.1 'Mulish'; color:#2f8f5b; margin-bottom:5px;">Keberlanjutan</div><div style="font-size:12px; line-height:1.5; color:var(--body);">Trade-off efektivitas vs. efisiensi energi (Studi Kasus "6V vs 12V").</div></div>
+          </div>
+        </div>
+
+        <div style="font:700 12px/1 'Mulish'; letter-spacing:.1em; text-transform:uppercase; color:var(--aqua); margin-bottom:10px;">Studi Kasus Dunia Nyata</div>
+          <p style="margin:0;"><b>6 volt vs 12 volt.</b> <span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#2f8f5b; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>ESD</span> Dua kelompok membangun alat elektrokoagulasi identik, tetapi kelompok A memakai adaptor <b>6 V</b> dan kelompok B memakai <b>12 V</b>. Kelompok B mengklaim airnya lebih cepat jernih, tetapi adaptornya panas dan boros. Kelompok A lebih hemat, tetapi lambat. Manakah yang "lebih baik"? Jawabannya menuntut Anda memahami hubungan tegangan–arus–hambatan–daya–energi.</p>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:16px 0 8px;">
+          <figure style="margin:0;">
+            <div style="aspect-ratio:4/3; border-radius:14px; overflow:hidden; background:#0c2a30;">
+              <img src="assets/gambar-3-1-rangkaian-elektrokoagulasi.png" alt="Rangkaian alat elektrokoagulasi: DC power supply 12 V 2 A, multimeter, sakelar, dan reaktor elektroda" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+            <figcaption style="font-size:12.5px; color:var(--muted); margin-top:6px;"><b>Gambar 3.1</b> <span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#0e8388; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle;"><svg width="10" height="10" viewBox="0 0 24 24" fill="#fff"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>T</span> Rangkaian dasar elektrokoagulasi: sumber DC (12 V; 2 A), multimeter, sakelar, dan reaktor elektroda.</figcaption>
+          </figure>
+          <figure style="margin:0;">
+            <div data-yt-holder="" data-yt="xt8Um5Z0oPA" style="aspect-ratio:4/3; border-radius:14px; overflow:hidden; position:relative; cursor:pointer; background:#0c2a30;">
+              <img src="https://img.youtube.com/vi/xt8Um5Z0oPA/hqdefault.jpg" alt="Video hukum Ohm dan hantaran listrik pada air" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
+              <div style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.5));"></div>
+              <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:60px; height:60px; border-radius:50%; background:rgba(224,38,34,.92); display:flex; align-items:center; justify-content:center; box-shadow:0 6px 18px rgba(0,0,0,.35);"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></div>
+              <div style="position:absolute; left:14px; bottom:12px; right:14px; color:#fff; font-weight:700; font-size:13.5px; text-shadow:0 1px 4px rgba(0,0,0,.5);">Video: Hukum Ohm &amp; Hantaran Listrik pada Air</div>
+            </div>
+            <figcaption style="font-size:12.5px; color:var(--muted); margin-top:6px;"><b>Video 3.1</b> Pemantik: hukum Ohm &amp; konduktivitas listrik pada air (klik untuk memutar). <a href="https://www.youtube.com/watch?v=xt8Um5Z0oPA" target="_blank" rel="noopener" style="color:var(--teal); font-weight:600;">Buka di YouTube ↗</a></figcaption>
+          </figure>
+        </div>
+
+        <div style="background:#fef7ea; border:1px solid #f2e0bd; border-left:4px solid var(--amber); border-radius:14px; padding:20px 22px; margin:22px 0;">
+          <div style="font:700 12px/1 'Mulish'; letter-spacing:.1em; text-transform:uppercase; color:var(--amber); margin-bottom:10px;">Ayo Berpikir · Diskusi Interaktif</div>
+          <ol style="margin:0 0 12px; padding-left:20px; font-size:14.5px;">
+            <li>Jika tegangan dinaikkan tetapi hambatan tetap, apa yang terjadi pada arus? Mengapa?</li>
+            <li>Air murni hampir tidak menghantar listrik. Apa yang membuat air sungai bisa dialiri arus?</li>
+          </ol>
+          <textarea data-note="b3-berpikir" placeholder="Tulis dugaan Anda…" style="width:100%; min-height:88px; resize:vertical; border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-family:inherit; font-size:14.5px; background:#fff; color:var(--body);"></textarea>
+        </div>
+
+        <div style="background:#f7f3fc; border:1px solid #ddd0ee; border-left:4px solid var(--violet); border-radius:14px; padding:20px 22px; margin:22px 0;">
+          <div style="font:700 12px/1 'Mulish'; letter-spacing:.1em; text-transform:uppercase; color:var(--violet); margin-bottom:10px;">Sintaks PjBL · Fase 3 · Perencanaan Proyek</div>
+          <p style="margin:0 0 8px;">Rencanakan <b>spesifikasi listrik awal</b> alat kelompok Anda: perkiraan tegangan (V), rentang arus (A) yang ditargetkan, dan alasan pemilihannya berdasarkan hukum Ohm &amp; pertimbangan energi.</p>
+          <textarea data-note="b3-plan" placeholder="Rencana proyek kelompok kami…" style="width:100%; min-height:80px; resize:vertical; border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-family:inherit; font-size:14.5px; background:#fff; color:var(--body);"></textarea>
+        </div>
+
+
+        <div style="background:#e9f6f0; border:1px solid #c4e6d5; border-left:4px solid var(--teal); border-radius:14px; padding:20px 22px; margin:22px 0;">
+          <div style="font:700 12px/1 'Mulish'; letter-spacing:.1em; text-transform:uppercase; color:var(--teal); margin-bottom:10px;">Aktivitas Mahasiswa · LKM 3: Analisis Multiperspektif</div>
+          <p style="margin:0 0 10px;">Tinjau kasus "6 V vs 12 V" dari <b>empat perspektif</b> berbeda (melatih <b>Flexibility</b>). Isi tabel di bawah dengan argumen tiap sudut pandang.</p>
+          <div style="overflow-x:auto; border:1px solid var(--line); border-radius:10px; background:#fff; margin-bottom:12px;">
+            <table style="width:100%; border-collapse:collapse; font-size:13px; min-width:460px;">
+              <thead><tr style="background:#eef6f4; text-align:left;"><th style="padding:8px 12px;">Perspektif</th><th style="padding:8px 12px;">Argumen 6 V</th><th style="padding:8px 12px;">Argumen 12 V</th></tr></thead>
+              <tbody>
+                <tr style="border-top:1px solid var(--line);"><td style="padding:8px 12px;">Efektivitas</td><td style="padding:8px 12px; color:var(--muted);">…</td><td style="padding:8px 12px; color:var(--muted);">…</td></tr>
+                <tr style="border-top:1px solid var(--line);"><td style="padding:8px 12px;">Energi/biaya</td><td style="padding:8px 12px; color:var(--muted);">…</td><td style="padding:8px 12px; color:var(--muted);">…</td></tr>
+                <tr style="border-top:1px solid var(--line);"><td style="padding:8px 12px;">Keselamatan</td><td style="padding:8px 12px; color:var(--muted);">…</td><td style="padding:8px 12px; color:var(--muted);">…</td></tr>
+                <tr style="border-top:1px solid var(--line);"><td style="padding:8px 12px;">Keberlanjutan</td><td style="padding:8px 12px; color:var(--muted);">…</td><td style="padding:8px 12px; color:var(--muted);">…</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <textarea data-note="b3-lkm" placeholder="Tuliskan argumen tiap perspektif…" style="width:100%; min-height:100px; resize:vertical; border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-family:inherit; font-size:14.5px; background:#fff; color:var(--body);"></textarea>
+        </div>
+
+        <h3 style="font-family:'Newsreader',serif; font-weight:600; font-size:27px; color:var(--ink); margin:36px 0 4px;">Konsep Inti</h3>
+        <div style="height:3px; width:56px; background:var(--teal); border-radius:2px; margin-bottom:18px;"></div>
+
+        <div style="background:#fbfaf5; border:1px solid #ece6d2; border-radius:14px; padding:16px 20px; margin:0 0 24px;">
+          <div style="font:700 11px/1 'Mulish'; letter-spacing:.1em; text-transform:uppercase; color:#9a8a4a; margin-bottom:10px; display:flex; align-items:center; gap:6px;"><span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#2f8f5b; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle; white-space:nowrap;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>SDG</span> Keterkaitan SDGs</div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px;"><span style="display:inline-flex; align-items:center; gap:5px; padding:5px 11px 5px 8px; background:#fcc30b; color:#4a3a00; border-radius:999px; font:800 12px/1.4 'Mulish';"><span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; background:rgba(255,255,255,.28); border-radius:50%; font-size:10.5px;">7</span>Energi Bersih dan Terjangkau</span> <span style="display:inline-flex; align-items:center; gap:5px; padding:5px 11px 5px 8px; background:#26bde2; color:#fff; border-radius:999px; font:800 12px/1.4 'Mulish';"><span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; background:rgba(255,255,255,.28); border-radius:50%; font-size:10.5px;">6</span>Air Bersih dan Sanitasi Layak</span></div>
+          <p style="margin:0; font-size:13.5px; color:var(--body); line-height:1.65;">Konsep kelistrikan DC, hukum Ohm, dan daya listrik berkontribusi pada <b>SDGs 7 (Energi Bersih dan Terjangkau)</b>, karena pemilihan tegangan dan arus yang tepat menentukan seberapa hemat energi alat elektrokoagulasi bekerja. Materi ini juga mendukung <b>SDGs 6 (Air Bersih dan Sanitasi Layak)</b> sebagai dasar teknis dari alat penjernih air yang sedang dirancang.</p>
+        </div>
+
+        <h4 style="font-family:'Newsreader',serif; font-size:21px; color:var(--ink); margin:24px 0 8px;">3.1 Arus Searah (DC) dan Beda Potensial <span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#1596ad; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><circle cx="12" cy="12" r="1.8" fill="#fff" stroke="none"/><ellipse cx="12" cy="12" rx="10" ry="4.2"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)"/></svg>S</span></h4>
+        <p><b>Arus searah (DC)</b> mengalir satu arah dengan besar relatif tetap · inilah yang dibutuhkan elektrokoagulasi agar satu elektroda konsisten menjadi anoda (larut) dan lainnya menjadi katoda. <b>Beda potensial (tegangan, V)</b> adalah "dorongan" yang menggerakkan muatan. Arus (\(I\)) menyatakan laju aliran muatan: \(I = q/t\).</p>
+        <p>Dalam sel elektrokoagulasi, sumber DC biasanya berasal dari aki 12 V, adaptor listrik, atau panel surya kecil yang dilengkapi regulator tegangan. Pemilihan sumber DC dan bukan AC (arus bolak-balik) bukan kebetulan: jika arus dibiarkan berganti arah berkali-kali per detik seperti pada listrik rumah tangga, elektroda tidak akan konsisten berperan sebagai anoda atau katoda, sehingga proses pelarutan logam dan pembentukan koagulan menjadi tidak terkendali.</p>
+        <p>Pemahaman tentang beda potensial dan arus ini menjadi fondasi bagi seluruh perhitungan di bab ini. Sebagaimana ditunjukkan pada Studi Kasus "6 Volt vs 12 Volt", pertanyaan yang tampak sederhana, yakni tegangan mana yang lebih baik, sesungguhnya menuntut pemahaman tentang bagaimana tegangan, arus, dan hambatan saling berkaitan lewat hukum Ohm, yang akan Anda pelajari pada subbab 3.3.</p>
+
+        <h4 style="font-family:'Newsreader',serif; font-size:21px; color:var(--ink); margin:24px 0 8px;">3.2 Hambatan Larutan dan Konduktivitas Air <span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#1596ad; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><circle cx="12" cy="12" r="1.8" fill="#fff" stroke="none"/><ellipse cx="12" cy="12" rx="10" ry="4.2"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)"/></svg>S</span></h4>
+        <p>Air <i>murni</i> hampir tak menghantar listrik. Yang menghantar adalah <b>ion terlarut</b> (garam, mineral, limbah). Makin banyak ion, makin besar <b>konduktivitas</b> (\(\sigma\)) dan makin kecil <b>hambatan</b> (\(R\)). Inilah jawaban "Ayo Berpikir" no. 2: air sungai menghantar karena mengandung ion. Hambatan larutan bergantung pada geometri sel:</p>
+        <p>Hal ini menjelaskan mengapa air suling (akuades) hampir tidak dapat digunakan langsung dalam elektrokoagulasi tanpa penambahan elektrolit, sementara air limbah industri yang kaya ion justru sangat mudah menghantarkan arus. Konduktivitas air, dengan demikian, bukan hanya parameter kualitas air seperti dibahas pada Bab 2, tetapi juga variabel kelistrikan yang menentukan performa alat.</p>
+        <div style="background:#0c2b31; color:#eafaf7; border-radius:12px; padding:16px 20px; margin:14px 0;">
+          <div style="font:700 11px/1 'Mulish'; letter-spacing:.1em; color:#7fd8cf; margin-bottom:8px;">RUMUS (3.1) · HAMBATAN LARUTAN <span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#375a97; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>M</span></div>
+          <div style="font-size:18px;">\[ R = \frac{d}{\sigma\,A} \]</div>
+          <div style="font-size:13px; color:#bfe6e0; margin-top:8px;">\(d\) = jarak antar-elektroda (m), \(\sigma\) = konduktivitas (S/m), \(A\) = luas elektroda (m²). Mendekatkan elektroda atau menaikkan konduktivitas menurunkan \(R\).</div>
+        </div>
+        <p>Persamaan 3.1 menunjukkan bahwa hambatan larutan dapat direkayasa melalui tiga cara: mengubah jarak antar-elektroda \(d\), memperbesar luas permukaan elektroda \(A\), atau meningkatkan konduktivitas larutan \(\sigma\) (misalnya dengan menambahkan sedikit elektrolit). Pemahaman ini akan sangat berguna ketika Anda merancang spesifikasi alat pada Bab 6, karena ketiga variabel tersebut langsung memengaruhi berapa banyak arus yang mengalir pada tegangan tertentu.</p>
+
+        <h4 style="font-family:'Newsreader',serif; font-size:21px; color:var(--ink); margin:24px 0 8px;">3.3 Hukum Ohm dalam Sel Elektrokoagulasi <span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#1596ad; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><circle cx="12" cy="12" r="1.8" fill="#fff" stroke="none"/><ellipse cx="12" cy="12" rx="10" ry="4.2"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)"/></svg>S</span></h4>
+        <p>Hukum Ohm adalah salah satu hukum paling mendasar dalam kelistrikan, dan dalam konteks elektrokoagulasi ia menjadi jembatan yang menghubungkan tiga besaran yang telah dibahas: tegangan sumber (subbab 3.1), hambatan larutan (subbab 3.2), dan arus yang mengalir melalui sel.</p>
+        <div style="background:#0c2b31; color:#eafaf7; border-radius:12px; padding:16px 20px; margin:14px 0;">
+          <div style="font:700 11px/1 'Mulish'; letter-spacing:.1em; color:#7fd8cf; margin-bottom:8px;">RUMUS (3.2) · HUKUM OHM <span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#375a97; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>M</span></div>
+          <div style="font-size:20px;">\[ V = I\,R \qquad\Longleftrightarrow\qquad I = \frac{V}{R} \]</div>
+          <div style="font-size:13px; color:#bfe6e0; margin-top:8px;">\(V\) = tegangan (V), \(I\) = arus (A), \(R\) = hambatan (Ω).</div>
+        </div>
+        <p>Jadi pada tegangan tetap, menurunkan \(R\) (mendekatkan elektroda / air lebih konduktif) menaikkan arus \(I\). Ini menjawab "Ayo Berpikir" no. 1.</p>
+        <p>Dalam praktik di lapangan, hubungan ini berarti bahwa dua kelompok yang menggunakan tegangan sumber sama persis dapat memperoleh arus yang jauh berbeda hanya karena perbedaan jarak antar-elektroda atau tingkat konduktivitas air sampel mereka. Oleh sebab itu, laporan hasil praktikum elektrokoagulasi yang baik (Bab 7) harus selalu mencantumkan arus yang benar-benar terukur, bukan hanya tegangan yang diatur pada sumber.</p>
+
+        <h4 style="font-family:'Newsreader',serif; font-size:21px; color:var(--ink); margin:24px 0 8px;">3.4 Daya dan Energi Listrik <span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#1596ad; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><circle cx="12" cy="12" r="1.8" fill="#fff" stroke="none"/><ellipse cx="12" cy="12" rx="10" ry="4.2"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)"/></svg>S</span> <span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#375a97; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>M</span></h4>
+        <p>Setelah memahami hubungan tegangan, arus, dan hambatan, pertanyaan berikutnya adalah: seberapa besar energi yang dikonsumsi alat selama proses berlangsung? Jawabannya penting karena energi listrik adalah salah satu komponen biaya operasional utama sekaligus indikator keberlanjutan (ESD) sebuah alat pengolahan air.</p>
+        <div style="background:#0c2b31; color:#eafaf7; border-radius:12px; padding:16px 20px; margin:14px 0;">
+          <div style="font:700 11px/1 'Mulish'; letter-spacing:.1em; color:#7fd8cf; margin-bottom:8px;">RUMUS (3.3) &amp; (3.4) · DAYA &amp; ENERGI <span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#375a97; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>M</span></div>
+          <div style="font-size:19px;">\[ P = V\,I \qquad\qquad E = P\,t = V\,I\,t \]</div>
+          <div style="font-size:13px; color:#bfe6e0; margin-top:8px;">\(P\) = daya (W), \(E\) = energi (J; 1 kWh = 3,6×10⁶ J), \(t\) = waktu (s atau jam).</div>
+        </div>
+        <div style="background:#f7fbfa; border:1px solid var(--line); border-radius:12px; padding:16px 20px; margin:14px 0;">
+          <div style="font:700 12px/1 'Mulish'; color:var(--teal-d); margin-bottom:8px;">Contoh Hitungan 3.1</div>
+          <p style="margin:0 0 6px; font-size:14.5px;">Sel elektrokoagulasi bekerja pada \(V = 12\) V dengan hambatan larutan \(R = 8\) Ω selama \(t = 30\) menit. Hitung arus, daya, dan energi.</p>
+          <div style="font-size:15px; margin:8px 0;">\[ I = \frac{V}{R} = \frac{12}{8} = 1{,}5\ \text{A} \]</div>
+          <div style="font-size:15px; margin:8px 0;">\[ P = V\,I = 12 \times 1{,}5 = 18\ \text{W} \]</div>
+          <div style="font-size:15px; margin:8px 0;">\[ E = P\,t = 18 \times (30\times 60) = 32{.}400\ \text{J} \approx 0{,}009\ \text{kWh} \]</div>
+          <p style="margin:0; font-size:14px; color:var(--muted);">Bandingkan: pada 6 V &amp; \(R\) sama, \(I=0{,}75\) A, \(P=4{,}5\) W · jauh lebih hemat tetapi lebih lambat. Inilah <i>trade-off</i> kasus pembuka.</p>
+        </div>
+        <p>Perhitungan pada Contoh 3.1 menegaskan mengapa pemilihan tegangan bukan sekadar preferensi teknis, melainkan keputusan yang membawa konsekuensi ekonomi dan lingkungan. Konsep <i>trade-off</i> antara kecepatan proses dan konsumsi energi ini akan Anda kaji lebih dalam pada Bab 5 melalui konsep efisiensi arus dan konsumsi energi spesifik (SEC), sebelum akhirnya menjadi salah satu variabel yang harus Anda tetapkan saat merancang alat pada Bab 6.</p>
+
+        <h4 style="font-family:'Newsreader',serif; font-size:21px; color:var(--ink); margin:24px 0 8px;">3.5 Medan Listrik &amp; Pergerakan Ion (Elektromigrasi) <span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#1596ad; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><circle cx="12" cy="12" r="1.8" fill="#fff" stroke="none"/><ellipse cx="12" cy="12" rx="10" ry="4.2"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)"/></svg>S</span></h4>
+        <p>Di antara elektroda terbentuk <b>medan listrik</b> <span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mi>f</mi></msub><mo>=</mo><mi>V</mi><mi mathvariant="normal">/</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">E_f = V/d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.9694em; vertical-align: -0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right: 0.0576em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.3361em;"><span class="" style="top: -2.55em; margin-left: -0.0576em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right: 0.1076em;">f</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.2861em;"><span class=""></span></span></span></span></span></span><span class="mspace" style="margin-right: 0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.2778em;"></span></span><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mord mathnormal" style="margin-right: 0.2222em;">V</span><span class="mord">/</span><span class="mord mathnormal">d</span></span></span></span></span>. Medan ini mendorong ion positif menuju katoda dan ion negatif menuju anoda, peristiwa <b>elektromigrasi</b>. Pergerakan ion inilah "jembatan" antara fisika (listrik) dan kimia (reaksi elektroda) yang akan dibahas pada Bab 4. Meski disebut "elektromagnetik", pada sel DC sederhana efek magnetik kecil; yang dominan adalah medan listrik dan hantaran ionik.</p>
+        <p>Kecepatan pergerakan ion akibat elektromigrasi ini bergantung pada besar medan listrik dan jenis ionnya; ion yang lebih kecil dan bermuatan lebih tinggi umumnya bergerak lebih cepat. Semakin besar medan listrik yang terbentuk, baik karena tegangan yang lebih tinggi maupun jarak antar-elektroda yang lebih pendek, semakin cepat pula ion-ion mencapai elektroda dan bereaksi di sana.</p>
+        <p>Konsep elektromigrasi ini menjadi jembatan penting menuju Bab 4, karena begitu ion logam dari elektroda (misalnya Al³⁺ atau Fe²⁺) terlepas ke dalam larutan, elektromigrasi dan difusi memungkinkan ion tersebut bergerak dan berinteraksi dengan partikel-partikel penyebab kekeruhan di seluruh volume air, bukan hanya di sekitar elektroda saja. Inilah mekanisme fisis yang membuat proses koagulasi dapat terjadi merata pada seluruh wadah, bukan hanya menggumpal di dekat elektroda.</p>
+
+                <h4 style="font-family:'Newsreader',serif; font-size:21px; color:var(--ink); margin:24px 0 8px;">3.6 Susunan Elektroda: Rangkaian Seri vs Paralel <span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#0e8388; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle;"><svg width="10" height="10" viewBox="0 0 24 24" fill="#fff"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>T</span></h4>
+        <p>Ketika sebuah sel elektrokoagulasi memakai <b>lebih dari sepasang elektroda</b>, susunannya dapat dipandang sebagai rangkaian hambatan. Dua konfigurasi dasar berlaku sama seperti pada rangkaian listrik biasa:</p>
+        <div style="background:#0c2b31; color:#eafaf7; border-radius:12px; padding:16px 20px; margin:14px 0;">
+          <div style="font:700 11px/1 'Mulish'; letter-spacing:.1em; color:#7fd8cf; margin-bottom:8px;">RUMUS (3.5) · HAMBATAN GABUNGAN ELEKTRODA</div>
+          <div style="font-size:18px;">\[ \text{Seri: } R_{total} = R_1+R_2+\cdots+R_n \qquad \text{Paralel: } \frac{1}{R_{total}} = \frac{1}{R_1}+\frac{1}{R_2}+\cdots+\frac{1}{R_n} \]</div>
+          <div style="font-size:13px; color:#bfe6e0; margin-top:8px;">Susunan <b>seri</b> (konfigurasi monopolar berurutan) menaikkan hambatan total → arus lebih kecil pada tegangan sama. Susunan <b>paralel</b> menurunkan hambatan total → arus lebih besar, tetapi setiap cabang butuh sumber arus lebih besar pula.</div>
+        </div>
+        <p style="font-size:14px; color:var(--muted);">Pemilihan susunan ini memengaruhi kebutuhan daya sumber DC dan akan dibahas lebih lanjut sebagai keputusan desain pada Bab 6.</p>
+        <p>Selain memengaruhi arus total, susunan elektroda juga menentukan keseragaman proses pelarutan logam. Pada konfigurasi monopolar (elektroda tersambung langsung ke kutub sumber, disusun seri atau paralel), setiap pasang elektroda bekerja relatif independen sehingga mudah dipantau dan diganti. Pada konfigurasi bipolar, elektroda di tengah tidak tersambung langsung ke sumber tetapi terpolarisasi akibat medan listrik, sehingga rangkaiannya lebih sederhana namun lebih sulit dianalisis. Pemilihan konfigurasi ini akan menjadi salah satu keputusan desain penting yang Anda ambil bersama kelompok pada Bab 6.</p>
+
+        <div style="background:#e9f5f7; border:1px solid var(--line); border-left:4px solid #127f97; border-radius:14px; padding:20px 22px; margin:22px 0;">
+          <div style="font:700 12px/1 'Mulish'; letter-spacing:.1em; text-transform:uppercase; color:#127f97; margin-bottom:10px;">Aktivitas Terpadu STEM-ESD · Pertemuan 3</div>
+          <p style="margin:0 0 8px;">Tiga pasang elektroda identik masing-masing memiliki hambatan \(R=4\) Ω, disusun dari sumber \(V=12\) V.</p>
+          <ol style="margin:0 0 10px; padding-left:20px; font-size:14.5px;">
+            <li><span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#375a97; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle; white-space:nowrap;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>M</span> Hitung \(R_{total}\) dan arus total untuk susunan seri, lalu untuk susunan paralel.</li>
+            <li><span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#c47f22; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle; white-space:nowrap;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>E</span> Susunan mana yang menghasilkan arus lebih besar? Apa konsekuensinya terhadap daya &amp; energi (rujuk Persamaan 3.3–3.4)?</li>
+            <li><span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#0e8388; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle; white-space:nowrap;"><svg width="10" height="10" viewBox="0 0 24 24" fill="#fff"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>T</span> Sebutkan pertimbangan teknis (mis. kapasitas sumber DC, kabel) saat memilih salah satu susunan pada alat nyata.</li>
+            <li><span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#375a97; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle; white-space:nowrap;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>PCK</span> Rancang satu pertanyaan diagnostik untuk mengecek apakah siswa memahami perbedaan hambatan seri vs paralel.</li>
+          </ol>
+          <textarea data-note="b3-stemesd" placeholder="Jawaban aktivitas terpadu saya…" style="width:100%; min-height:110px; resize:vertical; border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-family:inherit; font-size:14.5px; background:#fff; color:var(--body); margin-top:10px;"></textarea>
+        </div>
+
+        <div style="background:#f4effa; border:1px solid #ddd0ee; border-left:4px solid var(--violet); border-radius:14px; padding:20px 22px; margin:24px 0;">
+          <div style="font:700 12px/1 'Mulish'; letter-spacing:.1em; text-transform:uppercase; color:var(--violet); margin-bottom:10px; display:flex; align-items:center; gap:6px;"><span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#6a4c93; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle; white-space:nowrap;"><svg width="10" height="10" viewBox="0 0 24 24" fill="#fff"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>CPSS</span> <span>Flexibility</span></div>
+          <p style="margin:0 0 8px;">Tuliskan <b>tiga cara berbeda</b> menaikkan arus pada sel tanpa menaikkan tegangan sumber (mis. mengubah geometri, larutan, atau elektroda). Untuk tiap cara, sebutkan satu konsekuensinya.</p>
+          <textarea data-note="b3-cpss" placeholder="Cara 1 … (konsekuensi …) / Cara 2 … / Cara 3 …" style="width:100%; min-height:88px; resize:vertical; border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-family:inherit; font-size:14.5px; background:#fff; color:var(--body);"></textarea>
+        </div>
+
+        <div style="background:#eef2fb; border:1px solid #cdd8ef; border-left:4px solid var(--indigo); border-radius:14px; padding:20px 22px; margin:24px 0;">
+          <div style="font:700 12px/1 'Mulish'; letter-spacing:.1em; text-transform:uppercase; color:var(--indigo); margin-bottom:10px; display:flex; align-items:center; gap:6px;"><span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#375a97; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle; white-space:nowrap;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>PCK</span> <span>Teacher Candidate Corner (Student Understanding)</span></div>
+          <p style="margin:0 0 8px;">Banyak siswa bingung membedakan <b>tegangan</b> dan <b>arus</b>. Rancang satu analogi (mis. air/pipa) untuk menjelaskannya, lalu tuliskan satu pertanyaan diagnostik untuk mengecek pemahaman siswa.</p>
+          <textarea data-note="b3-pck" placeholder="Analogi saya … Pertanyaan diagnostik …" style="width:100%; min-height:76px; resize:vertical; border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-family:inherit; font-size:14.5px; background:#fff; color:var(--body);"></textarea>
+        </div>
+
+        <div style="background:#ecf7ef; border:1px solid #c8e6d1; border-left:4px solid var(--green); border-radius:14px; padding:20px 22px; margin:24px 0;">
+          <div style="font:700 12px/1 'Mulish'; letter-spacing:.1em; text-transform:uppercase; color:var(--green); margin-bottom:10px; display:flex; align-items:center; gap:6px;"><span style="display:inline-flex; align-items:center; gap:4px; padding:3px 9px 3px 6px; border-radius:999px; background:#2f8f5b; color:#fff; font:800 10px/1.5 'Mulish'; letter-spacing:.02em; vertical-align:middle; white-space:nowrap;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>EA</span> <span>Green Note (Sikap terhadap Efisiensi Energi)</span></div>
+          <p style="margin:0;">Alat yang "kuat" belum tentu "baik". Alat 12 V mungkin cepat tetapi memboroskan energi. Sikap berkelanjutan berarti memilih parameter yang <b>cukup efektif dengan energi minimum,&nbsp;</b>prinsip yang akan Anda kuantifikasi di Bab 5.</p>
+        </div>
+
+        <div style="background:#fbefec; border:1px solid #f1cfc6; border-left:4px solid var(--coral); border-radius:14px; padding:20px 22px; margin:24px 0;">
+          <div style="font:700 12px/1 'Mulish'; letter-spacing:.1em; text-transform:uppercase; color:var(--coral); margin-bottom:10px;">Miskonsepsi yang Perlu Diwaspadai</div>
+          <ul style="margin:0; padding-left:20px; font-size:14.5px;">
+            <li><b>"Listrik membakar/memanaskan endapan tanah dalam air hingga hilang."</b> Salah, elektrokoagulasi bekerja lewat pembentukan koagulan &amp; penggumpalan, bukan pembakaran.</li>
+            <li><b>"Tegangan lebih tinggi selalu lebih baik."</b> Salah, menaikkan V menaikkan energi &amp; panas; efektivitas harus diimbangi efisiensi.</li>
+          </ul>
+        </div>
+
+        <div style="background:#fdf8ec; border:1px solid #f0e3bf; border-left:4px solid #b8860b; border-radius:14px; padding:20px 22px; margin:22px 0;">
+          <div style="font:700 12px/1 'Mulish'; letter-spacing:.1em; text-transform:uppercase; color:#b8860b; margin-bottom:10px;">Sintaks PjBL · Fase 5 · Monitoring &amp; Revisi</div>
+          <p style="margin:0 0 6px;">Beri tanda ✓ pada hal yang sudah Anda kuasai/lakukan pertemuan ini:</p>
+          <div style="display:flex; flex-direction:column; gap:6px; margin:8px 0 10px; font-size:14px;"><label style="display:flex; gap:8px; align-items:flex-start; cursor:pointer;"><input type="checkbox" style="margin-top:3px;">Menerapkan hukum Ohm (V=IR) pada sel elektrokoagulasi</label><label style="display:flex; gap:8px; align-items:flex-start; cursor:pointer;"><input type="checkbox" style="margin-top:3px;">Menghitung daya (P=VI) &amp; energi (E=VIt)</label><label style="display:flex; gap:8px; align-items:flex-start; cursor:pointer;"><input type="checkbox" style="margin-top:3px;">Menjelaskan mengapa air sungai dapat menghantar listrik</label><label style="display:flex; gap:8px; align-items:flex-start; cursor:pointer;"><input type="checkbox" style="margin-top:3px;">Menjelaskan medan listrik &amp; elektromigrasi ion</label></div>
+          <textarea data-note="b3-monitor" placeholder="Catatan revisi/kendala yang perlu ditindaklanjuti…" style="width:100%; min-height:64px; resize:vertical; border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-family:inherit; font-size:14.5px; background:#fff; color:var(--body);"></textarea>
+        </div>
+
+        <div style="background:#eef2fb; border:1px solid #cdd8ef; border-left:4px solid var(--indigo); border-radius:14px; padding:20px 22px; margin:22px 0;">
+          <div style="font:700 12px/1 'Mulish'; letter-spacing:.1em; text-transform:uppercase; color:var(--indigo); margin-bottom:10px;">Sintaks PjBL · Fase 6 · Presentasi Hasil</div>
+          <p style="margin:0 0 8px;">Sampaikan hasil <b>tabel multiperspektif (LKM 3)</b> ke kelompok lain (± 3 menit) &amp; catat masukan yang Anda terima.</p>
+          <textarea data-note="b3-share" placeholder="Masukan yang saya terima dari kelompok lain…" style="width:100%; min-height:64px; resize:vertical; border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-family:inherit; font-size:14.5px; background:#fff; color:var(--body);"></textarea>
+        </div>
+
+        <div style="background:#0c2a30; color:#dbeee9; border-radius:16px; padding:24px 26px; margin:28px 0;">
+          <div style="font:700 12px/1 'Mulish'; letter-spacing:.14em; text-transform:uppercase; color:#7fd8cf; margin-bottom:12px;">Rangkuman Bab 3</div>
+          <ul style="margin:0; padding-left:20px; font-size:14.5px; line-height:1.9;">
+            <li>Elektrokoagulasi memakai <b>arus DC</b>; ion terlarutlah yang membuat air menghantar.</li>
+            <li><b>Hukum Ohm</b> \(V=IR\); menurunkan \(R\) menaikkan arus pada tegangan tetap.</li>
+            <li><b>Daya</b> \(P=VI\); <b>Energi</b> \(E=VIt\) · dasar perhitungan biaya &amp; efisiensi.</li>
+            <li><b>Medan listrik</b> menggerakkan ion (elektromigrasi), penghubung fisika–kimia.</li>
+            <li>Efektif ≠ efisien: pilih parameter dengan energi minimum (sikap EA).</li>
+          </ul>
+        </div>
+
+        <h3 style="font-family:'Newsreader',serif; font-weight:600; font-size:24px; color:var(--ink); margin:30px 0 4px;">Evaluasi Bab 3</h3>
+        <div style="height:3px; width:56px; background:var(--amber); border-radius:2px; margin-bottom:16px;"></div>
+
+        <div data-quiz="" data-quiz-id="b3-q1" style="background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:14px 0;">
+          <p style="margin:0 0 12px; font-weight:600;">1. <span style="color:var(--teal); font-size:12px; font-weight:700;">(Hitungan)</span> Pada \(V=9\) V dan \(R=6\) Ω, arus yang mengalir adalah…</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <button data-opt="" style="text-align:left; padding:11px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; cursor:pointer; font-family:inherit; font-size:14.5px; color:var(--body);"><span data-mark="" style="display:inline-block; width:18px; font-weight:800;"></span>A. 0,67 A</button>
+            <button data-opt="" data-correct="1" style="text-align:left; padding:11px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; cursor:pointer; font-family:inherit; font-size:14.5px; color:var(--body);"><span data-mark="" style="display:inline-block; width:18px; font-weight:800;"></span>B. 1,5 A</button>
+            <button data-opt="" style="text-align:left; padding:11px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; cursor:pointer; font-family:inherit; font-size:14.5px; color:var(--body);"><span data-mark="" style="display:inline-block; width:18px; font-weight:800;"></span>C. 54 A</button>
+            <button data-opt="" style="text-align:left; padding:11px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; cursor:pointer; font-family:inherit; font-size:14.5px; color:var(--body);"><span data-mark="" style="display:inline-block; width:18px; font-weight:800;"></span>D. 15 A</button>
+          </div>
+          <div data-feedback="" data-fb-correct="Benar." data-expl="I = V/R = 9/6 = 1,5 A." style="display:none; margin-top:12px; padding:11px 14px; border:1px solid; border-radius:10px; font-size:13.5px;"></div>
+        </div>
+
+        <div data-quiz="" data-quiz-id="b3-q2" style="background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:14px 0;">
+          <p style="margin:0 0 12px; font-weight:600;">2. <span style="color:var(--aqua); font-size:12px; font-weight:700;">(Konsep)</span> Air sungai dapat menghantarkan arus terutama karena…</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <button data-opt="" style="text-align:left; padding:11px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; cursor:pointer; font-family:inherit; font-size:14.5px; color:var(--body);"><span data-mark="" style="display:inline-block; width:18px; font-weight:800;"></span>A. Molekul H₂O bermuatan</button>
+            <button data-opt="" data-correct="1" style="text-align:left; padding:11px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; cursor:pointer; font-family:inherit; font-size:14.5px; color:var(--body);"><span data-mark="" style="display:inline-block; width:18px; font-weight:800;"></span>B. Adanya ion-ion terlarut</button>
+            <button data-opt="" style="text-align:left; padding:11px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; cursor:pointer; font-family:inherit; font-size:14.5px; color:var(--body);"><span data-mark="" style="display:inline-block; width:18px; font-weight:800;"></span>C. Warna airnya</button>
+            <button data-opt="" style="text-align:left; padding:11px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; cursor:pointer; font-family:inherit; font-size:14.5px; color:var(--body);"><span data-mark="" style="display:inline-block; width:18px; font-weight:800;"></span>D. Suhunya yang tinggi</button>
+          </div>
+          <div data-feedback="" data-fb-correct="Benar." data-expl="Hantaran listrik dalam larutan dibawa oleh ion-ion terlarut, bukan molekul air murni." style="display:none; margin-top:12px; padding:11px 14px; border:1px solid; border-radius:10px; font-size:13.5px;"></div>
+        </div>
+
+        <div data-quiz="" data-quiz-id="b3-q3" style="background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:14px 0;">
+          <p style="margin:0 0 12px; font-weight:600;">3. <span style="color:var(--teal); font-size:12px; font-weight:700;">(Hitungan)</span> Daya sel pada \(V=12\) V dan \(I=2\) A adalah…</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <button data-opt="" style="text-align:left; padding:11px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; cursor:pointer; font-family:inherit; font-size:14.5px; color:var(--body);"><span data-mark="" style="display:inline-block; width:18px; font-weight:800;"></span>A. 6 W</button>
+            <button data-opt="" data-correct="1" style="text-align:left; padding:11px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; cursor:pointer; font-family:inherit; font-size:14.5px; color:var(--body);"><span data-mark="" style="display:inline-block; width:18px; font-weight:800;"></span>B. 24 W</button>
+            <button data-opt="" style="text-align:left; padding:11px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; cursor:pointer; font-family:inherit; font-size:14.5px; color:var(--body);"><span data-mark="" style="display:inline-block; width:18px; font-weight:800;"></span>C. 14 W</button>
+            <button data-opt="" style="text-align:left; padding:11px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; cursor:pointer; font-family:inherit; font-size:14.5px; color:var(--body);"><span data-mark="" style="display:inline-block; width:18px; font-weight:800;"></span>D. 10 W</button>
+          </div>
+          <div data-feedback="" data-fb-correct="Benar." data-expl="P = V·I = 12 × 2 = 24 W." style="display:none; margin-top:12px; padding:11px 14px; border:1px solid; border-radius:10px; font-size:13.5px;"></div>
+        </div>
+
+        <div style="background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:14px 0;">
+          <p style="margin:0 0 6px; font-weight:600;">Esai 1. <span style="color:var(--violet); font-size:12px; font-weight:700;">(CPSS–Flexibility)</span></p>
+          <p style="margin:0 0 10px;">Sebuah sel bekerja lambat menjernihkan air. Ajukan solusi dari tiga sudut pandang berbeda (fisika rangkaian, sifat larutan, dan desain elektroda), lalu diskusikan konsekuensi energi masing-masing.</p>
+          <textarea data-note="b3-esai1" data-gate-essay="" placeholder="Jawaban esai Anda…" style="width:100%; min-height:88px; resize:vertical; border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-family:inherit; font-size:14.5px; background:#fbfdfc; color:var(--body);"></textarea>
+        </div>
+        <div style="background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:14px 0;">
+          <p style="margin:0 0 6px; font-weight:600;">Esai 2. <span style="color:var(--indigo); font-size:12px; font-weight:700;">(PCK)</span></p>
+          <p style="margin:0 0 10px;">Seorang siswa berkata, "Tegangan dan arus itu sama saja." Tuliskan langkah pembelajaran (analogi + demonstrasi + pertanyaan) untuk meluruskan miskonsepsi tersebut.</p>
+          <textarea data-note="b3-esai2" data-gate-essay="" placeholder="Jawaban esai Anda…" style="width:100%; min-height:88px; resize:vertical; border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-family:inherit; font-size:14.5px; background:#fbfdfc; color:var(--body);"></textarea>
+        </div>
+
+        <div style="margin-top:8px;">
+          <button data-reveal="b3-kunci" data-gate="1" data-label-show="▸ Tampilkan Pedoman Jawaban" data-label-hide="▾ Sembunyikan Pedoman Jawaban" disabled="" style="padding:10px 18px; border:1px solid var(--line); border-radius:10px; background:#f0f2f1; color:#9aa5a3; font-weight:700; font-family:inherit; font-size:13.5px; cursor:not-allowed; opacity:.75;"><span data-lbl="">🔒 Tampilkan Pedoman Jawaban</span></button>
+          <div data-gate-hint="1" style="margin-top:7px; font-size:12px; color:var(--amber);">Jawab semua soal (3 objektif + 2 esai) dahulu untuk membuka pedoman jawaban. (0/5 terjawab)</div>
+        </div>
+        <div id="b3-kunci" data-open="0" style="display:none; margin-top:12px; background:#f5faf8; border:1px dashed var(--teal); border-radius:12px; padding:16px 18px; font-size:14px;">
+          <p style="margin:0 0 6px;"><b>Objektif:</b> 1-B, 2-B, 3-B.</p>
+          <p style="margin:0 0 6px;"><b>Esai 1:</b> Flexibility dinilai dari keberagaman kategori solusi (mis. dekatkan elektroda/tambah luas → turunkan R; tambah elektrolit → naikkan σ; ganti bahan elektroda) + analisis energi (arus naik → daya &amp; energi naik).</p>
+          <p style="margin:0;"><b>Esai 2:</b> Nilai ketepatan analogi (tegangan=dorongan, arus=laju aliran), demonstrasi terukur (multimeter), dan pertanyaan diagnostik yang menyasar miskonsepsi.</p>
+        </div>
+
+        <h3 style="font-family:'Newsreader',serif; font-weight:600; font-size:20px; color:var(--ink); margin:30px 0 10px;">Referensi Utama Bab 3</h3>
+        <ol style="font-size:13px; color:var(--body); line-height:1.7; padding-left:22px; margin:0;">
+          <li>Serway, R. A., &amp; Jewett, J. W. (2018). <i>Physics for scientists and engineers</i> (10th ed.). Cengage Learning.</li>
+          <li>Halliday, D., Resnick, R., &amp; Walker, J. (2014). <i>Fundamentals of physics</i> (10th ed.). Wiley.</li>
+          <li>Mollah, M. Y. A., Morkovsky, P., Gomes, J. A. G., Kesmez, M., Parga, J., &amp; Cocke, D. L. (2004). Fundamentals, present and future perspectives of electrocoagulation. <i>Journal of Hazardous Materials, 114</i>(1–3), 199–210. https://doi.org/10.1016/j.jhazmat.2004.08.009</li>
+          <li>Chen, G. (2004). Electrochemical technologies in wastewater treatment. <i>Separation and Purification Technology, 38</i>(1), 11–41. https://doi.org/10.1016/j.seppur.2003.10.006</li>
+          <li>Magnusson, S., Krajcik, J., &amp; Borko, H. (1999). Nature, sources, and development of pedagogical content knowledge for science teaching. In J. Gess-Newsome &amp; N. G. Lederman (Eds.), <i>Examining pedagogical content knowledge</i> (pp. 95–132). Springer. https://doi.org/10.1007/0-306-47217-1_4</li>
+          <li>Stern, P. C. (2000). Toward a coherent theory of environmentally significant behavior. <i>Journal of Social Issues, 56</i>(3), 407–424. https://doi.org/10.1111/0022-4537.00175</li>
+        </ol>
+      </section>
+
+      
+
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin:26px 0 6px; flex-wrap:wrap;">
+        <a href="Bab%202.dc.html" style="display:flex; align-items:center; gap:6px; padding:10px 16px; border:1px solid var(--line); border-radius:10px; background:#fff; color:var(--teal-d); text-decoration:none; font-weight:700; font-size:13.5px;">← Bab 2 · Analisis Air Tercemar</a>
+        <a href="Bahan%20Ajar%20Elektrokoagulasi%20STEM-ESD.dc.html#alur" style="font-size:12.5px; color:var(--muted); text-decoration:none;">Daftar Isi</a>
+        <a href="Bab%204.dc.html" style="display:flex; align-items:center; gap:6px; padding:10px 16px; border:1px solid var(--line); border-radius:10px; background:#fff; color:var(--teal-d); text-decoration:none; font-weight:700; font-size:13.5px;">Bab 4 · Elektrokimia &amp; Koagulasi →</a>
+      </div>
+
+      
+
+    </article>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;hideDashes&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Tampilan Teks&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this._boot();
+  }
+  _boot() {
+    this.DOSEN_SECRET = 'dosen2024';
+    this.mhsMode = 'signup';
+    this.buildNoteLabels();
+    this.wireAuth();
+    this.initSession();
+    this.applyGates();
+    this.cloudMergeGates();
+    this.setupMath();
+    window.addEventListener('pagehide', () => {
+      const u = this.cu();
+      if (u && u.role === 'mhs') this.cloudPushNow(u.nim, true);
+    });
+    this.bindAnswers();
+    this.bindScores();
+    this.wireClicks();
+    this.wireToc();
+    this.applyDashRemoval();
+  }
+  componentDidUpdate(prevProps) {
+    if (prevProps.hideDashes !== this.props.hideDashes) this.applyDashRemoval();
+  }
+  // ---------- TWEAK: hilangkan tanda pisah "-" pada semua teks ----------
+  applyDashRemoval() {
+    if (!this._dashNodes) {
+      this._dashNodes = [];
+      const root = document.getElementById('bookRoot') || document.body;
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+        acceptNode: (n) => {
+          const p = n.parentElement;
+          if (!p) return NodeFilter.FILTER_REJECT;
+          const tag = p.tagName;
+          if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'TEXTAREA') return NodeFilter.FILTER_REJECT;
+          if (!/[-\u2010-\u2015]/.test(n.nodeValue)) return NodeFilter.FILTER_SKIP;
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      });
+      let n;
+      while ((n = walker.nextNode())) this._dashNodes.push({ node: n, original: n.nodeValue });
+    }
+    const strip = !!this.props.hideDashes;
+    this._dashNodes.forEach(({ node, original }) => {
+      node.nodeValue = strip ? original.replace(/[-\u2010-\u2015]+/g, ' ').replace(/ {2,}/g, ' ') : original;
+    });
+  }
+  setupMath() {
+    let tries = 0;
+    const run = () => {
+      if (window.renderMathInElement) {
+        try {
+          window.renderMathInElement(document.getElementById('bookRoot') || document.body, {
+            delimiters: [
+              { left: '\\[', right: '\\]', display: true },
+              { left: '\\(', right: '\\)', display: false }
+            ],
+            throwOnError: false,
+            trust: true
+          });
+        } catch (e) {}
+      } else if (tries++ < 60) {
+        setTimeout(run, 120);
+      }
+    };
+    run();
+  }
+  // ---------- SESSION ----------
+  cu() {
+    try { return JSON.parse(localStorage.getItem('ecbook:session') || 'null'); } catch (e) { return null; }
+  }
+  getDB() { try { return JSON.parse(localStorage.getItem('ecbook:students') || '{}'); } catch (e) { return {}; } }
+  saveDB(db) { try { localStorage.setItem('ecbook:students', JSON.stringify(db)); } catch (e) {} }
+  getRec(nim) { const db = this.getDB(); return db[nim] || {}; }
+  touchRec(db, u) {
+    const rec = db[u.nim] || {};
+    rec.name = u.name; rec.kelas = u.kelas || rec.kelas || ''; if (!rec.registeredAt) rec.registeredAt = Date.now(); rec.updated = Date.now();
+    db[u.nim] = rec;
+    return rec;
+  }
+  setAnswer(id, val) { const u = this.cu(); if (!u) return; const db = this.getDB(); const rec = this.touchRec(db, u); rec.answers = rec.answers || {}; rec.answers[id] = val; this.saveDB(db); }
+  getAnswer(id) { const u = this.cu(); if (!u) return null; const rec = this.getRec(u.nim); return rec.answers ? rec.answers[id] : null; }
+  setAngket(name, val) { const u = this.cu(); if (!u) return; const db = this.getDB(); const rec = this.touchRec(db, u); rec.angket = rec.angket || {}; rec.angket[name] = val; this.saveDB(db); }
+  getAngket(name) { const u = this.cu(); if (!u) return null; const rec = this.getRec(u.nim); return rec.angket ? rec.angket[name] : null; }
+  clearAngket(name) { const u = this.cu(); if (!u) return; const db = this.getDB(); const rec = db[u.nim]; if (!rec || !rec.angket) return; delete rec.angket[name]; rec.updated = Date.now(); this.saveDB(db); }
+  setQuiz(qid, val) { const u = this.cu(); if (!u) return; const db = this.getDB(); const rec = this.touchRec(db, u); rec.quiz = rec.quiz || {}; rec.quiz[qid] = val; this.saveDB(db); }
+  getQuiz(qid) { const u = this.cu(); if (!u) return null; const rec = this.getRec(u.nim); return rec.quiz ? rec.quiz[qid] : null; }
+  async cloudMergeOnLogin(nim) {
+    try {
+      if (!window.EcbookCloud || !window.EcbookCloud.ready()) return;
+      const cloudRec = await window.EcbookCloud.pull(nim);
+      if (!cloudRec) { this.cloudPushNow(nim); return; }
+      const db = this.getDB();
+      const localRec = db[nim] || {};
+      const cu = cloudRec.updated || 0, lu = localRec.updated || 0;
+      const base = cu >= lu ? [localRec, cloudRec] : [cloudRec, localRec];
+      const merged = Object.assign({}, base[0], base[1], {
+        answers: Object.assign({}, base[0].answers, base[1].answers),
+        quiz: Object.assign({}, base[0].quiz, base[1].quiz),
+        angket: Object.assign({}, base[0].angket, base[1].angket),
+        scores: Object.assign({}, base[0].scores, base[1].scores)
+      });
+      db[nim] = merged;
+      this.saveDB(db);
+      this.cloudPushNow(nim);
+    } catch (e) {}
+  }
+  cloudPushNow(nim, keepalive) {
+    try {
+      if (!window.EcbookCloud || !window.EcbookCloud.ready()) return;
+      const rec = this.getRec(nim);
+      if (rec && Object.keys(rec).length) window.EcbookCloud.push(nim, rec, keepalive);
+    } catch (e) {}
+  }
+  async cloudPullAllMerge() {
+    try {
+      if (!window.EcbookCloud || !window.EcbookCloud.ready()) return;
+      const cloud = await window.EcbookCloud.pullAll();
+      const db = this.getDB();
+      Object.keys(cloud).forEach((nim) => {
+        const c = cloud[nim] || {}, l = db[nim] || {};
+        const cu = c.updated || 0, lu = l.updated || 0;
+        const base = cu >= lu ? [l, c] : [c, l];
+        db[nim] = Object.assign({}, base[0], base[1], {
+          answers: Object.assign({}, base[0].answers, base[1].answers),
+          quiz: Object.assign({}, base[0].quiz, base[1].quiz),
+          angket: Object.assign({}, base[0].angket, base[1].angket),
+          scores: Object.assign({}, base[0].scores, base[1].scores)
+        });
+      });
+      this.saveDB(db);
+    } catch (e) {}
+  }
+  async cloudMergeGates() {
+    try {
+      if (!window.EcbookCloud || !window.EcbookCloud.ready()) return;
+      const g = await window.EcbookCloud.pullGates();
+      if (g) { this.setGates(g); this.applyGates(); }
+    } catch (e) {}
+  }
+
+  buildNoteLabels() {
+    this.noteLabels = {};
+    document.querySelectorAll('textarea[data-note]').forEach((t) => {
+      const id = t.getAttribute('data-note');
+      let label = '';
+      let node = t.previousElementSibling;
+      while (node) { const tx = (node.innerText || '').trim(); if (tx) { label = tx; break; } node = node.previousElementSibling; }
+      if (!label) { const c = t.closest('div,li'); if (c) label = (c.innerText || '').trim(); }
+      const chap = t.closest('[data-chapter]');
+      const chapId = chap ? (chap.getAttribute('data-screen-label') || chap.id) : (t.closest('[id]') ? t.closest('[id]').id : '');
+      this.noteLabels[id] = { label: label.replace(/\s+/g, ' ').slice(0, 150) || id, chap: chapId };
+    });
+  }
+
+  checkGateComplete() {
+    const quizzes = document.querySelectorAll('[data-quiz]');
+    const answeredQuiz = [...quizzes].filter((q) => q.getAttribute('data-answered') === '1').length;
+    const essays = document.querySelectorAll('[data-gate-essay]');
+    const answeredEssay = [...essays].filter((t) => t.value && t.value.trim().length > 0).length;
+    return { total: quizzes.length + essays.length, answered: answeredQuiz + answeredEssay };
+  }
+  updateGate() {
+    const btn = document.querySelector('[data-gate]');
+    if (!btn) return;
+    const { total, answered } = this.checkGateComplete();
+    const hint = document.querySelector('[data-gate-hint]');
+    const lbl = btn.querySelector('[data-lbl]');
+    if (total > 0 && answered >= total) {
+      btn.disabled = false;
+      btn.style.background = '#fff'; btn.style.color = 'var(--teal-d)'; btn.style.cursor = 'pointer'; btn.style.opacity = '1';
+      if (lbl) lbl.textContent = btn.getAttribute('data-label-show');
+      if (hint) hint.style.display = 'none';
+    } else {
+      btn.disabled = true;
+      btn.style.background = '#f0f2f1'; btn.style.color = '#9aa5a3'; btn.style.cursor = 'not-allowed'; btn.style.opacity = '.75';
+      if (lbl) lbl.textContent = '\ud83d\udd12 Tampilkan Pedoman Jawaban';
+      if (hint) { hint.style.display = 'block'; hint.textContent = 'Jawab semua soal (3 objektif + 2 esai) dahulu untuk membuka pedoman jawaban. (' + answered + '/' + total + ' terjawab)'; }
+    }
+  }
+  renderQuizVisual(quiz, chosenIdx) {
+    const opts = [...quiz.querySelectorAll('[data-opt]')];
+    opts.forEach((o, i) => {
+      o.style.cursor = 'default';
+      const isC = o.getAttribute('data-correct') === '1';
+      const mk = o.querySelector('[data-mark]');
+      if (isC) { o.style.background = '#e6f6ec'; o.style.borderColor = '#2f8f5b'; o.style.color = '#1c5f39'; if (mk) mk.textContent = '✓'; }
+      else if (i === chosenIdx) { o.style.background = '#fbe9e6'; o.style.borderColor = '#cf503b'; o.style.color = '#8f2c1e'; if (mk) mk.textContent = '✕'; }
+      else { o.style.opacity = '0.6'; }
+    });
+    const correctIdx = opts.findIndex((o) => o.getAttribute('data-correct') === '1');
+    const correct = chosenIdx === correctIdx;
+    const fb = quiz.querySelector('[data-feedback]');
+    if (fb) {
+      fb.style.display = 'block';
+      fb.style.background = correct ? '#e6f6ec' : '#fbe9e6';
+      fb.style.color = correct ? '#1c5f39' : '#8f2c1e';
+      fb.style.borderColor = correct ? '#bfe6cd' : '#f0c9c2';
+      const good = fb.getAttribute('data-fb-correct') || 'Tepat!';
+      const bad = fb.getAttribute('data-fb-wrong') || 'Belum tepat. Lihat opsi yang ditandai hijau.';
+      const expl = fb.getAttribute('data-expl') || '';
+      fb.innerHTML = '<b>' + (correct ? '✓ ' + good : '✕ ' + bad) + '</b>' + (expl ? '<br>' + expl : '');
+    }
+    quiz.setAttribute('data-answered', '1');
+  }
+  answerQuiz(quiz, opt) {
+    const opts = [...quiz.querySelectorAll('[data-opt]')];
+    const chosenIdx = opts.indexOf(opt);
+    const correctIdx = opts.findIndex((o) => o.getAttribute('data-correct') === '1');
+    const correct = chosenIdx === correctIdx;
+    this.renderQuizVisual(quiz, chosenIdx);
+    this.updateGate();
+    const u = this.cu();
+    const qid = quiz.getAttribute('data-quiz-id');
+    if (u && qid) {
+      try { this.setQuiz(qid, { choice: chosenIdx, correct: correct, ts: Date.now() }); } catch (e) {}
+    }
+  }
+  restoreQuizzes() {
+    document.querySelectorAll('[data-quiz-id]').forEach((quiz) => {
+      const qid = quiz.getAttribute('data-quiz-id');
+      try {
+        const rec = this.getQuiz(qid);
+        if (rec) {
+          this.renderQuizVisual(quiz, rec.choice);
+        } else {
+          quiz.removeAttribute('data-answered');
+          quiz.querySelectorAll('[data-opt]').forEach((o) => { o.style.cursor=''; o.style.background=''; o.style.borderColor=''; o.style.color=''; o.style.opacity=''; const mk=o.querySelector('[data-mark]'); if(mk) mk.textContent=''; });
+          const fb = quiz.querySelector('[data-feedback]'); if (fb) fb.style.display = 'none';
+        }
+      } catch (e) {}
+    });
+  }
+  bindScores() {
+    const modal = document.getElementById('dashModal');
+    if (modal) {
+      modal.addEventListener('input', (e) => {
+        const inp = e.target.closest('[data-score-input]');
+        if (!inp) return;
+        const parts = inp.getAttribute('data-score-input').split('||');
+        const nim = parts[0], id = parts[1];
+        let v = inp.value.trim();
+        if (v !== '') {
+          let n = Number(v);
+          if (isNaN(n)) return;
+          if (n < 1) n = 1; if (n > 4) n = 4;
+          v = String(n);
+        }
+        this.setScore(nim, id, v || null);
+      });
+    }
+  }
+
+  bindAnswers() {
+    document.querySelectorAll('textarea[data-note]').forEach((t) => {
+      t.addEventListener('input', () => {
+        const u = this.cu(); if (!u) return;
+        try { this.setAnswer(t.getAttribute('data-note'), t.value); } catch (e) {}
+        if (t.hasAttribute('data-gate-essay')) this.updateGate();
+      });
+    });
+    document.querySelectorAll('input[type="radio"][data-persist]').forEach((r) => {
+      r.addEventListener('change', () => {
+        const u = this.cu(); if (!u) return;
+        try { this.setAngket(r.name, r.value); } catch (e) {}
+      });
+    });
+  }
+
+  loadAnswers() {
+    document.querySelectorAll('textarea[data-note]').forEach((t) => {
+      try { const v = this.getAnswer(t.getAttribute('data-note')); t.value = v != null ? v : ''; } catch (e) {}
+    });
+    this.restoreQuizzes();
+    this.updateGate();
+    document.querySelectorAll('input[type="radio"][data-persist]').forEach((r) => {
+      try { r.checked = this.getAngket(r.name) === r.value; } catch (e) {}
+    });
+  }
+
+  touch(u) {
+    if (!u || u.role !== 'mhs') return;
+    try {
+      const db = this.getDB();
+      this.touchRec(db, u);
+      this.saveDB(db);
+    } catch (e) {}
+  }
+
+  initSession() {
+    const u = this.cu();
+    if (u) { this.applyAuth(u); } else { this.showGate(); }
+  }
+
+  applyAuth(u) {
+    const gate = document.getElementById('authGate');
+    if (gate) gate.style.display = 'none';
+    const pill = document.getElementById('userPill');
+    if (pill) {
+      pill.style.display = 'flex';
+      document.getElementById('pillName').textContent = u.name + (u.role === 'mhs' && u.nim ? ' · ' + u.nim : '');
+      const role = document.getElementById('pillRole');
+      role.textContent = u.role === 'dosen' ? 'Dosen' : 'Mahasiswa';
+      role.style.background = u.role === 'dosen' ? '#e7edf8' : '#eef6f4';
+      role.style.color = u.role === 'dosen' ? '#375a97' : '#0a5a5d';
+      document.getElementById('pillDash').style.display = u.role === 'dosen' ? 'flex' : 'none';
+      document.getElementById('pillCollect').style.display = u.role === 'mhs' ? 'flex' : 'none';
+    }
+    if (u.role === 'mhs') {
+      this.touch(u);
+      this.cloudMergeOnLogin(u.nim).then(() => this.loadAnswers());
+    }
+    this.applyGates();
+    this.loadAnswers();
+  }
+
+  showGate() { const g = document.getElementById('authGate'); if (g) g.style.display = 'block'; }
+
+  wireAuth() {
+    const setTab = (which) => {
+      const m = which === 'mhs';
+      document.getElementById('formMhs').style.display = m ? 'block' : 'none';
+      document.getElementById('formDosen').style.display = m ? 'none' : 'block';
+      const tm = document.getElementById('tabMhs'), td = document.getElementById('tabDosen');
+      tm.style.background = m ? '#eef6f4' : '#f4f8f7'; tm.style.color = m ? '#0a5a5d' : '#5f7d80'; tm.style.fontWeight = m ? '800' : '700';
+      td.style.background = !m ? '#e7edf8' : '#f4f8f7'; td.style.color = !m ? '#375a97' : '#5f7d80'; td.style.fontWeight = !m ? '800' : '700';
+    };
+    document.getElementById('bookRoot').addEventListener('click', (e) => {
+      const tab = e.target.closest('[data-auth-tab]');
+      if (tab) { setTab(tab.getAttribute('data-auth-tab')); return; }
+      const mm = e.target.closest('[data-mhs-mode]');
+      if (mm) { this.setMhsMode(mm.getAttribute('data-mhs-mode')); return; }
+      const login = e.target.closest('[data-auth-login]');
+      if (login) { this.doLogin(login.getAttribute('data-auth-login')); return; }
+      if (e.target.closest('#pillLogout')) { this.logout(); return; }
+      if (e.target.closest('#pillDash')) { this.openDash(); return; }
+      if (e.target.closest('#pillCollect')) { const u = this.cu(); if (u) this.exportOne(u.nim); return; }
+      if (e.target.closest('#dashClose')) { document.getElementById('dashModal').style.display = 'none'; return; }
+      if (e.target.closest('#dashRefresh')) { this.renderDash(); this.cloudPullAllMerge().then(() => this.renderDash()); return; }
+      if (e.target.closest('#dashCsv')) { this.exportCsv(); return; }
+      if (e.target.closest('#dashClearAll')) { this.delAll(); return; }
+      const gt = e.target.closest('[data-gate-toggle]'); if (gt) { this.toggleGate(gt.getAttribute('data-gate-toggle')); return; }
+      const del = e.target.closest('[data-dash-del]'); if (del) { this.delStudent(del.getAttribute('data-dash-del')); return; }
+      const back = e.target.closest('[data-dash-back]'); if (back) { this.renderDash(); return; }
+      const view = e.target.closest('[data-dash-view]'); if (view) { this.viewStudent(view.getAttribute('data-dash-view')); return; }
+      const exp = e.target.closest('[data-dash-export]'); if (exp) { this.exportOneCsv(exp.getAttribute('data-dash-export')); return; }
+    });
+  }
+
+  setMhsMode(mode) {
+    this.mhsMode = mode;
+    const signup = mode === 'signup';
+    const bSignup = document.getElementById('mhsModeSignup'), bLogin = document.getElementById('mhsModeLogin');
+    bSignup.style.background = signup ? '#fff' : 'transparent'; bSignup.style.color = signup ? 'var(--teal-d)' : 'var(--muted)'; bSignup.style.boxShadow = signup ? '0 2px 6px rgba(0,0,0,.08)' : 'none'; bSignup.style.fontWeight = signup ? '800' : '700';
+    bLogin.style.background = !signup ? '#fff' : 'transparent'; bLogin.style.color = !signup ? 'var(--teal-d)' : 'var(--muted)'; bLogin.style.boxShadow = !signup ? '0 2px 6px rgba(0,0,0,.08)' : 'none'; bLogin.style.fontWeight = !signup ? '800' : '700';
+    document.getElementById('mhsSubmitBtn').textContent = signup ? 'Daftar sebagai Mahasiswa' : 'Masuk sebagai Mahasiswa';
+    document.getElementById('mhsErr').style.display = 'none';
+  }
+
+  doLogin(role) {
+    if (role === 'mhs') {
+      const name = document.getElementById('mhsName').value.trim();
+      const nimRaw = document.getElementById('mhsNim').value.trim();
+      const kelas = document.getElementById('mhsKelas').value.trim();
+      const err = document.getElementById('mhsErr');
+      if (!name || !nimRaw) { err.textContent = 'Nama dan NIM wajib diisi.'; err.style.display = 'block'; return; }
+      const nim = nimRaw.replace(/[^A-Za-z0-9_-]/g, '');
+      if (!nim) { err.textContent = 'NIM hanya boleh huruf/angka.'; err.style.display = 'block'; return; }
+      let reg = {};
+      try { reg = JSON.parse(localStorage.getItem('ecbook:students') || '{}'); } catch (e) {}
+      const existing = reg[nim];
+      if (this.mhsMode === 'signup') {
+        if (existing) { err.textContent = 'NIM ' + nim + ' sudah terdaftar atas nama "' + existing.name + '". Silakan pilih Masuk.'; err.style.display = 'block'; return; }
+        reg[nim] = { name, kelas, registeredAt: Date.now() };
+        try { localStorage.setItem('ecbook:students', JSON.stringify(reg)); } catch (e) {}
+        err.style.display = 'none';
+        const u = { role: 'mhs', name, nim, kelas };
+        localStorage.setItem('ecbook:session', JSON.stringify(u));
+        this.applyAuth(u);
+      } else {
+        if (!existing) { err.textContent = 'NIM ' + nim + ' belum terdaftar. Silakan pilih Daftar Baru.'; err.style.display = 'block'; return; }
+        if (existing.name && existing.name.trim().toLowerCase() !== name.toLowerCase()) { err.textContent = 'Nama tidak sesuai data pendaftaran NIM ini ("' + existing.name + '").'; err.style.display = 'block'; return; }
+        err.style.display = 'none';
+        const u = { role: 'mhs', name: existing.name || name, nim, kelas: kelas || existing.kelas || '' };
+        localStorage.setItem('ecbook:session', JSON.stringify(u));
+        this.applyAuth(u);
+      }
+    } else {
+      const name = document.getElementById('dosenName').value.trim() || 'Dosen';
+      const pass = document.getElementById('dosenPass').value;
+      const err = document.getElementById('dosenErr');
+      if (pass !== this.DOSEN_SECRET) { err.textContent = 'Kode rahasia salah.'; err.style.display = 'block'; return; }
+      err.style.display = 'none';
+      const u = { role: 'dosen', name, nim: 'DOSEN' };
+      localStorage.setItem('ecbook:session', JSON.stringify(u));
+      this.applyAuth(u);
+    }
+    window.scrollTo(0, 0);
+  }
+
+  logout() {
+    try { localStorage.removeItem('ecbook:session'); } catch (e) {}
+    document.getElementById('userPill').style.display = 'none';
+    document.getElementById('dashModal').style.display = 'none';
+    this.loadAnswers();
+    this.showGate();
+    window.scrollTo(0, 0);
+  }
+
+  // ---------- MONITORING ----------
+  getManifest() {
+    return {
+      chapters: {
+        1: { title:'Orientasi & Krisis Air', essays:['b1-esai1','b1-esai2'], quizzes:['b1-q1','b1-q2','b1-q3'], activities:['b1-berpikir','b1-plan','b1-lkm','b1-cpss','b1-pck','b1-monitor','b1-share','b1-stemesd'] },
+        2: { title:'Analisis Air Tercemar', essays:['b2-esai1','b2-esai2'], quizzes:['b2-q1','b2-q2','b2-q3'], activities:['b2-berpikir','b2-plan','b2-lkm','b2-cpss','b2-pck','b2-monitor','b2-share','b2-stemesd'] },
+        3: { title:'Kelistrikan & Elektromagnetik', essays:['b3-esai1','b3-esai2'], quizzes:['b3-q1','b3-q2','b3-q3'], activities:['b3-berpikir','b3-plan','b3-lkm','b3-cpss','b3-pck','b3-monitor','b3-share','b3-stemesd'] },
+        4: { title:'Elektrokimia & Koagulasi', essays:['b4-esai1','b4-esai2'], quizzes:['b4-q1','b4-q2','b4-q3'], activities:['b4-berpikir','b4-plan','b4-lkm','b4-cpss','b4-pck','b4-monitor','b4-share','b4-stemesd'] },
+        5: { title:'Faraday & Efisiensi Energi', essays:['b5-esai1','b5-esai2'], quizzes:['b5-q1','b5-q2','b5-q3'], activities:['b5-berpikir','b5-plan','b5-lkm','b5-cpss','b5-pck','b5-monitor','b5-share','b5-stemesd'] },
+        6: { title:'Desain Alat Berkelanjutan', essays:['b6-esai1','b6-esai2'], quizzes:['b6-q1','b6-q2','b6-q3'], activities:['b6-berpikir','b6-plan','b6-lkm','b6-cpss','b6-pck','b6-monitor','b6-share','b6-stemesd'] },
+        7: { title:'Praktikum & Analisis Data', essays:['b7-esai1','b7-esai2'], quizzes:['b7-q1','b7-q2','b7-q3'], activities:['b7-berpikir','b7-plan','b7-lkm','b7-cpss','b7-pck','b7-monitor','b7-share','b7-stemesd'] },
+        8: { title:'Presentasi, Posttest & Angket', essays:['b8-esai1','b8-esai2'], quizzes:['b8-q1','b8-q2','b8-q3'], activities:['b8-berpikir','b8-lkm','b8-ref-cpss','b8-ref-pck','b8-ref-ea','b8-post-cpss','b8-post-pck','b8-cpss','b8-pck','b8-stemesd'] }
+      },
+      posttest: ['pre-cpss1','pre-cpss2','pre-cpss3','pre-cpss4','pre-cpss5','pre-cpss6','pre-cpss7','pre-pck1','pre-pck2','pre-pck3','pre-pck4','pre-pck5','pre-open1','pre-open2','pre-open3','post-cpss1','post-cpss2','post-cpss3','post-cpss4','post-cpss5','post-cpss6','post-cpss7','post-pck1','post-pck2','post-pck3','post-pck4','post-pck5','post-open1','post-open2','post-open3'],
+      angketTotal: 60
+    };
+  }
+
+  labelFor(id) {
+    const SUF = { berpikir:'Ayo Berpikir', plan:'PjBL F3 · Rencana Proyek', lkm:'Aktivitas/LKM', cpss:'Tantangan CPSS', pck:'Teacher Candidate Corner', monitor:'Monitoring Diri', share:'PjBL F6 · Presentasi', esai1:'Esai 1', esai2:'Esai 2', 'ref-cpss':'Refleksi CPSS', 'ref-pck':'Refleksi PCK', 'ref-ea':'Refleksi EA', 'post-cpss':'Simulasi Posttest CPSS (latihan)', 'post-pck':'Simulasi Posttest PCK (latihan)', stemesd:'Aktivitas Terpadu STEM-ESD' };
+    const PT = { 'pre-cpss1':'Pretest CPSS · Fluency', 'pre-cpss2':'Pretest CPSS · Flexibility', 'pre-cpss3':'Pretest CPSS · Originality', 'pre-cpss4':'Pretest CPSS · Elaboration', 'pre-cpss5':'Pretest CPSS · Problem Identification', 'pre-cpss6':'Pretest CPSS · Solution Planning', 'pre-cpss7':'Pretest CPSS · Solution Implementation', 'pre-pck1':'Pretest PCK · Content Knowledge', 'pre-pck2':'Pretest PCK · Curriculum Knowledge', 'pre-pck3':'Pretest PCK · Instructional Strategies', 'pre-pck4':'Pretest PCK · Student Understanding', 'pre-pck5':'Pretest PCK · Assessment', 'pre-open1':'Pretest EA · Refleksi Terbuka 1', 'pre-open2':'Pretest EA · Refleksi Terbuka 2', 'pre-open3':'Pretest EA · Refleksi Terbuka 3', 'post-cpss1':'Posttest CPSS · Fluency', 'post-cpss2':'Posttest CPSS · Flexibility', 'post-cpss3':'Posttest CPSS · Originality', 'post-cpss4':'Posttest CPSS · Elaboration', 'post-cpss5':'Posttest CPSS · Problem Identification', 'post-cpss6':'Posttest CPSS · Solution Planning', 'post-cpss7':'Posttest CPSS · Solution Implementation', 'post-pck1':'Posttest PCK · Content Knowledge', 'post-pck2':'Posttest PCK · Curriculum Knowledge', 'post-pck3':'Posttest PCK · Instructional Strategies', 'post-pck4':'Posttest PCK · Student Understanding', 'post-pck5':'Posttest PCK · Assessment', 'post-open1':'Posttest EA · Refleksi Terbuka 1', 'post-open2':'Posttest EA · Refleksi Terbuka 2', 'post-open3':'Posttest EA · Refleksi Terbuka 3' };
+    if (PT[id]) return PT[id];
+    const m = id.match(/^b\d+-(.+)$/);
+    if (m && SUF[m[1]]) return SUF[m[1]];
+    return id;
+  }
+
+  listStudents() {
+    const db = this.getDB();
+    return Object.keys(db).map((nim) => {
+      const info = db[nim] || {};
+      return { nim, name: info.name || '(tanpa nama)', kelas: info.kelas || '', updated: info.updated || 0, progress: this.progressFor(nim) };
+    }).sort((a, b) => b.updated - a.updated);
+  }
+
+  collect(nim) {
+    const rec = this.getRec(nim);
+    return { text: rec.answers || {}, radio: rec.angket || {}, quiz: rec.quiz || {} };
+  }
+
+  progressFor(nim) {
+    const man = this.getManifest();
+    const d = this.collect(nim);
+    const chapters = {};
+    let totQuiz = 0, doneQuiz = 0, totEssay = 0, doneEssay = 0, totAct = 0, doneAct = 0;
+    Object.keys(man.chapters).forEach((cn) => {
+      const c = man.chapters[cn];
+      const qDone = c.quizzes.filter((id) => d.quiz[id] != null).length;
+      const eDone = c.essays.filter((id) => d.text[id] && d.text[id].trim()).length;
+      const aDone = c.activities.filter((id) => d.text[id] && d.text[id].trim()).length;
+      totQuiz += c.quizzes.length; doneQuiz += qDone;
+      totEssay += c.essays.length; doneEssay += eDone;
+      totAct += c.activities.length; doneAct += aDone;
+      const chapTotal = c.quizzes.length + c.essays.length + c.activities.length;
+      const chapDone = qDone + eDone + aDone;
+      chapters[cn] = { title: c.title, qDone, qTotal: c.quizzes.length, eDone, eTotal: c.essays.length, aDone, aTotal: c.activities.length, pct: chapTotal ? Math.round(chapDone / chapTotal * 100) : 0 };
+    });
+    const postDone = man.posttest.filter((id) => d.text[id] && d.text[id].trim()).length;
+    const postTotal = man.posttest.length;
+    const angketDone = Object.keys(d.radio).length;
+    const angketTotal = man.angketTotal;
+    const grandTotal = totQuiz + totEssay + totAct + postTotal + angketTotal;
+    const grandDone = doneQuiz + doneEssay + doneAct + postDone + angketDone;
+    return {
+      chapters,
+      quiz: { done: doneQuiz, total: totQuiz }, essay: { done: doneEssay, total: totEssay }, activity: { done: doneAct, total: totAct },
+      posttest: { done: postDone, total: postTotal }, angket: { done: angketDone, total: angketTotal },
+      overallPct: grandTotal ? Math.round(grandDone / grandTotal * 100) : 0
+    };
+  }
+
+  fmtDate(ts) { if (!ts) return '—'; const d = new Date(ts); return d.toLocaleDateString('id-ID', { day: '2-digit', month: 'short' }) + ' ' + d.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' }); }
+  esc(s) { return (s == null ? '' : String(s)).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+  openDash() {
+    document.getElementById('dashModal').style.display = 'block';
+    this.renderDash();
+    this.cloudPullAllMerge().then(() => this.renderDash());
+  }
+
+
+  getGates() {
+    try { return Object.assign({ pretest: false, posttest: false }, JSON.parse(localStorage.getItem('ecbook:gates') || '{}')); } catch (e) { return { pretest: false, posttest: false }; }
+  }
+  setGates(g) { try { localStorage.setItem('ecbook:gates', JSON.stringify(g)); } catch (e) {} }
+  toggleGate(key) {
+    const g = this.getGates();
+    g[key] = !g[key];
+    this.setGates(g);
+    this.applyGates();
+    this.renderDash();
+    if (window.EcbookCloud) window.EcbookCloud.pushGates(g);
+  }
+  applyGates() {
+    const gates = this.getGates();
+    const u = this.cu();
+    const isDosen = u && u.role === 'dosen';
+    ['pretest', 'posttest'].forEach((key) => {
+      const locked = document.getElementById(key + '-locked');
+      const content = document.getElementById(key + '-content');
+      if (!locked || !content) return;
+      const open = isDosen || gates[key];
+      locked.style.display = open ? 'none' : 'block';
+      content.style.display = open ? 'block' : 'none';
+    });
+  }
+
+  renderDash() {
+    const body = document.getElementById('dashBody');
+    if (!body) return;
+    const gates = this.getGates();
+    const gateBtn = (key, label) => {
+      const open = gates[key];
+      return '<button data-gate-toggle="' + key + '" style="padding:9px 16px; border:1px solid ' + (open ? '#bfe3cd' : 'var(--line)') + '; border-radius:9px; background:' + (open ? '#eaf7ee' : '#fff') + '; color:' + (open ? 'var(--green)' : 'var(--muted)') + '; font-weight:700; font-family:inherit; font-size:13px; cursor:pointer; display:flex; align-items:center; gap:6px;">' + (open ? '🔓' : '🔒') + ' ' + label + ': ' + (open ? 'Terbuka' : 'Tertutup') + '</button>';
+    };
+    const gateHtml = '<div style="background:#fff; border:1px solid var(--line); border-radius:12px; padding:14px 16px; margin-bottom:16px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;"><b style="font-size:13px; color:var(--ink); margin-right:4px;">Akses Mahasiswa:</b>' + gateBtn('pretest', 'Pretest') + gateBtn('posttest', 'Posttest') + '</div>';
+    const students = this.listStudents();
+    const man = this.getManifest();
+    const totQuiz = Object.values(man.chapters).reduce((a, c) => a + c.quizzes.length, 0);
+    const totEssay = Object.values(man.chapters).reduce((a, c) => a + c.essays.length, 0);
+    const totAct = Object.values(man.chapters).reduce((a, c) => a + c.activities.length, 0);
+    let html = gateHtml + '<div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px;">' +
+      '<div style="flex:1; min-width:110px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px;"><div style="font:800 22px/1 Newsreader; color:#0e8388;">' + students.length + '</div><div style="font-size:11px; color:var(--muted);">Mahasiswa terdata</div></div>' +
+      '<div style="flex:1; min-width:110px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px;"><div style="font:800 22px/1 Newsreader; color:#375a97;">' + totQuiz + '</div><div style="font-size:11px; color:var(--muted);">Soal objektif (8 bab)</div></div>' +
+      '<div style="flex:1; min-width:110px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px;"><div style="font:800 22px/1 Newsreader; color:#6a4c93;">' + totEssay + '</div><div style="font-size:11px; color:var(--muted);">Esai evaluasi bab</div></div>' +
+      '<div style="flex:1; min-width:110px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px;"><div style="font:800 22px/1 Newsreader; color:#c47f22;">' + totAct + '</div><div style="font-size:11px; color:var(--muted);">Aktivitas/LKM</div></div>' +
+      '<div style="flex:1; min-width:110px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px;"><div style="font:800 22px/1 Newsreader; color:#cf503b;">24</div><div style="font-size:11px; color:var(--muted);">Esai Pretest+Posttest</div></div>' +
+      '<div style="flex:1; min-width:110px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px;"><div style="font:800 22px/1 Newsreader; color:#2f8f5b;">60</div><div style="font-size:11px; color:var(--muted);">Angket EA (pre+post)</div></div></div>';
+
+    if (!students.length) {
+      html += '<div style="background:#fff; border:1px dashed var(--line); border-radius:12px; padding:30px; text-align:center; color:var(--muted); font-size:14px;">Belum ada data mahasiswa pada perangkat ini.<br>Mahasiswa dapat login &amp; mengerjakan, atau impor berkas jawaban (JSON) yang mereka kumpulkan.</div>';
+      body.innerHTML = html;
+      return;
+    }
+
+    const barCell = (done, total, color) => {
+      const pct = total ? Math.round(done / total * 100) : 0;
+      return '<div style="font-weight:700;">' + done + '/' + total + '</div><div style="height:5px; width:50px; margin:3px auto 0; background:#e2ece9; border-radius:3px; overflow:hidden;"><div style="height:100%; width:' + pct + '%; background:' + color + ';"></div></div>';
+    };
+
+    html += '<div style="overflow-x:auto; background:#fff; border:1px solid var(--line); border-radius:12px;"><table style="width:100%; border-collapse:collapse; font-size:12.5px; min-width:920px;"><thead><tr style="background:#0c2a30; color:#fff; text-align:left;">' +
+      '<th style="padding:10px 12px;">Mahasiswa</th><th style="padding:10px 12px;">Kelas</th>' +
+      '<th style="padding:10px 12px; text-align:center;">Keseluruhan</th>' +
+      '<th style="padding:10px 12px; text-align:center;">Objektif</th>' +
+      '<th style="padding:10px 12px; text-align:center;">Esai Bab</th>' +
+      '<th style="padding:10px 12px; text-align:center;">Aktivitas</th>' +
+      '<th style="padding:10px 12px; text-align:center;">Posttest</th>' +
+      '<th style="padding:10px 12px; text-align:center;">Angket</th>' +
+      '<th style="padding:10px 12px;">Terakhir</th><th style="padding:10px 12px;"></th></tr></thead><tbody>';
+    students.forEach((s, i) => {
+      const p = s.progress;
+      const overallColor = p.overallPct >= 67 ? '#2f8f5b' : p.overallPct >= 34 ? '#c47f22' : '#cf503b';
+      html += '<tr style="border-top:1px solid var(--line); ' + (i % 2 ? 'background:#f7fbfa;' : '') + '">' +
+        '<td style="padding:9px 12px;"><b>' + this.esc(s.name) + '</b><div style="font-size:11px; color:var(--muted);">' + this.esc(s.nim) + '</div></td>' +
+        '<td style="padding:9px 12px; color:var(--muted);">' + (this.esc(s.kelas) || '—') + '</td>' +
+        '<td style="padding:9px 12px; text-align:center;"><div style="font-weight:800; color:' + overallColor + ';">' + p.overallPct + '%</div><div style="height:6px; width:62px; margin:3px auto 0; background:#e2ece9; border-radius:3px; overflow:hidden;"><div style="height:100%; width:' + p.overallPct + '%; background:' + overallColor + ';"></div></div></td>' +
+        '<td style="padding:9px 12px; text-align:center;">' + barCell(p.quiz.done, p.quiz.total, '#375a97') + '</td>' +
+        '<td style="padding:9px 12px; text-align:center;">' + barCell(p.essay.done, p.essay.total, '#6a4c93') + '</td>' +
+        '<td style="padding:9px 12px; text-align:center;">' + barCell(p.activity.done, p.activity.total, '#c47f22') + '</td>' +
+        '<td style="padding:9px 12px; text-align:center;">' + barCell(p.posttest.done, p.posttest.total, '#cf503b') + '</td>' +
+        '<td style="padding:9px 12px; text-align:center;">' + barCell(p.angket.done, p.angket.total, '#2f8f5b') + '</td>' +
+        '<td style="padding:9px 12px; color:var(--muted); font-size:12px;">' + this.fmtDate(s.updated) + '</td>' +
+        '<td style="padding:9px 12px; white-space:nowrap;"><button data-dash-view="' + this.esc(s.nim) + '" style="padding:6px 10px; border:1px solid var(--line); border-radius:8px; background:#fff; color:var(--teal-d); font-weight:700; font-size:12px; cursor:pointer;">Lihat</button> <button data-dash-export="' + this.esc(s.nim) + '" style="padding:6px 10px; border:1px solid var(--line); border-radius:8px; background:#fff; color:var(--indigo); font-weight:700; font-size:12px; cursor:pointer;">⇩</button> <button data-dash-del="' + this.esc(s.nim) + '" title="Hapus data mahasiswa ini" style="padding:6px 10px; border:1px solid #f0c9c2; border-radius:8px; background:#fff; color:var(--coral); font-weight:700; font-size:12px; cursor:pointer;">🗑</button></td></tr>';
+    });
+    html += '</tbody></table></div>';
+    body.innerHTML = html;
+  }
+
+  viewStudent(nim) {
+    const body = document.getElementById('dashBody');
+    const students = this.listStudents();
+    const s = students.find((x) => x.nim === nim) || { name: nim, nim, kelas: '', progress: this.progressFor(nim) };
+    const p = s.progress;
+    const man = this.getManifest();
+    const d = this.collect(nim);
+    let html = '<button data-dash-back style="padding:8px 14px; border:1px solid var(--line); border-radius:9px; background:#fff; color:var(--teal-d); font-weight:700; font-size:13px; cursor:pointer; margin-bottom:14px;">← Kembali ke daftar</button>';
+    html += '<div style="background:#fff; border:1px solid var(--line); border-radius:12px; padding:16px 18px; margin-bottom:14px;"><div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px;"><div><div style="font:800 18px/1.1 Newsreader; color:var(--ink);">' + this.esc(s.name) + '</div><div style="font-size:12.5px; color:var(--muted); margin-top:2px;">NIM ' + this.esc(s.nim) + (s.kelas ? ' · ' + this.esc(s.kelas) : '') + '</div><button data-dash-export="' + this.esc(nim) + '" style="margin-top:10px; padding:7px 14px; border:none; border-radius:9px; background:#2f8f5b; color:#fff; font-weight:700; font-size:12.5px; cursor:pointer;">⇩ Unduh jawaban (CSV)</button></div>' +
+      '<div style="text-align:center;"><div style="font:800 30px/1 Newsreader; color:' + (p.overallPct >= 67 ? '#2f8f5b' : p.overallPct >= 34 ? '#c47f22' : '#cf503b') + ';">' + p.overallPct + '%</div><div style="font-size:11px; color:var(--muted);">Progres keseluruhan</div></div></div></div>';
+
+    html += '<div style="background:#fff; border:1px solid var(--line); border-radius:12px; padding:14px 16px; margin-bottom:14px;"><div style="font:700 12px/1 Mulish; color:var(--ink); margin-bottom:10px;">Progres per Pertemuan</div><div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr)); gap:8px;">';
+    Object.keys(p.chapters).forEach((cn) => {
+      const c = p.chapters[cn];
+      const col = c.pct >= 67 ? '#2f8f5b' : c.pct >= 34 ? '#c47f22' : '#cf503b';
+      html += '<div style="text-align:center; border:1px solid var(--line); border-radius:9px; padding:8px 6px;"><div style="font:800 11px/1 Mulish; color:var(--muted);">BAB ' + cn + '</div><div style="font:800 16px/1.3 Newsreader; color:' + col + '; margin-top:3px;">' + c.pct + '%</div><div style="height:4px; background:#e2ece9; border-radius:3px; overflow:hidden; margin-top:4px;"><div style="height:100%; width:' + c.pct + '%; background:' + col + ';"></div></div></div>';
+    });
+    html += '</div></div>';
+
+    Object.keys(man.chapters).forEach((cn) => {
+      const c = man.chapters[cn];
+      const cp = p.chapters[cn];
+      html += '<div style="background:#fff; border:1px solid var(--line); border-radius:12px; padding:6px 0; margin-bottom:12px;"><div style="font:700 13px/1 Mulish; color:var(--teal-d); padding:10px 16px; display:flex; justify-content:space-between;"><span>Bab ' + cn + ' · ' + this.esc(c.title) + '</span><span style="color:var(--muted); font-weight:600;">' + cp.pct + '%</span></div>';
+      c.quizzes.forEach((qid, qi) => {
+        const rec = d.quiz[qid];
+        html += '<div style="padding:9px 16px; border-top:1px solid var(--line); display:flex; justify-content:space-between; align-items:center;"><div style="font-size:12.5px; color:var(--body);">Soal Objektif ' + (qi + 1) + '</div>' +
+          (rec ? '<span style="font-size:11.5px; font-weight:700; padding:3px 9px; border-radius:999px; background:' + (rec.correct ? '#e6f6ec' : '#fbe9e6') + '; color:' + (rec.correct ? '#1c5f39' : '#8f2c1e') + ';">' + (rec.correct ? '✓ Benar' : '✕ Salah') + '</span>' : '<span style="font-size:11.5px; color:#b9c6c3; font-style:italic;">belum dijawab</span>') + '</div>';
+      });
+      [...c.essays, ...c.activities].forEach((id) => {
+        const val = d.text[id];
+        const has = val && val.trim();
+        html += '<div style="padding:10px 16px; border-top:1px solid var(--line);"><div style="font-size:12px; color:var(--muted); margin-bottom:4px;">' + this.esc(this.labelFor(id)) + '</div>' +
+          (has ? '<div style="font-size:13.5px; white-space:pre-wrap; color:var(--body);">' + this.esc(val) + '</div>' : '<div style="font-size:12.5px; color:#b9c6c3; font-style:italic;">— belum dijawab —</div>') + '</div>';
+      });
+      html += '</div>';
+    });
+
+    html += this.renderPrePost(nim, d);
+    body.innerHTML = html;
+  }
+
+  getScore(nim, id) { const rec = this.getRec(nim); return rec.scores && rec.scores[id] != null ? rec.scores[id] : null; }
+  setScore(nim, id, val) {
+    try {
+      const db = this.getDB();
+      const rec = db[nim] || {};
+      rec.scores = rec.scores || {};
+      if (val === '' || val == null) delete rec.scores[id]; else rec.scores[id] = Number(val);
+      rec.updated = Date.now();
+      db[nim] = rec;
+      this.saveDB(db);
+    } catch (e) {}
+  }
+
+  renderPrePost(nim, d) {
+    const CPSS_LABELS = ['Fluency', 'Flexibility', 'Originality', 'Elaboration', 'Problem Identification', 'Solution Planning', 'Solution Implementation'];
+    const PCK_LABELS = ['Content Knowledge', 'Curriculum Knowledge', 'Instructional Strategies', 'Student Understanding', 'Assessment'];
+    const DIM_NAME = { isu: 'Pengetahuan isu', sikap: 'Sikap', perilaku: 'Perilaku', praktik: 'Praktik berkelanjutan', gaya: 'Ubah gaya hidup' };
+
+    const answerCell = (val) => {
+      const has = val && val.trim();
+      return has ? '<div style="font-size:13px; white-space:pre-wrap; color:var(--body);">' + this.esc(val) + '</div>' : '<div style="font-size:12px; color:#b9c6c3; font-style:italic;">— belum dijawab —</div>';
+    };
+    const scoreInput = (id) => {
+      const v = this.getScore(nim, id);
+      return '<input type="number" min="1" max="4" step="1" data-score-input="' + this.esc(nim) + '||' + this.esc(id) + '" placeholder="—" value="' + (v != null ? v : '') + '" style="width:44px; margin-top:6px; padding:5px 7px; border:1px solid var(--line); border-radius:7px; font-family:inherit; font-size:12.5px; text-align:center;">';
+    };
+
+    let html = '<div style="background:#fff; border:1px solid var(--line); border-radius:12px; padding:16px 18px; margin-bottom:14px;">' +
+      '<div style="font:800 16px/1.2 Newsreader; color:var(--ink); margin-bottom:2px;">Pretest &amp; Posttest · Monitoring &amp; Penilaian</div>' +
+      '<div style="font-size:12.5px; color:var(--muted);">Bandingkan jawaban &amp; isi kolom skor (1–4) untuk tiap indikator esai CPSS/PCK. Skor EA dihitung otomatis dari angket.</div></div>';
+
+    const essayCompare = (title, color, labels, keyPrefix) => {
+      let h = '<div style="background:#fff; border:1px solid var(--line); border-radius:12px; padding:6px 0; margin-bottom:12px;"><div style="font:700 13px/1 Mulish; color:' + color + '; padding:10px 16px;">' + title + '</div>';
+      labels.forEach((label, i) => {
+        const preId = 'pre-' + keyPrefix + (i + 1), postId = 'post-' + keyPrefix + (i + 1);
+        h += '<div style="padding:10px 16px; border-top:1px solid var(--line);"><div style="font-size:12px; font-weight:700; color:var(--ink); margin-bottom:6px;">' + (i + 1) + '. ' + label + '</div>' +
+          '<div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">' +
+          '<div><div style="font-size:10.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:3px;">Pretest</div>' + answerCell(d.text[preId]) + scoreInput(preId) + '</div>' +
+          '<div><div style="font-size:10.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:3px;">Posttest</div>' + answerCell(d.text[postId]) + scoreInput(postId) + '</div>' +
+          '</div></div>';
+      });
+      const preScores = labels.map((_, i) => this.getScore(nim, 'pre-' + keyPrefix + (i + 1))).filter((v) => v != null);
+      const postScores = labels.map((_, i) => this.getScore(nim, 'post-' + keyPrefix + (i + 1))).filter((v) => v != null);
+      const avg = (arr) => arr.length ? (arr.reduce((a, b) => a + b, 0) / arr.length) : null;
+      const preAvg = avg(preScores), postAvg = avg(postScores);
+      h += '<div style="padding:10px 16px; border-top:1px solid var(--line); background:#f9fcfb; display:flex; justify-content:space-between; font-size:12.5px;"><span style="font-weight:700; color:var(--ink);">Rata-rata skor</span><span>Pretest <b>' + (preAvg != null ? preAvg.toFixed(2) : '—') + '</b> &nbsp;→&nbsp; Posttest <b>' + (postAvg != null ? postAvg.toFixed(2) : '—') + '</b>' + (preAvg != null && postAvg != null ? ' <span style="color:' + (postAvg >= preAvg ? 'var(--green)' : 'var(--coral)') + '; font-weight:700;">(' + (postAvg >= preAvg ? '+' : '') + (postAvg - preAvg).toFixed(2) + ')</span>' : '') + '</span></div>';
+      h += '</div>';
+      return h;
+    };
+
+    html += essayCompare('Esai CPSS (7 Indikator)', 'var(--violet)', CPSS_LABELS, 'cpss');
+    html += essayCompare('Esai PCK (5 Indikator)', 'var(--indigo)', PCK_LABELS, 'pck');
+
+    // Refleksi terbuka EA (tanpa skor)
+    html += '<div style="background:#fff; border:1px solid var(--line); border-radius:12px; padding:6px 0; margin-bottom:12px;"><div style="font:700 13px/1 Mulish; color:var(--amber); padding:10px 16px;">Refleksi Terbuka EA (3 Butir)</div>';
+    for (let i = 1; i <= 3; i++) {
+      html += '<div style="padding:10px 16px; border-top:1px solid var(--line);"><div style="font-size:12px; font-weight:700; color:var(--ink); margin-bottom:6px;">' + i + '.</div>' +
+        '<div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">' +
+        '<div><div style="font-size:10.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:3px;">Pretest</div>' + answerCell(d.text['pre-open' + i]) + '</div>' +
+        '<div><div style="font-size:10.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:3px;">Posttest</div>' + answerCell(d.text['post-open' + i]) + '</div>' +
+        '</div></div>';
+    }
+    html += '</div>';
+
+    // EA angket score compare
+    const scoreEa = (prefix) => {
+      const dims = { isu: 0, sikap: 0, perilaku: 0, praktik: 0, gaya: 0 };
+      let answered = 0;
+      for (let n = 1; n <= 30; n++) {
+        const name = prefix + '-ea' + n;
+        const v = d.radio[name];
+        if (v == null) continue;
+        answered++;
+        const nv = Number(v) || 0;
+        if (n <= 6) dims.isu += nv; else if (n <= 12) dims.sikap += nv; else if (n <= 18) dims.perilaku += nv; else if (n <= 24) dims.praktik += nv; else dims.gaya += nv;
+      }
+      const sum = Object.values(dims).reduce((a, b) => a + b, 0);
+      return { dims, sum, answered, pct: Math.round((sum / 120) * 100) };
+    };
+    const preEa = scoreEa('pre'), postEa = scoreEa('post');
+    html += '<div style="background:#fff; border:1px solid var(--line); border-radius:12px; padding:14px 16px;"><div style="font:700 13px/1 Mulish; color:var(--green); margin-bottom:10px;">Angket Environmental Awareness (EA) · Pretest vs Posttest</div>' +
+      '<div style="display:flex; justify-content:space-between; font-size:13px; padding:6px 0; border-bottom:1px solid var(--line); margin-bottom:6px;"><span style="font-weight:700;">Skor total (dari 120)</span><span>Pretest <b>' + preEa.sum + '</b> (' + preEa.pct + '%, ' + preEa.answered + '/30 terjawab) &nbsp;→&nbsp; Posttest <b>' + postEa.sum + '</b> (' + postEa.pct + '%, ' + postEa.answered + '/30 terjawab)' + (preEa.answered && postEa.answered ? ' <span style="color:' + (postEa.sum >= preEa.sum ? 'var(--green)' : 'var(--coral)') + '; font-weight:700;">(' + (postEa.sum >= preEa.sum ? '+' : '') + (postEa.sum - preEa.sum) + ')</span>' : '') + '</span></div>';
+    Object.keys(DIM_NAME).forEach((k) => {
+      html += '<div style="display:flex; justify-content:space-between; font-size:13px; padding:4px 0; border-bottom:1px dashed var(--line);"><span>' + DIM_NAME[k] + '</span><span>' + preEa.dims[k] + ' / 24 &nbsp;→&nbsp; ' + postEa.dims[k] + ' / 24</span></div>';
+    });
+    html += '</div>';
+
+    return html;
+  }
+
+  delStudent(nim) {
+    const s = this.listStudents().find((x) => x.nim === nim);
+    const nm = s ? s.name : nim;
+    if (!window.confirm('Hapus semua data mahasiswa "' + nm + '" (NIM ' + nim + ')?\nSeluruh jawaban, kuis, angket, & skor akan reset ke 0. Tindakan ini tidak dapat dibatalkan.')) return;
+    try {
+      const db = this.getDB();
+      delete db[nim];
+      this.saveDB(db);
+    } catch (e) {}
+    if (window.EcbookCloud) window.EcbookCloud.deleteOne(nim);
+    this.renderDash();
+  }
+
+  delAll() {
+    const n = this.listStudents().length;
+    if (!n) { window.alert('Belum ada data mahasiswa untuk dihapus.'); return; }
+    if (!window.confirm('Hapus SELURUH data ' + n + ' mahasiswa pada perangkat ini?\nSemua jawaban, kuis, angket, & skor akan reset ke 0 -- termasuk data di cloud. Tindakan ini tidak dapat dibatalkan.')) return;
+    try {
+      this.saveDB({});
+    } catch (e) {}
+    if (window.EcbookCloud) window.EcbookCloud.deleteAll();
+    this.renderDash();
+  }
+
+  download(filename, text, type) {
+    try {
+      const blob = new Blob([text], { type: type || 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = filename; document.body.appendChild(a); a.click();
+      setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 400);
+    } catch (e) {}
+  }
+
+  exportOne(nim) {
+    const rec = this.getRec(nim);
+    const u = this.cu();
+    const payload = { app: 'ecbook', nim, name: rec.name || (u && u.nim === nim ? u.name : nim), kelas: rec.kelas || (u ? u.kelas : '') || '', updated: rec.updated || Date.now(), answers: rec.answers || {}, angket: rec.angket || {}, quiz: rec.quiz || {}, scores: rec.scores || {} };
+    this.download('jawaban_' + nim + '.json', JSON.stringify(payload, null, 2));
+  }
+
+  exportCsv() {
+    const rows = [['NIM', 'Nama', 'Kelas', 'Tipe', 'Butir', 'Jawaban']];
+    this.listStudents().forEach((s) => {
+      const d = this.collect(s.nim);
+      Object.keys(d.text).forEach((id) => { const v = d.text[id]; if (v && v.trim()) rows.push([s.nim, s.name, s.kelas, 'esai/aktivitas', this.labelFor(id), v]); });
+      Object.keys(d.quiz).forEach((id) => { const rec = d.quiz[id]; rows.push([s.nim, s.name, s.kelas, 'objektif', id, rec && rec.correct ? 'Benar' : 'Salah']); });
+      Object.keys(d.radio).forEach((name) => rows.push([s.nim, s.name, s.kelas, 'angket', name, d.radio[name]]));
+    });
+    const csv = rows.map((r) => r.map((c) => '"' + String(c == null ? '' : c).replace(/"/g, '""').replace(/\r?\n/g, ' ') + '"').join(',')).join('\r\n');
+    this.download('rekap_jawaban_mahasiswa.csv', '\ufeff' + csv, 'text/csv;charset=utf-8');
+  }
+
+  exportOneCsv(nim) {
+    const s = this.listStudents().find((x) => x.nim === nim) || { nim, name: nim, kelas: '' };
+    const d = this.collect(nim);
+    const rows = [['NIM', 'Nama', 'Kelas', 'Tipe', 'Butir', 'Jawaban']];
+    Object.keys(d.text).forEach((id) => { const v = d.text[id]; if (v && v.trim()) rows.push([s.nim, s.name, s.kelas, 'esai/aktivitas', this.labelFor(id), v]); });
+    Object.keys(d.quiz).forEach((id) => { const rec = d.quiz[id]; rows.push([s.nim, s.name, s.kelas, 'objektif', id, rec && rec.correct ? 'Benar' : 'Salah']); });
+    Object.keys(d.radio).forEach((name) => rows.push([s.nim, s.name, s.kelas, 'angket', name, d.radio[name]]));
+    const csv = rows.map((r) => r.map((c) => '"' + String(c == null ? '' : c).replace(/"/g, '""').replace(/\r?\n/g, ' ') + '"').join(',')).join('\r\n');
+    this.download('jawaban_' + nim + '.csv', '\ufeff' + csv, 'text/csv;charset=utf-8');
+  }
+
+  wireClicks() {
+    document.getElementById('bookRoot').addEventListener('click', (e) => {
+      // youtube lite-embed -> load player on click
+      const yt = e.target.closest('[data-yt-holder]');
+      if (yt && !yt.querySelector('iframe')) {
+        const id = yt.getAttribute('data-yt');
+        yt.innerHTML = '<iframe style="position:absolute; inset:0; width:100%; height:100%; border:0;" src="https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1" title="YouTube video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+        return;
+      }
+      // reveal toggles
+      const rev = e.target.closest('[data-reveal]');
+      if (rev) {
+        const el = document.getElementById(rev.getAttribute('data-reveal'));
+        if (el) {
+          const open = el.getAttribute('data-open') === '1';
+          el.style.display = open ? 'none' : 'block';
+          el.setAttribute('data-open', open ? '0' : '1');
+          const lbl = rev.getAttribute(open ? 'data-label-show' : 'data-label-hide');
+          if (lbl) rev.querySelector('[data-lbl]') ? (rev.querySelector('[data-lbl]').textContent = lbl) : (rev.textContent = lbl);
+        }
+        return;
+      }
+      // quiz options
+      const opt = e.target.closest('[data-opt]');
+      if (opt) {
+        const quiz = opt.closest('[data-quiz]');
+        if (!quiz || quiz.getAttribute('data-answered') === '1') return;
+        this.answerQuiz(quiz, opt);
+        return;
+      }
+      // angket score
+      const sc = e.target.closest('[data-angket-score]');
+      if (sc) { this.scoreAngket(sc.getAttribute('data-angket-score')); return; }
+      const rs = e.target.closest('[data-angket-reset]');
+      if (rs) {
+        const box = document.getElementById(rs.getAttribute('data-angket-reset'));
+        if (box) box.querySelectorAll('input[type="radio"]').forEach((r) => { r.checked = false; try { this.clearAngket(r.name); } catch (e) {} });
+        const out = document.getElementById(rs.getAttribute('data-angket-reset') + '-out');
+        if (out) out.style.display = 'none';
+        return;
+      }
+    });
+  }
+  scoreAngket(id) {
+    const box = document.getElementById(id);
+    const out = document.getElementById(id + '-out');
+    if (!box || !out) return;
+    const groups = {};
+    box.querySelectorAll('input[type="radio"]:checked').forEach((r) => {
+      const g = r.getAttribute('data-dim') || 'x';
+      groups[g] = (groups[g] || 0) + Number(r.value);
+    });
+    const totalItems = new Set([...box.querySelectorAll('input[type="radio"]')].map((r) => r.name)).size;
+    const answered = box.querySelectorAll('input[type="radio"]:checked').length;
+    let sum = Object.values(groups).reduce((a, b) => a + b, 0);
+    const max = totalItems * 4;
+    const pct = max ? Math.round((sum / max) * 100) : 0;
+    let level = 'Rendah', col = '#cf503b';
+    if (pct >= 84) { level = 'Sangat Tinggi'; col = '#1c7a45'; }
+    else if (pct >= 68) { level = 'Tinggi'; col = '#2f8f5b'; }
+    else if (pct >= 52) { level = 'Sedang'; col = '#c47f22'; }
+    const dimNames = { isu: 'Pengetahuan isu lingkungan', sikap: 'Sikap terhadap lingkungan', perilaku: 'Perilaku ramah lingkungan', praktik: 'Menerapkan praktik berkelanjutan', gaya: 'Kesediaan mengubah gaya hidup' };
+    let rows = '';
+    Object.keys(dimNames).forEach((k) => {
+      if (groups[k] != null) rows += '<div style="display:flex; justify-content:space-between; gap:12px; padding:4px 0; border-bottom:1px dashed #d6e4e1;"><span>' + dimNames[k] + '</span><b>' + groups[k] + '</b></div>';
+    });
+    out.style.display = 'block';
+    out.innerHTML = '<div style="font:800 15px/1 Mulish; color:#0f3238; margin-bottom:8px;">Hasil Angket EA Anda</div>' +
+      (answered < totalItems ? '<div style="color:#c47f22; font-size:13px; margin-bottom:8px;">Catatan: ' + answered + ' dari ' + totalItems + ' pernyataan terjawab. Lengkapi untuk hasil akurat.</div>' : '') +
+      '<div style="display:flex; align-items:baseline; gap:10px; margin-bottom:6px;"><div style="font:800 34px/1 Newsreader; color:' + col + ';">' + pct + '%</div><div style="font-weight:700; color:' + col + ';">' + level + '</div></div>' +
+      '<div style="height:10px; border-radius:6px; background:#e2ece9; overflow:hidden; margin-bottom:12px;"><div style="height:100%; width:' + pct + '%; background:' + col + ';"></div></div>' +
+      '<div style="font-size:13.5px;">Skor total: <b>' + sum + ' / ' + max + '</b></div>' +
+      '<div style="margin-top:10px; font-size:13.5px;">' + rows + '</div>' +
+      '<div style="margin-top:10px; font-size:12.5px; color:#5f7d80;">Kategori: &lt;52% Rendah · 52–67% Sedang · 68–83% Tinggi · ≥84% Sangat Tinggi. Angket ini untuk refleksi diri, bukan penilaian formal.</div>';
+  }
+  wireToc() {
+    const toggle = document.getElementById('tocToggle');
+    const aside = document.getElementById('tocAside');
+    if (toggle && aside) {
+      toggle.addEventListener('click', () => aside.classList.toggle('open'));
+      aside.querySelectorAll('a[href^="#"]').forEach((a) => a.addEventListener('click', () => { if (window.innerWidth <= 1040) aside.classList.remove('open'); }));
+    }
+    const bar = document.getElementById('progressBar');
+    const links = [...document.querySelectorAll('#tocAside a[data-toc]')];
+    const map = {};
+    links.forEach((l) => { map[l.getAttribute('data-toc')] = l; });
+    const sections = [...document.querySelectorAll('[data-section],[data-chapter]')];
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(() => {
+        const st = window.scrollY || document.documentElement.scrollTop;
+        const h = document.documentElement.scrollHeight - window.innerHeight;
+        if (bar) bar.style.width = (h > 0 ? (st / h) * 100 : 0) + '%';
+        let cur = null;
+        for (const s of sections) {
+          if (s.getBoundingClientRect().top <= 140) cur = s;
+        }
+        links.forEach((l) => { l.style.background = 'transparent'; l.style.color = '#cfe6e2'; });
+        if (cur && map[cur.id]) {
+          const a = map[cur.id];
+          a.style.background = 'rgba(127,216,207,.16)';
+          a.style.color = '#fff';
+        }
+        ticking = false;
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+}
+</script>
+</body>
+</html>
